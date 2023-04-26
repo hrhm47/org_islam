@@ -22,6 +22,11 @@ import { ApiProvider } from './src/contextApi/ApiProvider';
 import Calender from './src/modules/salahTracker/calender/Calender';
 import Chart from './src/modules/salahTracker/charts/Chart';
 import Streak from './src/modules/salahTracker/streak/Streak';
+// salah times screens
+import ApiCall from './src/modules/prayerTimes/ApiCall';
+import Monthly_Timings from './src/modules/prayerTimes/MonthlyTimings';
+import Settings from './src/modules/prayerTimes/Settings';
+
 
 // Salah Tracker IconImages
 import prayerImage from './src/modules/salahTracker/images/prayer.png';
@@ -29,10 +34,17 @@ import streaksImage from './src/modules/salahTracker/images/streaks.png';
 import reportImage from './src/modules/salahTracker/images/report.png';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+// qibla screens
+import LoadingScreen from './src/modules/qibla/screens/LoadingScreen';
+import RequestAccess from './src/modules/qibla/screens/RequestAccess';
+import FaceQibla from './src/modules/qibla/screens/FaceQibla';
+import FacingQibla from './src/modules/qibla/components/FacingQibla';
+
 // navigation stack
 const Stack = createNativeStackNavigator(); 
+const SalahTimeStack = createNativeStackNavigator(); 
 const Tab = createBottomTabNavigator();
-
+const QiblaStack= createNativeStackNavigator();
 
 
 
@@ -42,12 +54,12 @@ function TabNavigation() {
       initialRouteName="Home"
       screenOptions={{
         // tabBarActiveBackgroundColor: "brown",
-        tabBarActiveBackgroundColor: '#1A2A52',
-        tabBarInactiveBackgroundColor: '#273B69',
-        // tabBarInactiveTintColor: "b",
-        tabBarInactiveBackgroundColor: '#273B69',
-        headerShown: false,
-        tabBarLabelStyle: {
+          tabBarActiveBackgroundColor: '#1A2A52',
+          tabBarInactiveBackgroundColor: '#273B69',
+          // tabBarInactiveTintColor: "b",
+          tabBarInactiveBackgroundColor: '#273B69',
+          headerShown: false,
+          tabBarLabelStyle: {
           color: 'white',
           fontWeight: '900',
           letterSpacing: 1,
@@ -96,6 +108,33 @@ function TabNavigation() {
   );
 }
 
+function SalahTimesNavigator(){
+  return(
+    <SalahTimeStack.Navigator>
+
+      <SalahTimeStack.Screen name="SalahTimes" component={ApiCall} options={{headerShown:false
+          }}/> 
+            <SalahTimeStack.Screen name="Settings" component={Settings} options={{headerShown:false
+          }}/>  
+            <SalahTimeStack.Screen name="Monthly" component={Monthly_Timings} options={{headerShown:false
+          }}/>  
+    </SalahTimeStack.Navigator>
+  )
+}
+
+
+function QiblaNavigation(){
+  return(
+      <QiblaStack.Navigator screenOptions={{headerShown: false}} >
+        <QiblaStack.Screen name="Home" component={LoadingScreen} />
+        <QiblaStack.Screen name="RequestAccess" component={RequestAccess} />
+        <QiblaStack.Screen name="FaceQibla" component={FaceQibla} />
+        <QiblaStack.Screen name="FacingQibla" component={FacingQibla} />
+      </QiblaStack.Navigator>
+  )
+}
+
+
 const App= () => {
   return (
 
@@ -109,6 +148,8 @@ const App= () => {
         
            <Stack.Screen name="Home" component={HomePage} options={{headerShown:false
           }}/>
+           <Stack.Screen name="SalahTimes" component={SalahTimesNavigator} options={{headerShown:false
+          }}/>
            
           {/*  <Stack.Screen name="SalahTimes" component={ApiCall} options={{headerShown:false
           }}/> 
@@ -116,7 +157,9 @@ const App= () => {
           }}/>  
             <Stack.Screen name="Monthly" component={Monthly_Timings} options={{headerShown:false
           }}/>  */}
-          <Stack.Screen name = 'TabNavigatorTracker' component={TabNavigation} options={{headerShown:false}}
+          <Stack.Screen name = "TabNavigatorTracker" component={TabNavigation} options={{headerShown:false}}
+          />
+          <Stack.Screen name = "QiblaNavigator" component={QiblaNavigation} options={{headerShown:false}}
           />
         </Stack.Navigator>
       </NavigationContainer>

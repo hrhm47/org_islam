@@ -4,12 +4,16 @@ import Ionicons from 'react-native-vector-icons/MaterialIcons';
 import { widthPercentageToDP as WP, heightPercentageToDP as HP} from '../../utills/pixelratio/index';
 
 
+
+
+
+
 const Header = () => {
   
   return (
     <View style={styles.Header}>
         <View style={styles.Headerinner}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={{}}>
                 <Ionicons name='place' size={24} color='white'/>
             </TouchableOpacity>
             <TouchableOpacity>

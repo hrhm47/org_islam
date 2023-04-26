@@ -9,6 +9,9 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactNativeHost;
 import com.facebook.soloader.SoLoader;
 import java.util.List;
+import com.github.reactnativecommunity.location.RNLocationPackage;
+import org.reactnative.camera.RNCameraPackage;
+import com.sensors.RNSensorsPackage;
 // import com.reactcommunity.rndatetimepicker.RNDateTimePickerPackage;
 
 
@@ -25,6 +28,9 @@ public class MainApplication extends Application implements ReactApplication {
         protected List<ReactPackage> getPackages() {
           @SuppressWarnings("UnnecessaryLocalVariable")
           List<ReactPackage> packages = new PackageList(this).getPackages();
+          new RNLocationPackage();
+          new RNCameraPackage();
+          new RNSensorsPackage();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
           // packages.add(new RNDateTimePickerPackage());

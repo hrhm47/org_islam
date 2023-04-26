@@ -11,6 +11,7 @@ const ApiProvider = ({children}) => {
   const[longeststreak,setLongeststreak]=useState("");
   const [calculatestreak,setCalculatestreak]=useState(0);
   const [streakstartdate,setStreakstartdate]=useState([]);
+  const [location, setLocation] = useState(null);
 
   const [remtime, setRemtime] = useState(0); //   remianing time
   const [latlang,setLantlang] = useState("");
@@ -25,7 +26,7 @@ const ApiProvider = ({children}) => {
   startdate=yyyy+"-"+mm+"-"+dd;
   // setToday(startdate);
   const[today,setToday]=useState(startdate);
-  const [last4months,setLast4months]=useState("its 4th month");
+  const [last4months,setLast4months]=useState([]);
   const [streakdates, setStreakdates] = useState([]);
   const [markdates, setMarkdates] = useState([]);
 

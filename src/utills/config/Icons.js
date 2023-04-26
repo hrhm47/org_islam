@@ -11,7 +11,7 @@ export const Data=[
         uri:require('../../images/compass.png'),
         title:'Qibla',
         id:'123457',
-        screenName:''
+        screenName:'QiblaNavigator'
     },
     {
         uri:require('../../images/dua.png'),
