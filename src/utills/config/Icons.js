@@ -29,7 +29,7 @@ export const Data=[
         uri:require('../../images/quran.png'),
         title:'Quran',
         id:'123450',
-        screenName:''
+        screenName:'Quran'
     },
     {
         uri:require('../../images/teaching.png'),

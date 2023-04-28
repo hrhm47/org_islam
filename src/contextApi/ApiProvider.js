@@ -12,7 +12,6 @@ const ApiProvider = ({children}) => {
   const [calculatestreak,setCalculatestreak]=useState(0);
   const [streakstartdate,setStreakstartdate]=useState([]);
   const [location, setLocation] = useState(null);
-
   const [remtime, setRemtime] = useState(0); //   remianing time
   const [latlang,setLantlang] = useState("");
 
