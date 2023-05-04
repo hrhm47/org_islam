@@ -13,7 +13,11 @@ import {
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
+
+
+// Salah Tracker Screens
 import HomePage from './src/screens/homeScreen/HomePage';
+// context api
 import {ApiProvider} from './src/contextApi/ApiProvider';
 // Salah Tracker Screens
 import Calender from './src/modules/salahTracker/calender/Calender';
@@ -159,47 +163,47 @@ function QuranNavigation() {
 
 const App = () => {
   return (
-    <ApiProvider>
-      {/* <HomePage/>
-       */}
+      <ApiProvider>
+        {/* <HomePage/>
+         */}
 
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen
-            name="Home"
-            component={HomePage}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="SalahTimes"
-            component={SalahTimesNavigator}
-            options={{headerShown: false}}
-          />
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName="Home">
+            <Stack.Screen
+              name="Home"
+              component={HomePage}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="SalahTimes"
+              component={SalahTimesNavigator}
+              options={{headerShown: false}}
+            />
 
-          {/*  <Stack.Screen name="SalahTimes" component={ApiCall} options={{headerShown:false
+            {/*  <Stack.Screen name="SalahTimes" component={ApiCall} options={{headerShown:false
           }}/> 
             <Stack.Screen name="Settings" component={Settings} options={{headerShown:false
           }}/>  
             <Stack.Screen name="Monthly" component={Monthly_Timings} options={{headerShown:false
           }}/>  */}
-          <Stack.Screen
-            name="TabNavigatorTracker"
-            component={TabNavigation}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="QiblaNavigator"
-            component={QiblaNavigation}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="Quran"
-            component={QuranNavigation}
-            options={{headerShown: false}}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </ApiProvider>
+            <Stack.Screen
+              name="TabNavigatorTracker"
+              component={TabNavigation}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="QiblaNavigator"
+              component={QiblaNavigation}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Quran"
+              component={QuranNavigation}
+              options={{headerShown: false}}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </ApiProvider>
   );
 };
 

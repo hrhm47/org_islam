@@ -1,6 +1,7 @@
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import SurahScreen from '../screens/SurahScreen';
 import ParaScreen from '../screens/ParaScreen';
+import BookMark from '../screens/BookMark';
 const Tab = createMaterialTopTabNavigator();
 
 export function QuranHomeTabNavigator(){
@@ -21,6 +22,6 @@ export function QuranHomeTabNavigator(){
       component={SurahScreen}
     />
     <Tab.Screen name="PARA" component={ParaScreen} />
-    <Tab.Screen name="PAGE" component={ParaScreen} />
+    <Tab.Screen name="BookMark" component={BookMark} />
   </Tab.Navigator>)
 }

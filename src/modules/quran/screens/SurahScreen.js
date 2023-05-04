@@ -9,7 +9,7 @@ import Quran from 'quran-json'
 const SurahScreen = () => {
     const navigation=useNavigation();
 
-    // console.log(Quran.map((item,index)=>item.name));
+    // console.log(Quran.map((item,index)=>item.total_verses));
     return(
 
         <View style={styles.surah}>
@@ -17,14 +17,18 @@ const SurahScreen = () => {
             <ScrollView>
             {Quran.map((item,index)=>{
                         return(
-                            <View style={styles.names}>
-                            <TouchableOpacity style={{flexDirection:'row',padding:10}} onPress={() => navigation.navigate('Surah',{quran:Quran.item})}>
-                                <ImageBackground source={require("../images/shape.png")} style={{width:WP('13.3'),height:HP('8'),justifyContent:'space-around',alignItems:"center", marginRight:7,marginLeft:1 }} imageStyle={{tintColor:"#004C9B",borderWidth:3}} >
+                            <View style={styles.names} key={item.id}>
+                            <TouchableOpacity style={{flexDirection:'row',padding:WP('1')}} onPress={() => navigation.navigate('Surah',{quran:item})}>
+                                <ImageBackground source={require("../images/shape.png")}
+                                 style={{width:WP('14'),height:HP('8'),
+                                 justifyContent:'space-around',alignItems:"center", 
+                                 marginRight:WP('3') }} 
+                                 imageStyle={{tintColor:"#004C9B",borderWidth:3}} >
                                     <Text style={{fontWeight:'500'}}>{item.id}</Text>
                                 </ImageBackground >
                                 <View style={{flexDirection:"row",width:WP('70'),justifyContent:"space-between",alignItems:"center"}}>
                                     <View style={{flexDirection:'column'}}>
-                                    <Text style={{fontWeight:'500',fontSize:17}}>{item.transliteration}</Text>
+                                    <Text style={{fontWeight:'500',fontSize:17,color:"black"}}>{item.transliteration}</Text>
                                     <View style={{flexDirection:'row',justifyContent:'space-between'}}>
                                     <Text style={{color:'grey'}}>{item.type}</Text>
                                     <Text style={{color:'grey'}}>   • {item.total_verses} Verses</Text>
@@ -33,11 +37,7 @@ const SurahScreen = () => {
                                     <Text style={{fontWeight:'600',fontSize:20,color:"#004C9B"}}>{item.name}</Text>
                                 </View>
                             </TouchableOpacity>
-                            
-
-                            </View>
-            )
-
+                            </View>)
             })}
           </ScrollView>
             {/* {Quran.map((item,index)=> */}

@@ -195,7 +195,7 @@ const Home = () => {
             <TouchableOpacity>
               <Image
                 source={require('../images/back.png')}
-                style={styles.images}
+                style={[styles.images,{tintColor:"white"}]}
               />
             </TouchableOpacity>
             <TouchableOpacity onPress={() => setIsSearchActive(false)}>
@@ -207,7 +207,7 @@ const Home = () => {
                 onPress={() => setIsSearchActive(!isSearchActive)}>
                 <Image
                   source={require('../images/search.png')}
-                  style={styles.images}
+                  style={[styles.images,{tintColor:"white"}]}
                 />
               </TouchableOpacity>
             ) : null}
@@ -292,20 +292,17 @@ const styles = StyleSheet.create({
   header: {
     flex: 1 ,
     // backgroundColor:'#FAFAFC',
-    backgroundColor: 'yellow',
+    backgroundColor: '#104586',
     flexDirection: 'row',
     justifyContent: 'space-between',
     // position:"absolute"
   },
   headText: {
-    color: 'black',
+    color: 'white',
     fontSize: 30,
     fontWeight: 'bold',
-    // justifyContent:"center",
-    // alignSelf:"center",
-    // alignItems: 'center',
     textAlign: 'center',
-    color: '#0F2247',
+    // color: '#0F2247',
   },
   images: {
     width: WP('3'),
@@ -317,9 +314,9 @@ const styles = StyleSheet.create({
   },
   lastRead: {
     flex: 1,
-    marginTop: WP('8'),
+    marginTop: WP('3'),
     width: WP('100'),
-    height: HP('25'),
+    height: HP('23'),
     justifyContent: 'center',
     alignItems: 'center',
   },
