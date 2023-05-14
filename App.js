@@ -43,6 +43,8 @@ import FacingQibla from './src/modules/qibla/components/FacingQibla';
 //quran screens
 import Home from './src/modules/quran/screens/Home';
 import Surah from './src/modules/quran/screens/Surah';
+import Para_Juz from './src/modules/quran/screens/Para_Juz';
+import SearchScreen from './src/modules/quran/screens/SearchScreen';
 // navigation stack
 const Stack = createNativeStackNavigator();
 const SalahTimeStack = createNativeStackNavigator();
@@ -155,6 +157,8 @@ function QuranNavigation() {
       screenOptions={{headerShown: false}}>
       <QuranStack.Screen name="Home" component={Home} />
       <QuranStack.Screen name="Surah" component={Surah} />
+      <QuranStack.Screen name="Para" component={Para_Juz} />
+      <QuranStack.Screen name="SearchScreen" component={SearchScreen} />
     </QuranStack.Navigator>
   );
 }

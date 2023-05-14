@@ -12,6 +12,10 @@ import java.util.List;
 import com.github.reactnativecommunity.location.RNLocationPackage;
 import org.reactnative.camera.RNCameraPackage;
 import com.sensors.RNSensorsPackage;
+import com.rnfs.RNFSPackage;
+import com.dooboolab.audiorecorderplayer.RNAudioRecorderPlayerPackage;
+import com.RNFetchBlob.RNFetchBlobPackage; 
+import com.rnfs.RNFSPackage; 
 // import com.reactcommunity.rndatetimepicker.RNDateTimePickerPackage;
 
 
@@ -28,9 +32,13 @@ public class MainApplication extends Application implements ReactApplication {
         protected List<ReactPackage> getPackages() {
           @SuppressWarnings("UnnecessaryLocalVariable")
           List<ReactPackage> packages = new PackageList(this).getPackages();
+          new RNFSPackage();
           new RNLocationPackage();
           new RNCameraPackage();
           new RNSensorsPackage();
+          new RNAudioRecorderPlayerPackage();
+          new RNFetchBlobPackage();  
+          new RNFSPackage();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
           // packages.add(new RNDateTimePickerPackage());

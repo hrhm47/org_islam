@@ -35,6 +35,7 @@ import LastReadSurah from '../components/LastReadSurah';
 
 
 import {QuranHomeTabNavigator} from '../components/QuranHomeTabNavigator';
+import { useNavigation } from '@react-navigation/native';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -145,6 +146,7 @@ const Tab = createMaterialTopTabNavigator();
 
 const Home = () => {
   const headerHeight = useHeaderHeight();
+  const navigation=useNavigation();
   // const callData=()=>{
   //     axios.get('https://api.quran.com/api/v4/verses/by_juz/1?language=en&words=true&page=1&per_page=10')
   //     axios.get('https://api.quran.com/api/v4/juzs')
@@ -198,7 +200,9 @@ const Home = () => {
                 style={[styles.images,{tintColor:"white"}]}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => setIsSearchActive(false)}>
+            <TouchableOpacity onPress={() => {
+              // setIsSearchActive(false);
+               navigation.navigate('SearchScreen')}}>
               <Text style={styles.headText}>Quran</Text>
             </TouchableOpacity>
 

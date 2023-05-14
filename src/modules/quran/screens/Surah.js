@@ -17,7 +17,7 @@ import {
 export default function Surah({route,navigation}) {
     // const navigation=useNavigation();
     
-    const {quran}=route.params
+    const {quran, searchText}=route.params
     const [selectTranslation,setSelectTranslation]=React.useState("en")
     const [selectQari,setSelectQari]=React.useState("ar.abdulbasitmurattal")
     const [surahTranslation,setSurahTranslation]=React.useState("")
@@ -66,17 +66,7 @@ export default function Surah({route,navigation}) {
 
   return (
     <MenuProvider >
-    <View style={styles.container} 
-    // onStartShouldSetResponder={()=>{
-    //         if(isVisible){
-    //             setIsVisible(!isVisible)
-    //         }
-    //         else{
-    //             setIsVisible(isVisible)
-    //         }
-    //         }}
-            
-            >
+    <View style={styles.container}>
         
         {/* heading with image details */}
             <View style={styles.heading}>
@@ -110,7 +100,7 @@ export default function Surah({route,navigation}) {
             </ImageBackground>
             
             
-            <QuranAyat quran={quran} translation={selectTranslation} qari={selectQari} tafseerId={tafseerId}/>
+            <QuranAyat quran={quran} translation={selectTranslation} qari={selectQari} tafseerId={tafseerId} searchText={searchText}/>
             
 
         </View>
