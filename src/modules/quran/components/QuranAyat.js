@@ -88,6 +88,7 @@ const QuranAyat = ({quran, translation, qari, tafseerId, searchText}) => {
   };
 
   const playAudio = (surahNameFromList, surahId) => {
+    
     // console.log(surahNameFromList);
     // console.log((surahsWithVerses.find(item => Object.keys(item)[0] === (surahNameFromList))[surahNameFromList])+1);
     const verseNumber =

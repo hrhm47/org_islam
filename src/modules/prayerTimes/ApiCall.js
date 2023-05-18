@@ -1083,7 +1083,7 @@ async function setLocalData(localdata){
       <>
         {/* <StatusBar style="dark"></StatusBar> */}
       {isready?(
-        <SafeAreaView style={{ flex: 1, backgroundColor:"#0F2247" }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor:"white" }}>
          
           {/* topbar */}
           <View style={styles.viewHeading}>
@@ -1094,14 +1094,14 @@ async function setLocalData(localdata){
             >
               <Image
                 source={require('./images/leftarrow.png')}
-                style={{width:30,height:30}}
+                style={{width:30,height:30,tintColor:"white" }}
                 />
             </TouchableOpacity>
-            <TouchableOpacity>
-              {noInternet? 
-              <Image source={require('./images/no-wifi.png')} style={{ width: 30, height: 30 }}></Image>:<Image source={require('./images/no-wifi.png')} style={{ width: 30, height: 30 }}></Image>
-              }
-            </TouchableOpacity>
+            {/* <TouchableOpacity> */}
+              {/* {noInternet? 
+              <Image source={require('./images/no-wifi.png')} style={{ width: 30, height: 30}}></Image>:<Image source={{}} style={{ width: 30, height: 30 }}></Image>
+              } */}
+            {/* </TouchableOpacity> */}
             <Text style={styles.headingText}>Salah Times</Text>
             <TouchableOpacity
               onPress={() =>
@@ -1110,7 +1110,7 @@ async function setLocalData(localdata){
             >
               <Image
                 source={require("./images/settings.png")}
-                style={{ width: 30, height: 30 }}
+                style={{ width: 30, height: 30, tintColor:"white" }}
               ></Image>
             </TouchableOpacity>
           </View>
@@ -1126,9 +1126,9 @@ async function setLocalData(localdata){
               <Text style={styles.remTimeText}>Sunrise</Text>
               <Image
                 source={require("./images/sunrise.png")}
-                style={{ width: 30, height: 30,tintColor:"white"}}
+                style={{ width: 30, height: 30,tintColor:"#104586"}}
               ></Image>
-              <Text style={{ fontWeight: "400", fontSize: 17,color:"white" }}>
+              <Text style={{ fontWeight: "400", fontSize: 17,color:"black" }}>
                 {isready ? times.Sunrise : "Loading..."}
               </Text>
             </View>
@@ -1138,7 +1138,7 @@ async function setLocalData(localdata){
                 <Text
                   style={{
                     fontSize: 15,
-                    color:"white",
+                    color:"black",
                     fontFamily:
                       Platform.OS === "ios" ? "AvenirNext-DemiBold" : "monospace",
                     fontStyle: "italic",
@@ -1149,7 +1149,7 @@ async function setLocalData(localdata){
                 <Text
                   style={{
                     fontSize: 15,
-                    color:"white",
+                    color:"black",
                     fontFamily:
                       Platform.OS === "ios" ? "AvenirNext-DemiBold" : "monospace",
                     fontStyle: "italic",
@@ -1164,9 +1164,9 @@ async function setLocalData(localdata){
               <Text style={styles.remTimeText}>Sunset</Text>
               <Image
                 source={require("./images/sunset.png")}
-                style={{ width: 30, height: 30,tintColor:"white" }}
+                style={{ width: 30, height: 30,tintColor:"#104586" }}
               ></Image>
-              <Text style={{ fontWeight: "400", fontSize: 17,color:"white" }}>
+              <Text style={{ fontWeight: "400", fontSize: 17,color:"#104586" }}>
                 {isready ? times.Sunset : "Loading..."}
               </Text>
             </View>
@@ -1184,12 +1184,12 @@ async function setLocalData(localdata){
               >
                 <View style={{ flexDirection: "row" }}>
                  
-                  <Text style={{color:"white"}}>Current Prayer :</Text>
-                  <Text style={{ fontWeight: "bold",color:"white" }}> {remr[0]}</Text>
+                  <Text style={{color:"#104586"}}>Current Prayer :</Text>
+                  <Text style={{ fontWeight: "bold",color:"#104586" }}> {remr[0]}</Text>
                 </View>
   
                 <Text
-                  style={{ fontWeight: "400", fontSize: 19, letterSpacing: 4,color:"white" }}
+                  style={{ fontWeight: "400", fontSize: 19, letterSpacing: 4,color:"#104586" }}
                 >
                   -------------
                 </Text>
@@ -1197,7 +1197,7 @@ async function setLocalData(localdata){
                   <Text
                     style={{
                       fontSize: 15,
-                      color:"white",
+                      color:"#104586",
                       fontFamily:
                         Platform.OS === "ios"
                           ? "AvenirNext-DemiBold"
@@ -1207,11 +1207,12 @@ async function setLocalData(localdata){
                   >
                     Time Remaining till :
                   </Text>
-                  <Text style={{ fontWeight: "bold", color:"white" }}> {remr[1]}</Text>
+                  <Text style={{ fontWeight: "bold", color:"#104586" }}> {remr[1]}</Text>
                 </View>
               </View>
               {remtime ? (
                 <CountDown
+                
                   style={{ top: 5, }}
                   // size={20}
                   
@@ -1222,11 +1223,14 @@ async function setLocalData(localdata){
                     borderRadius: 10,
                     
                   }}
-                  separatorStyle={{ color: "#fff", margin: 3 }}
+                  separatorStyle={{ color: "#104586", margin: 3 }}
                   timeToShow={["H", "M", "S"]}
                   digitTxtStyle={{color:"white"}}
                   timeLabels={{ m: null, s: null }}
-                  showSeparator
+                  showSeparator={true}
+                    
+                  
+                
                 />
               ) : null}
             </View>
@@ -1479,7 +1483,7 @@ async function setLocalData(localdata){
     viewHeading: {
       width: "100%",
       // backgroundColor: "#eae57e",
-      backgroundColor: "#FAFAFC",
+      backgroundColor: "#104586",
       height: Platform.OS === "ios" ? "8%" : "9%",
       shadowColor: "white",
       shadowOffset: { width: 0, height: 2 },
@@ -1496,6 +1500,8 @@ async function setLocalData(localdata){
       fontSize: 22,
       fontFamily: Platform.OS === "ios" ? "AvenirNext-DemiBold" : "monospace",
       letterSpacing: Platform.OS === "ios" ? 2 : null,
+      // alignSelf:"center",
+      color: "white",
     },
     remTimeView: {
       flexDirection: "column",
@@ -1506,7 +1512,7 @@ async function setLocalData(localdata){
       fontWeight: "400",
       fontSize: 19,
       fontFamily: Platform.OS === "ios" ? "AvenirNext-DemiBold" : "monospace",
-      color:"white"
+      color:"#104586"
     },
     namaName: {
       fontWeight: "400",

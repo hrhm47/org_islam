@@ -136,12 +136,12 @@ let mm= new Date().getMonth()+1;
   return (
 
     <>
-    <StatusBar backgroundColor='white' style='auto'  ></StatusBar>
-      <SafeAreaView style={{flex:1,backgroundColor:"#FAFAFC"}}>
+    <StatusBar backgroundColor='#104586' style='auto'  ></StatusBar>
+      <SafeAreaView style={{flex:1,backgroundColor:"#104586"}}>
 
         {/* topbar */}
     <View style={{width:"100%", 
-    backgroundColor:"#FAFAFC",
+    // backgroundColor:"#104586",
     height: Platform.OS === 'ios' ? '8%' : '9%',
     shadowColor: 'black',
     shadowOffset: { width: 0, height: 2 },
@@ -154,9 +154,9 @@ let mm= new Date().getMonth()+1;
         // paddingTop:Platform.OS === 'ios' ? null : '10%',
      }}>
         <TouchableOpacity onPress={()=>navigation.goBack()}>
-        <Image source={require('./images/back.png')} style={{width:30,height:30}}></Image>
+        <Image source={require('./images/back.png')} style={{width:30,height:30, tintColor:"white"}}></Image>
         </TouchableOpacity>
-      <Text style={{fontWeight:"bold",fontSize:22,fontFamily: Platform.OS === 'ios' ? 'AvenirNext-DemiBold' : 'monospace', letterSpacing: Platform.OS === 'ios' ? 2: null, 
+      <Text style={{fontWeight:"bold",fontSize:22,fontFamily: Platform.OS === 'ios' ? 'AvenirNext-DemiBold' : 'monospace', letterSpacing: Platform.OS === 'ios' ? 2: null, color:"white" 
      }}>Salah Times</Text>
      <TouchableOpacity >
         <Image source={{}} style={{width:30,height:30}}></Image>
@@ -167,19 +167,19 @@ let mm= new Date().getMonth()+1;
 
     <View style={styles.container}>
       <Text style={styles.month}>Monthly Prayers Timings for</Text>
-      <Text style={[styles.month,{fontStyle:"italic", fontSize:16, color:"white",fontFamily: Platform.OS === 'ios' ? 'AvenirNext-DemiBold' : 'monospace', letterSpacing: Platform.OS === 'ios' ? 2: null}]}> {location[0]}, {location[1]}</Text>
+      <Text style={[styles.month,{fontStyle:"italic", fontSize:16, color:"#104586",fontFamily: Platform.OS === 'ios' ? 'AvenirNext-DemiBold' : 'monospace', letterSpacing: Platform.OS === 'ios' ? 2: null}]}> {location[0]}, {location[1]}</Text>
       <View style={{ shadowColor: 'white',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.6,
      elevation:45,top:4}}>
-        <Text style={{justifyContent:'center', fontSize:20,fontWeight:'bold',backgroundColor:'#0F2247',color:'#ffffff', textAlign:"center",fontFamily: Platform.OS === 'ios' ? 'AvenirNext-DemiBold' : 'monospace', letterSpacing: Platform.OS === 'ios' ? 2: null}}>Upcoming 30 Days Salah Timings for </Text>
-        <Text style={{justifyContent:'center', fontSize:20,fontWeight:'bold',backgroundColor:'#0F2247',color:'#ffffff', textAlign:"center",fontFamily: Platform.OS === 'ios' ? 'AvenirNext-DemiBold' : 'monospace', letterSpacing: Platform.OS === 'ios' ? 2: null}}> {months[new Date().getMonth()]}, {new Date().getFullYear()} </Text>
+        <Text style={{justifyContent:'center', fontSize:20,fontWeight:'bold',backgroundColor:'#ffffff',color:'#104586', textAlign:"center",fontFamily: Platform.OS === 'ios' ? 'AvenirNext-DemiBold' : 'monospace', letterSpacing: Platform.OS === 'ios' ? 2: null}}>Upcoming 30 Days Salah Timings for </Text>
+        <Text style={{justifyContent:'center', fontSize:20,fontWeight:'bold',backgroundColor:'#ffffff',color:'#ffffff', textAlign:"center",fontFamily: Platform.OS === 'ios' ? 'AvenirNext-DemiBold' : 'monospace', letterSpacing: Platform.OS === 'ios' ? 2: null}}> {months[new Date().getMonth()]}, {new Date().getFullYear()} </Text>
         
 
       </View>
     <ScrollView horizontal={true} >
-        <Table borderStyle={{borderWidth: 1, borderColor: '#C1C0B9'}} >
-          <Row data={state.tableHead} widthArr={state.widthArr} style={styles.header} textStyle={{color:"white", textAlign:"center", fontWeight:"bold", fontSize:18}} />
+        <Table borderStyle={{borderWidth: 1, borderColor: '#104586'}} >
+          <Row data={state.tableHead} widthArr={state.widthArr} style={styles.header} textStyle={{color:"#104586", textAlign:"center", fontWeight:"bold", fontSize:18}} />
         <ScrollView >
           {/* <TableWrapper style={styles.wrapper}> */}
           <Col
@@ -196,7 +196,7 @@ let mm= new Date().getMonth()+1;
                   data={rowData}
                   height={20}
                   widthArr={state.widthArr}
-                  style={[styles.row, index%2 && {backgroundColor: '#004C9B', color:'#fff'}]}
+                  style={[styles.row, index%2 && {backgroundColor: '#fff', color:'#104586'}]}
                   textStyle={styles.text}
                 />
                 ))
@@ -215,11 +215,11 @@ let mm= new Date().getMonth()+1;
 
 
 const styles = StyleSheet.create({
-  container: { flex: 1,top:5,paddingTop: 8, backgroundColor: '#004C9B'},
-  month:{justifyContent: 'center',textAlign:'center',  fontSize: 20, fontWeight: 'bold',margin:2,fontFamily: Platform.OS === 'ios' ? 'AvenirNext-DemiBold' : 'monospace', letterSpacing: Platform.OS === 'ios' ? 2: null, color:"white"},
-  header: { height: 50,fontSize:35, fontWeight: '900',backgroundColor:'#004C9B',padding:10 },
-  title: { backgroundColor:"#f8f9fa" },
-  text: { textAlign: 'center', color:"white",fontSize:15,backgroundColor:"#0F2247"},
+  container: { flex: 1,top:5,paddingTop: 8, backgroundColor: 'white'},
+  month:{justifyContent: 'center',textAlign:'center',  fontSize: 20, fontWeight: 'bold',margin:2,fontFamily: Platform.OS === 'ios' ? 'AvenirNext-DemiBold' : 'monospace', letterSpacing: Platform.OS === 'ios' ? 2: null, color:"#104586"},
+  header: { height: 50,fontSize:35, fontWeight: '900',backgroundColor:'#004C9B',padding:10,color:"#fff" },
+  title: { backgroundColor:"#fff" },
+  text: { textAlign: 'center', color:"white",fontSize:15,backgroundColor:"#104586"},
   dataWrapper: { marginTop: -1 },
   row: { height: 40,justifyContent:"center", alignItems:"center",backgroundColor:"#0F2247" },
   

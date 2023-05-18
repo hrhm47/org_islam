@@ -8,7 +8,7 @@ const Header = () => {
   
   return (
     <View style={styles.Header}>
-        <View style={styles.Headerinner}>
+        {/* <View style={styles.Headerinner}>
             <TouchableOpacity>
                 <Ionicons name='place' size={24} color='white'/>
             </TouchableOpacity>
@@ -16,16 +16,16 @@ const Header = () => {
                 <Ionicons name='settings' size={24} color='white'/>
             </TouchableOpacity>
         </View>
-        
+         */}
     </View>
   )
 }
 
 const styles=StyleSheet.create({
     Header:{
-        width:WP('100'),
-        height:HP('7'),
-        backgroundColor:"#0A1832",
+        // width:WP('100'),
+        // height:HP('7'),
+        // backgroundColor:"#0A1832",
         alignItems:"center",
         justifyContent:'center'     
     },

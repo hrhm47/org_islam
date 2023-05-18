@@ -18,10 +18,10 @@ const HomePage = () => {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#0F2247', //'#004C9B'
+      backgroundColor: 'white', //'#004C9B'
       alignItems: 'center',
       justifyContent: 'flex-start',
-      paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
+      paddingTop: Platform.OS === "android" ? StatusBar.currentHeight/2 : 0
     },
   });
 

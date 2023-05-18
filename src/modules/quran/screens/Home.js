@@ -201,20 +201,24 @@ const Home = () => {
               />
             </TouchableOpacity>
             <TouchableOpacity onPress={() => {
-              // setIsSearchActive(false);
-               navigation.navigate('SearchScreen')}}>
+              setIsSearchActive(false);
+              //  navigation.navigate('SearchScreen')
+              }}
+               >
               <Text style={styles.headText}>Quran</Text>
             </TouchableOpacity>
 
-            {!isSearchActive ? (
+            {/* {!isSearchActive ? ( */}
               <TouchableOpacity
-                onPress={() => setIsSearchActive(!isSearchActive)}>
+                onPress={() => {
+                  // setIsSearchActive(false);
+                   navigation.navigate('SearchScreen')}}>
                 <Image
                   source={require('../images/search.png')}
                   style={[styles.images,{tintColor:"white"}]}
                 />
               </TouchableOpacity>
-            ) : null}
+            {/* ) : null}
             {isSearchActive && (
               <TextInput
                 style={{width: '100%'}}
@@ -223,8 +227,8 @@ const Home = () => {
                   setSearchText(value);
                 }}
                 placeholder="Search"
-              />
-            )}
+              /> */}
+            {/* )} */}
           </View>
         </KeyboardAvoidingView>
       

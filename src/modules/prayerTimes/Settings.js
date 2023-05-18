@@ -71,12 +71,12 @@ import {
   return (
     <>
       <StatusBar backgroundColor="white" style="auto"></StatusBar>
-      <SafeAreaView style={{ flex: 1, backgroundColor: "#004C9B" }}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
         {/* topbar */}
         <View
           style={{
             width: "100%",
-            backgroundColor: "#FAFAFC",
+            backgroundColor: "#104586",
             height: Platform.OS === "ios" ? "8%" : "9%",
             shadowColor: "blue",
             shadowOffset: { width: 0, height: 2 },
@@ -96,7 +96,7 @@ import {
           >
             <Image
               source={require("./images/back.png")}
-              style={{ width: 30, height: 30 }}
+              style={{ width: 30, height: 30, tintColor:"white" }}
             ></Image>
           </TouchableOpacity>
           <Text
@@ -106,12 +106,13 @@ import {
               fontFamily:
                 Platform.OS === "ios" ? "AvenirNext-DemiBold" : "monospace",
               letterSpacing: Platform.OS === "ios" ? 2 : null,
+              color:"white"
             }}
           >
             Prayer Time
           </Text>
           <TouchableOpacity>
-            <Image source={{}} style={{ width: 30, height: 30 }}></Image>
+            <Image source={{}} style={{ width: 30, height: 30, tintColor:"white" }}></Image>
           </TouchableOpacity>
         </View>
         {/* <Text>Before Moving a screen please select an updated method</Text> */}
@@ -140,7 +141,7 @@ import {
                   
                   fontWeight: "400",
                   fontSize: 18,
-                  color:"white",
+                  color:"#104586",
                   fontFamily:
                     Platform.OS === "ios" ? "AvenirNext-DemiBold" : "monospace",
                   letterSpacing: Platform.OS === "ios" ? 1 : null,
@@ -157,7 +158,7 @@ import {
                 <Text style={{ fontSize: 18,
                   fontFamily:
                     Platform.OS === "ios" ? "AvenirNext-DemiBold" : "monospace",
-                  letterSpacing: Platform.OS === "ios" ? 1 : null, fontWeight: "400", color:"white", alignSelf:"center" }}>Prayer Time Conventions</Text>
+                  letterSpacing: Platform.OS === "ios" ? 1 : null, fontWeight: "400", color:"#104586", alignSelf:"center" }}>Prayer Time Conventions</Text>
                 <SelectDropdown
                 data={method}
                 defaultValueByIndex={selectmethod}
@@ -212,7 +213,7 @@ import {
       color: "#000",
       textAlign: "center",
       fontWeight: "600",
-      color:"#9f8484",
+      color:"#104586",
       fontSize: 15,
       fontFamily:
         Platform.OS === "ios" ? "AvenirNext-DemiBold" : "monospace",
@@ -226,7 +227,7 @@ import {
       borderTopRightRadius: 12,
     },
     dropdown2RowTxtStyle: {
-      color: "#000",
+      color: "#104586",
       textAlign: "center",
       fontWeight: "400",
       padding:2,

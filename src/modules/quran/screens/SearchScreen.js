@@ -179,10 +179,10 @@ const SearchScreen = () => {
     <View style={{backgroundColor: 'white', flex: 1, alignItems: 'center'}}>
       <View style={styles.container}>
         <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-          <Icon name="arrow-back-ios" size={24} color="#6e6e6e" />
+          <Icon name="arrow-back-ios" size={24} color="white" />
         </TouchableOpacity>
         <TextInput
-        style={{height: 40, borderColor: 'gray', borderWidth: 1, width:"80%",}}
+        style={{height: 40, borderColor: 'gray', borderWidth: 1, width:"80%",color:"#104586",backgroundColor:"white", paddingVertical:10, fontSize:SC(16), fontFamily:"Roboto"}}
           placeholder="Search Surah by Name / Number"
           value={searchQuery}
           onChangeText={text => {handleInputChange(text); setBySearch(true)}}
@@ -242,9 +242,9 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#f2f2f2',
-    // backgroundColor: '#000',
-    borderRadius: 8,
+    // backgroundColor: '#f2f2f2',
+    backgroundColor: '#104586',
+    // borderRadius: 8,
     paddingHorizontal: 12,
     paddingVertical: 8,
     position:"absolute",
@@ -257,6 +257,6 @@ const styles = StyleSheet.create({
     marginLeft: 8,
     paddingVertical: 0,
     fontSize: 16,
-    color: '#6e6e6e',
+    color: 'white',
   },
 });
