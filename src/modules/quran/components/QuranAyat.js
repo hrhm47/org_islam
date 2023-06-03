@@ -9,6 +9,7 @@ import {
   Share,
   Alert,
   Animated,
+  ActivityIndicator,
 } from 'react-native';
 import React, {useEffect, useMemo, useState, useContext} from 'react';
 import {widthPercentageToDP as WP} from '../../../utills/pixelratio';
@@ -43,6 +44,7 @@ const QuranAyat = ({quran, translation, qari, tafseerId, searchText}) => {
   const {isVisible, setIsVisible} = useContext(ChartsContext);
   const [tafsir, setTafsir] = useState(null);
   const [urlInfo, setUrlInfo] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
   const isFocused = useIsFocused();
   useEffect(() => {
     const quranLinkModified =
@@ -68,19 +70,19 @@ const QuranAyat = ({quran, translation, qari, tafseerId, searchText}) => {
       const result = await Share.share({
         message: item.text + '\n' + item.translation,
         title: 'this is share title',
-        url: 'https://www.google.com/',
+        url: 'https://www.myislam.com/',
       });
       if (result.action === Share.sharedAction) {
         if (result.activityType) {
           // shared with activity type of result.activityType
-          console.log(result.action, 'result.activityType');
+          // console.log(result.action, 'result.activityType');
         } else {
           // shared
-          console.log('shared');
+          // console.log('shared');
         }
       } else if (result.action === Share.dismissedAction) {
         // dismissed
-        console.log('dismissed');
+        // console.log('dismissed');
       }
     } catch (error) {
       alert(error.message);
@@ -88,17 +90,21 @@ const QuranAyat = ({quran, translation, qari, tafseerId, searchText}) => {
   };
 
   const playAudio = (surahNameFromList, surahId) => {
-    
-    // console.log(surahNameFromList);
-    // console.log((surahsWithVerses.find(item => Object.keys(item)[0] === (surahNameFromList))[surahNameFromList])+1);
+    setIsPlaying(true)
+
     const verseNumber =
       surahsWithVerses.find(item => Object.keys(item)[0] === surahNameFromList)[
         surahNameFromList
       ] + surahId;
-    // console.log("this is quran",surahsWithVerses.find(item => Object.keys(item)[0] === (surahNameFromList)[surahNameFromList])+1);
+  
     SoundPlayer.addEventListener('FinishedLoadingURL', ({success, name}) => {
-      console.log('finished loading url', success, name);
+      // console.log('finished loading url', success, name);
+      
     });
+    SoundPlayer.addEventListener('FinishedPlaying', ({success, name}) => {
+      console.log('finished playing', success, name);
+      setIsPlaying(false);
+    })
     try {
       SoundPlayer.playUrl(
         'https://cdn.islamic.network/quran/audio/64/' +
@@ -113,44 +119,9 @@ const QuranAyat = ({quran, translation, qari, tafseerId, searchText}) => {
     }
   };
 
-  // bookmarking filling aya icons
-
-  const callBookMark = async (item, quran) => {
-    const isBookMark = {
-      surahName: quran.transliteration,
-      surahId: quran.id,
-      ayaId: item.id,
-    };
-    const firstGetBookMark = JSON.parse(
-      await AsyncStorage.getItem('isBookMark'),
-    );
-    let firsGetBookMark2, addingPreviousBookMark;
-    if (firstGetBookMark === null) {
-      console.log('bookamrk null data');
-    } else {
-      firsGetBookMark2 = firstGetBookMark;
-    }
-    firstGetBookMark.map(item => {
-      if (item.ayaId === isBookMark.ayaId) {
-        console.log('already saved item');
-        return;
-      } else {
-        addingPreviousBookMark = firstGetBookMark
-          ? [...firsGetBookMark2, isBookMark]
-          : [isBookMark];
-        console.log('now saved');
-      }
-    });
-    // console.log("this is addingPreviousBookMark",addingPreviousBookMark);
-    await AsyncStorage.setItem(
-      'isBookMark',
-      JSON.stringify(addingPreviousBookMark),
-    );
-  };
-
   // bookMarking AYas
   const saveAyaWithSurah = async (item, quran) => {
-    callBookMark(item, quran);
+    // callBookMark(item, quran);
     const bookMarkAya = {
       surahName: quran.transliteration,
       surahId: quran.id,
@@ -158,36 +129,25 @@ const QuranAyat = ({quran, translation, qari, tafseerId, searchText}) => {
       ayaText: item.text,
       ayaTranslation: item.translation,
     };
-    // console.log(bookMarkAya);
-    // item.id.toString() ======> this is aya id
+
     const firstGetData = JSON.parse(await AsyncStorage.getItem('bookMarkAya'));
     // console.log("this is firstGetData",firstGetData);
     let firstGetData2;
     let addingPreviousData;
-    if (firstGetData === null) {
-      console.log('null data');
+    if (firstGetData == null) {
+      // console.log('null data');
+      addingPreviousData = [bookMarkAya];
     } else {
-      firstGetData2 = firstGetData;
+      // firstGetData2 = firstGetData;
+      firstGetData2=firstGetData.filter((item) => item.ayaId !== bookMarkAya.ayaId);
+      addingPreviousData = firstGetData2? [...firstGetData2, bookMarkAya]: [bookMarkAya];
     }
-    firstGetData.map(item => {
-      if (item.ayaId === bookMarkAya.ayaId) {
-        console.log('this is already saved');
-        return;
-      } else {
-        addingPreviousData = firstGetData
-          ? [...firstGetData2, bookMarkAya]
-          : [bookMarkAya];
-      }
-    });
-    // console.log("adding with previous data-> ",addingPreviousData);
+    // console.log(addingPreviousData);
 
     await AsyncStorage.setItem(
       'bookMarkAya',
       JSON.stringify(addingPreviousData),
     );
-
-    // console.log("this is bookMarkAya2",JSON.parse(bookMarkAya2));
-    // console.log("this is bookMarkAya",JSON.parse(await AsyncStorage.getItem("bookMarkAya")));
   };
 
   // checking bookmark for filling
@@ -304,6 +264,7 @@ const QuranAyat = ({quran, translation, qari, tafseerId, searchText}) => {
                         style={{marginLeft: 10}}
                       />
                     </TouchableOpacity>
+                    
                     <TouchableOpacity
                       onPress={() => {
                         playAudio(quran.transliteration, item.id);
@@ -390,9 +351,10 @@ const styles = StyleSheet.create({
   },
   arabicAyatText: {
     fontSize: SC(21),
+    fontFamily:'Amiri-Regular',
+    // fontFamily:'AmiriQuran-Regular',
     color: 'black',
-    fontWeight: 'bold',
-    textAlign: 'right',
+    writingDirection:'rtl',
     marginBottom: HP('2'),
   },
   transText: {

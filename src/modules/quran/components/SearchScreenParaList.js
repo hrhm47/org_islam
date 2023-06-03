@@ -17,7 +17,7 @@ const SurahScreen = ({surah_no, searchText}) => {
 const matching_surahs = Quran.filter(item => surah_no.map(Number).includes(item.id));
 
 // print the matching surahs
-console.log(matching_surahs);
+// console.log(matching_surahs);
     // console.log(Quran.map((item,index)=>item.total_verses));
     return(
 
@@ -26,8 +26,6 @@ console.log(matching_surahs);
             <ScrollView>
 
             {matching_surahs.map((item,index)=>{
-                
-
                         return(
                             <View style={styles.names} key={item.id}>
                             <TouchableOpacity style={{flexDirection:'row',padding:WP('1')}} onPress={() => navigation.navigate('Surah',{quran:item,searchText:searchText})}>
@@ -53,38 +51,7 @@ console.log(matching_surahs);
              
             })}
           </ScrollView>
-            {/* {Quran.map((item,index)=> */}
-
-              {/* <Text>{Quran}</Text> */}
-                    {/* <FlatList
-                        data={Quran}
-                        renderItem={(Quran)=>{
-                            return(
-                        <View style={styles.names}>
-                            <TouchableOpacity style={{flexDirection:'row',padding:10}} onPress={() => navigation.navigate('Surah',{quran:Quran.item})}>
-                                <ImageBackground source={require("../images/shape.png")} style={{width:WP('13.3'),height:HP('8'),justifyContent:'space-around',alignItems:"center", marginRight:7,marginLeft:1 }} imageStyle={{tintColor:"#004C9B",borderWidth:3}} >
-                                    <Text style={{fontWeight:'500'}}>{Quran.item.id}</Text>
-                                </ImageBackground >
-                                <View style={{flexDirection:"row",width:WP('70'),justifyContent:"space-between",alignItems:"center"}}>
-                                    <View style={{flexDirection:'column'}}>
-                                    <Text style={{fontWeight:'500',fontSize:17}}>{Quran.item.transliteration}</Text>
-                                    <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-                                    <Text style={{color:'grey'}}>{Quran.item.type}</Text>
-                                    <Text style={{color:'grey'}}>   • {Quran.item.total_verses} Verses</Text>
-                                    </View>
-                                    </View>
-                                    <Text style={{fontWeight:'600',fontSize:20,color:"#004C9B"}}>{Quran.item.name}</Text>
-                                </View>
-                            </TouchableOpacity>
-                            
-
-                            </View>
-                            )}
-                        }
-                        keyExtractor={Quran=>Quran.id}
-                        // id={item.id}
-                    /> */}
-                    {/* <Text>{item.name}</Text> */}
+            
                 
             
            

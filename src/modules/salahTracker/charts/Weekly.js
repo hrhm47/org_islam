@@ -90,17 +90,17 @@ export default function Weekly({navigation}) {
         
                 const chartConfig = {
                 // backgroundGradientFrom: "white",
-                backgroundGradientFrom: "#273B69",
-                backgroundGradientTo: "#273B69",
-                backgroundGradientFromOpacity: .8,
+                backgroundGradientFrom: "#fff",
+                backgroundGradientTo: "#fff",
+                // backgroundGradientFromOpacity: 1,
                 barPercentage: 0.75,
-                fillShadowGradient: 'whitesmoke',
-                fillShadowGradientOpacity: 1,
+                fillShadowGradient: '#104586',
+                fillShadowGradientOpacity: 11,
                 decimalPlaces: 0, // optional, defaults to 2dp
                 // color: () => `rgba(0, 0, 0,1)`,
-                color: () => `rgba(255, 255, 255,1)`,
+                color: () => "#1A2A52",
                 TextStyle: {},
-                labelColor: (opacity = .9) => `rgba(255,255,255, 1)`,
+                labelColor: (opacity = .9) => "#1A2A52",
                 propsForBackgroundLines: {
                   strokeWidth: .8,
                   stroke: "#e3e3e3",
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     // backgroundColor:"#FFF8EB",
-    backgroundColor:"#273B69",
+    // backgroundColor:"#273B69",
     // margin:10,
     // top:5,
     alignItems: 'center',

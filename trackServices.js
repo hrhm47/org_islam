@@ -1,8 +1,9 @@
-import TrackPlayer, {
+import TrackPlayer,{
     AppKilledPlaybackBehavior,
     Capability,
     RepeatMode,
-    Event
+    Event,
+    usePlaybackState
   } from 'react-native-track-player';
   
   export async function setupPlayer() {

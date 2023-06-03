@@ -7,7 +7,7 @@ export const callPermissions= async()=>{
         const grants =await PermissionsAndroid.requestMultiple([
           PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
           PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
-          PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
+          PermissionsAndroid.PERMISSIONS.RECORD_AUDIO
         ]);
 
         console.log('write external stroage', grants);
@@ -22,7 +22,12 @@ export const callPermissions= async()=>{
         ) {
           console.log('permissions granted');
         } else {
-          console.log('All required permissions not granted');
+          const grants =await PermissionsAndroid.requestMultiple([
+            PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+            PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
+            PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
+          ]);
+          console.log('All required permissions not granted but now ',grants['android.permission.RECORD_AUDIO']);
 
           return;
         }

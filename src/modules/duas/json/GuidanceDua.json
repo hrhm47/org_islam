@@ -1,0 +1,1598 @@
+{
+  "Dua for Guidance": {
+    "duas": [
+      {
+        "id": 1,
+        "title": "Dua for Seeking Guidance",
+        "description": "A supplication to seek guidance and clarity.",
+        "detail": "O Allah, guide me to the straight path and grant me understanding.",
+        "keywords": [
+          "guidance",
+          "clarity",
+          "understanding"
+        ],
+        "dua_arabic": "اللهم اهدني وسددني واجعلني هدى وهادياً",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 2,
+        "title": "Dua for Seeking Knowledge",
+        "description": "A supplication to seek knowledge and wisdom.",
+        "detail": "O Allah, grant me knowledge that benefits and make me among those who are guided.",
+        "keywords": [
+          "knowledge",
+          "wisdom",
+          "guidance"
+        ],
+        "dua_arabic": "اللهم ارزقني علمًا نافعًا واجعلني من الذين يهتدون",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 3,
+        "title": "Dua for Making Right Decisions",
+        "description": "A supplication to seek guidance in making the right decisions.",
+        "detail": "O Allah, grant me the ability to make sound decisions and choose what is best for me.",
+        "keywords": [
+          "decisions",
+          "wisdom",
+          "best"
+        ],
+        "dua_arabic": "اللهم أعني على اتخاذ القرارات الصائبة",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 4,
+        "title": "Dua for Clarity of Mind",
+        "description": "A supplication to seek clarity of mind and understanding.",
+        "detail": "O Allah, purify my heart and grant me clarity of mind to comprehend the truth.",
+        "keywords": [
+          "clarity",
+          "mind",
+          "comprehension"
+        ],
+        "dua_arabic": "اللهم طهر قلبي وأفقه لي في الدين",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 5,
+        "title": "Dua for Enlightenment",
+        "description": "A supplication to seek enlightenment and spiritual guidance.",
+        "detail": "O Allah, enlighten my heart and grant me deep understanding of Your teachings.",
+        "keywords": [
+          "enlightenment",
+          "spirituality",
+          "teachings"
+        ],
+        "dua_arabic": "اللهم انير قلبي وألهمني فهم دينك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 6,
+        "title": "Dua for Righteous Companions",
+        "description": "A supplication to seek righteous companions for guidance.",
+        "detail": "O Allah, grant me righteous companions who will help me stay on the path of guidance.",
+        "keywords": [
+          "righteous",
+          "companions",
+          "path"
+        ],
+        "dua_arabic": "اللهم اجعلني في حبك وحب من يحبك وحب عمل يقربني إلى حبك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 7,
+        "title": "Dua for Divine Assistance",
+        "description": "A supplication seeking divine assistance and guidance.",
+        "detail": "O Allah, help me with Your guidance and support in every aspect of my life.",
+        "keywords": [
+          "divine",
+          "assistance",
+          "support"
+        ],
+        "dua_arabic": "اللهم اعني بالهدى والتقى والعفاف والغنى",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 8,
+        "title": "Dua for Seeking Truth",
+        "description": "A supplication to seek the truth and be guided towards it.",
+        "detail": "O Allah, guide me to the truth and make the truth clear to me.",
+        "keywords": [
+          "truth",
+          "clarity",
+          "guidance"
+        ],
+        "dua_arabic": "اللهم أرني الحق حقاً وارزقني اتباعه وأرني الباطل باطلاً وارزقني اجتنابه",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 9,
+        "title": "Dua for Strengthening Faith",
+        "description": "A supplication to seek strength and guidance in strengthening faith.",
+        "detail": "O Allah, strengthen my faith and help me stay steadfast on the right path.",
+        "keywords": [
+          "faith",
+          "steadfastness",
+          "guidance"
+        ],
+        "dua_arabic": "اللهم ثبت قلبي على دينك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 10,
+        "title": "Dua for Seeking God's Pleasure",
+        "description": "A supplication to seek Allah's pleasure and guidance in all actions.",
+        "detail": "O Allah, guide me to actions that please You and make me among the righteous.",
+        "keywords": [
+          "pleasure",
+          "righteousness",
+          "guidance"
+        ],
+        "dua_arabic": "اللهم اهدني لما ترضاه مني واجعلني ممن يرضاك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 11,
+        "title": "Dua for Seeking Divine Knowledge",
+        "description": "A supplication to seek divine knowledge and understanding.",
+        "detail": "O Allah, grant me knowledge that brings me closer to You and benefits others.",
+        "keywords": [
+          "divine",
+          "knowledge",
+          "understanding"
+        ],
+        "dua_arabic": "اللهم ارزقني علماً نافعاً وعملاً صالحاً",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 12,
+        "title": "Dua for Seeking Clarity of Purpose",
+        "description": "A supplication to seek clarity of purpose and guidance in life.",
+        "detail": "O Allah, grant me clarity of purpose and guide me on the path that leads to success.",
+        "keywords": [
+          "clarity",
+          "purpose",
+          "guidance"
+        ],
+        "dua_arabic": "اللهم اجعلني مقصدًا مخلصًا لك واهدني إلى ما ينفعني",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 13,
+        "title": "Dua for Seeking Knowledge from the Quran",
+        "description": "A supplication to seek knowledge and guidance from the Quran.",
+        "detail": "O Allah, grant me understanding of the Quran and make it a source of guidance for me.",
+        "keywords": [
+          "knowledge",
+          "Quran",
+          "guidance"
+        ],
+        "dua_arabic": "اللهم اجعل القرآن ربيع قلبي ونور صدري وجلاء حزني وذهاب همي",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 14,
+        "title": "Dua for Seeking Wisdom in Decision Making",
+        "description": "A supplication to seek wisdom and guidance in making decisions.",
+        "detail": "O Allah, grant me wisdom and insight to make the right choices in life.",
+        "keywords": [
+          "wisdom",
+          "decision making",
+          "guidance"
+        ],
+        "dua_arabic": "اللهم أرني الأشياء كما هي عليه حقيقة ، واجعلني أرى الأشياء كما ترونها",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 15,
+        "title": "Dua for Seeking Clarity in Faith",
+        "description": "A supplication to seek clarity and firmness in faith.",
+        "detail": "O Allah, grant me a clear and strong faith that remains steadfast in the face of challenges.",
+        "keywords": [
+          "clarity",
+          "faith",
+          "steadfastness"
+        ],
+        "dua_arabic": "اللهم أعني على إكمال ديني وتمام نعمتك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 16,
+        "title": "Dua for Seeking Divine Guidance in Career",
+        "description": "A supplication to seek Allah's guidance in choosing a career path.",
+        "detail": "O Allah, guide me towards a career that aligns with my skills and benefits me in this life and the Hereafter.",
+        "keywords": [
+          "guidance",
+          "career",
+          "skills"
+        ],
+        "dua_arabic": "اللهم اهدني لما فيه خيري الدنيا والآخرة",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 17,
+        "title": "Dua for Seeking Guidance in Difficult Times",
+        "description": "A supplication to seek guidance and support during challenging situations.",
+        "detail": "O Allah, grant me strength and guide me through the hardships I face in life.",
+        "keywords": [
+          "guidance",
+          "strength",
+          "difficult times"
+        ],
+        "dua_arabic": "اللهم اجعل لي في الأمرين خيراً",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 18,
+        "title": "Dua for Seeking Guidance in Parenting",
+        "description": "A supplication to seek guidance and wisdom in raising children.",
+        "detail": "O Allah, grant me the wisdom and patience to raise my children in the best manner.",
+        "keywords": [
+          "guidance",
+          "parenting",
+          "wisdom"
+        ],
+        "dua_arabic": "اللهم أعني على تربية أولادي في طاعتك وخدمة أمتك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 19,
+        "title": "Dua for Seeking Spiritual Enlightenment",
+        "description": "A supplication to seek spiritual enlightenment and closeness to Allah.",
+        "detail": "O Allah, grant me spiritual enlightenment and fill my heart with love for You.",
+        "keywords": [
+          "spiritual",
+          "enlightenment",
+          "closeness"
+        ],
+        "dua_arabic": "اللهم اشرح صدري بالإيمان واجعل لي في أمري يسرًا",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 20,
+        "title": "Dua for Seeking Guidance in Marriage",
+        "description": "A supplication to seek Allah's guidance in choosing a righteous spouse.",
+        "detail": "O Allah, guide me in finding a spouse who will be a source of love, happiness, and righteousness.",
+        "keywords": [
+          "guidance",
+          "marriage",
+          "righteous spouse"
+        ],
+        "dua_arabic": "اللهم اختر لي ممن ترضاه لي ويترضاه لي",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      }
+    ]
+  },
+  "Dua for Patience": {
+    "duas": [
+      {
+        "id": 21,
+        "title": "Dua for Patience in Difficult Times",
+        "description": "A supplication to seek patience and strength during challenging situations.",
+        "detail": "O Allah, grant me patience and fortitude to endure the trials I face.",
+        "keywords": [
+          "patience",
+          "strength",
+          "difficult times"
+        ],
+        "dua_arabic": "اللهم اجعلني صبورًا وثابتًا على البلاء",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 22,
+        "title": "Dua for Patience in Worship",
+        "description": "A supplication to seek patience in performing acts of worship.",
+        "detail": "O Allah, help me remain patient and steadfast in fulfilling my religious obligations.",
+        "keywords": [
+          "patience",
+          "worship",
+          "steadfastness"
+        ],
+        "dua_arabic": "اللهم أعني على ذكرك وشكرك وحسن عبادتك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 23,
+        "title": "Dua for Patience in Seeking Knowledge",
+        "description": "A supplication to seek patience in the pursuit of knowledge.",
+        "detail": "O Allah, grant me patience and perseverance in seeking beneficial knowledge.",
+        "keywords": [
+          "patience",
+          "knowledge",
+          "perseverance"
+        ],
+        "dua_arabic": "اللهم ارزقني الصبر على طلب العلم",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 24,
+        "title": "Dua for Patience in Relationships",
+        "description": "A supplication to seek patience and understanding in relationships.",
+        "detail": "O Allah, grant me patience and wisdom in dealing with others.",
+        "keywords": [
+          "patience",
+          "relationships",
+          "understanding"
+        ],
+        "dua_arabic": "اللهم اجعلني حليمًا لينًا في أخلاقي",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 25,
+        "title": "Dua for Patience in Times of Grief",
+        "description": "A supplication to seek patience and solace during times of grief and loss.",
+        "detail": "O Allah, grant me patience and comfort in times of sorrow and grant me ease.",
+        "keywords": [
+          "patience",
+          "grief",
+          "comfort"
+        ],
+        "dua_arabic": "اللهم أجرني في مصيبتي واخلفني خيرًا منها",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 26,
+        "title": "Dua for Patience in Overcoming Challenges",
+        "description": "A supplication to seek patience and strength in overcoming challenges.",
+        "detail": "O Allah, help me remain patient and resilient in the face of difficulties.",
+        "keywords": [
+          "patience",
+          "challenges",
+          "resilience"
+        ],
+        "dua_arabic": "اللهم اصرف عني شر البلاء واجعل الأمور كلها خيرًا",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 27,
+        "title": "Dua for Patience in Fasting",
+        "description": "A supplication to seek patience and strength during fasting.",
+        "detail": "O Allah, grant me patience and endurance in observing the fasts.",
+        "keywords": [
+          "patience",
+          "fasting",
+          "endurance"
+        ],
+        "dua_arabic": "اللهم اعني على صيامي وقيامي",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 28,
+        "title": "Dua for Patience in Parenting",
+        "description": "A supplication to seek patience and guidance in raising children.",
+        "detail": "O Allah, grant me patience and wisdom in nurturing my children.",
+        "keywords": [
+          "patience",
+          "parenting",
+          "wisdom"
+        ],
+        "dua_arabic": "اللهم أعني على تربية أولادي في طاعتك وخدمة أمتك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 29,
+        "title": "Dua for Patience in Seeking Forgiveness",
+        "description": "A supplication to seek patience in seeking forgiveness from Allah.",
+        "detail": "O Allah, grant me patience and sincerity in seeking Your forgiveness.",
+        "keywords": [
+          "patience",
+          "forgiveness",
+          "sincerity"
+        ],
+        "dua_arabic": "اللهم اجعلني من التوابين واجعلني من المتطهرين",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 30,
+        "title": "Dua for Patience in Facing Adversity",
+        "description": "A supplication to seek patience and strength in facing adversity.",
+        "detail": "O Allah, grant me patience and steadfastness when faced with adversity.",
+        "keywords": [
+          "patience",
+          "adversity",
+          "steadfastness"
+        ],
+        "dua_arabic": "اللهم أعني على الشدائد والمحن وفتن الدنيا",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 31,
+        "title": "Dua for Patience in Times of Temptation",
+        "description": "A supplication to seek patience in resisting temptations and avoiding sin.",
+        "detail": "O Allah, grant me patience and strength to stay away from temptations and sinful acts.",
+        "keywords": [
+          "patience",
+          "temptation",
+          "resisting sin"
+        ],
+        "dua_arabic": "اللهم اعني على الجهاد في سبيلك وصبري على ما تبتليني به",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 32,
+        "title": "Dua for Patience in Times of Anger",
+        "description": "A supplication to seek patience and self-control during moments of anger.",
+        "detail": "O Allah, grant me patience and the ability to control my anger for Your sake.",
+        "keywords": [
+          "patience",
+          "anger",
+          "self-control"
+        ],
+        "dua_arabic": "اللهم اعصمني من الغضب والتشويش",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 33,
+        "title": "Dua for Patience in Times of Sickness",
+        "description": "A supplication to seek patience and healing during times of illness.",
+        "detail": "O Allah, grant me patience and cure me from all physical and spiritual ailments.",
+        "keywords": [
+          "patience",
+          "sickness",
+          "healing"
+        ],
+        "dua_arabic": "اللهم اشفني واشفِ مرضى المسلمين",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 34,
+        "title": "Dua for Patience in Times of Financial Hardship",
+        "description": "A supplication to seek patience and relief during times of financial difficulty.",
+        "detail": "O Allah, grant me patience and provide me with sustenance from Your abundant resources.",
+        "keywords": [
+          "patience",
+          "financial hardship",
+          "relief"
+        ],
+        "dua_arabic": "اللهم رزقني من حيث لا أحتسب",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 35,
+        "title": "Dua for Patience in Times of Loneliness",
+        "description": "A supplication to seek patience and solace during moments of loneliness.",
+        "detail": "O Allah, grant me patience and fill my heart with Your love and companionship.",
+        "keywords": [
+          "patience",
+          "loneliness",
+          "solace"
+        ],
+        "dua_arabic": "اللهم أنت صاحبي في السفر والحلم",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 36,
+        "title": "Dua for Patience in Times of Trials and Tribulations",
+        "description": "A supplication to seek patience and strength during times of trials and tribulations.",
+        "detail": "O Allah, grant me patience and steadfastness in the face of tests and hardships.",
+        "keywords": [
+          "patience",
+          "trials",
+          "tribulations",
+          "steadfastness"
+        ],
+        "dua_arabic": "اللهم اجعلني مصبورًا لينًا في البلاء",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 37,
+        "title": "Dua for Patience in Times of Temptation",
+        "description": "A supplication to seek patience in resisting temptations and avoiding sin.",
+        "detail": "O Allah, grant me patience and strength to stay away from temptations and sinful acts.",
+        "keywords": [
+          "patience",
+          "temptation",
+          "resisting sin"
+        ],
+        "dua_arabic": "اللهم اعني على الجهاد في سبيلك وصبري على ما تبتليني به",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 38,
+        "title": "Dua for Patience in Times of Anger",
+        "description": "A supplication to seek patience and self-control during moments of anger.",
+        "detail": "O Allah, grant me patience and the ability to control my anger for Your sake.",
+        "keywords": [
+          "patience",
+          "anger",
+          "self-control"
+        ],
+        "dua_arabic": "اللهم اعصمني من الغضب والتشويش",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 39,
+        "title": "Dua for Patience in Times of Sickness",
+        "description": "A supplication to seek patience and healing during times of illness.",
+        "detail": "O Allah, grant me patience and cure me from all physical and spiritual ailments.",
+        "keywords": [
+          "patience",
+          "sickness",
+          "healing"
+        ],
+        "dua_arabic": "اللهم اشفني واشفِ مرضى المسلمين",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 40,
+        "title": "Dua for Patience in Times of Financial Hardship",
+        "description": "A supplication to seek patience and relief during times of financial difficulty.",
+        "detail": "O Allah, grant me patience and provide me with sustenance from Your abundant resources.",
+        "keywords": [
+          "patience",
+          "financial hardship",
+          "relief"
+        ],
+        "dua_arabic": "اللهم رزقني من حيث لا أحتسب",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      }
+    ]
+  },
+  "Dua for Forgiveness": {
+    "duas": [
+      {
+        "id": 41,
+        "title": "Dua for Seeking Forgiveness",
+        "description": "A supplication to seek forgiveness from Allah for one's sins.",
+        "detail": "O Allah, forgive me for my sins and have mercy upon me.",
+        "keywords": [
+          "forgiveness",
+          "repentance",
+          "mercy"
+        ],
+        "dua_arabic": "اللهم اغفر لي وارحمني",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 42,
+        "title": "Dua for Repentance",
+        "description": "A supplication to seek sincere repentance and forgiveness from Allah.",
+        "detail": "O Allah, I repent to You and seek Your forgiveness for all my shortcomings.",
+        "keywords": [
+          "repentance",
+          "forgiveness",
+          "sincerity"
+        ],
+        "dua_arabic": "اللهم إني أتوب إليك وأستغفرك من جميع ذنوبي",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 43,
+        "title": "Dua for Seeking Allah's Pardon",
+        "description": "A supplication to seek pardon and forgiveness from Allah.",
+        "detail": "O Allah, I seek Your pardon and forgiveness for my mistakes and transgressions.",
+        "keywords": [
+          "pardon",
+          "forgiveness",
+          "mistakes"
+        ],
+        "dua_arabic": "اللهم إني أستغفرك من كل ذنب أذنبته وما لم أذنبه",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 44,
+        "title": "Dua for Seeking Forgiveness in Prayer",
+        "description": "A supplication to seek forgiveness from Allah during prayers.",
+        "detail": "O Allah, forgive me, have mercy on me, guide me, and grant me goodness.",
+        "keywords": [
+          "forgiveness",
+          "prayer",
+          "mercy",
+          "guidance"
+        ],
+        "dua_arabic": "اللهم اغفر لي، وارحمني، واهدني، وعافني، وارزقني",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 45,
+        "title": "Dua for Seeking Forgiveness at Night",
+        "description": "A supplication to seek forgiveness from Allah during the night.",
+        "detail": "O Allah, I seek Your forgiveness and turn to You in repentance.",
+        "keywords": [
+          "forgiveness",
+          "repentance",
+          "night"
+        ],
+        "dua_arabic": "اللهم إني أستغفرك وأتوب إليك في هذه الليلة",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 46,
+        "title": "Dua for Seeking Forgiveness in the Last Portion of the Night",
+        "description": "A supplication to seek forgiveness from Allah in the last portion of the night.",
+        "detail": "O Allah, I seek Your forgiveness for my sins and mistakes in the last portion of this night.",
+        "keywords": [
+          "forgiveness",
+          "sins",
+          "last portion of the night"
+        ],
+        "dua_arabic": "اللهم إني أستغفرك عما تعلم وما لا تعلم من ذنبي في هذه الساعة",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 47,
+        "title": "Dua for Seeking Forgiveness after Prayer",
+        "description": "A supplication to seek forgiveness from Allah after completing the prayer.",
+        "detail": "O Allah, forgive me, have mercy on me, and accept my prayers.",
+        "keywords": [
+          "forgiveness",
+          "mercy",
+          "prayer"
+        ],
+        "dua_arabic": "اللهم اغفر لي وارحمني واقبل صلاتي",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 48,
+        "title": "Dua for Seeking Forgiveness in Remembrance of Allah",
+        "description": "A supplication to seek forgiveness from Allah during the remembrance of Allah.",
+        "detail": "O Allah, I seek Your forgiveness and repent to You while remembering You.",
+        "keywords": [
+          "forgiveness",
+          "repentance",
+          "remembrance of Allah"
+        ],
+        "dua_arabic": "اللهم إني أستغفرك وأتوب إليك في ذكرك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 49,
+        "title": "Dua for Seeking Forgiveness in Prostration",
+        "description": "A supplication to seek forgiveness from Allah during prostration.",
+        "detail": "O Allah, forgive me and have mercy on me in this prostration.",
+        "keywords": [
+          "forgiveness",
+          "mercy",
+          "prostration"
+        ],
+        "dua_arabic": "اللهم اغفر لي وارحمني في سجدتي هذه",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 50,
+        "title": "Dua for Seeking Forgiveness during Hajj or Umrah",
+        "description": "A supplication to seek forgiveness from Allah during the pilgrimage or Umrah.",
+        "detail": "O Allah, forgive me and accept my pilgrimage/Umrah.",
+        "keywords": [
+          "forgiveness",
+          "pilgrimage",
+          "Umrah"
+        ],
+        "dua_arabic": "اللهم اغفر لي وتقبل مني في حجي/عمرتي",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 51,
+        "title": "Dua for Seeking Forgiveness in Times of Distress",
+        "description": "A supplication to seek forgiveness from Allah during times of distress and difficulty.",
+        "detail": "O Allah, I seek Your forgiveness and relief from all distress and hardship.",
+        "keywords": [
+          "forgiveness",
+          "distress",
+          "hardship"
+        ],
+        "dua_arabic": "اللهم إني أستغفرك وأستغيثك في كل مشكلة",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 52,
+        "title": "Dua for Seeking Forgiveness in Times of Doubt",
+        "description": "A supplication to seek forgiveness from Allah during times of doubt and uncertainty.",
+        "detail": "O Allah, forgive me and remove any doubts and uncertainties from my heart.",
+        "keywords": [
+          "forgiveness",
+          "doubt",
+          "uncertainty"
+        ],
+        "dua_arabic": "اللهم اغفر لي واطرد عن قلبي الشكوك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 53,
+        "title": "Dua for Seeking Forgiveness in Times of Forgetfulness",
+        "description": "A supplication to seek forgiveness from Allah for forgetfulness and lapses in remembrance.",
+        "detail": "O Allah, forgive me for my forgetfulness and grant me a steadfast remembrance of You.",
+        "keywords": [
+          "forgiveness",
+          "forgetfulness",
+          "remembrance"
+        ],
+        "dua_arabic": "اللهم اغفر لي ما أسررت وما أعلنت",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 54,
+        "title": "Dua for Seeking Forgiveness in Times of Negligence",
+        "description": "A supplication to seek forgiveness from Allah for negligence and heedlessness.",
+        "detail": "O Allah, forgive me for my negligence and grant me attentiveness in my worship.",
+        "keywords": [
+          "forgiveness",
+          "negligence",
+          "heedlessness"
+        ],
+        "dua_arabic": "اللهم اغفر لي ما قدمت وما أخرت",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 55,
+        "title": "Dua for Seeking Forgiveness in Times of Arrogance",
+        "description": "A supplication to seek forgiveness from Allah for arrogance and pride.",
+        "detail": "O Allah, forgive me for my arrogance and grant me humility and modesty.",
+        "keywords": [
+          "forgiveness",
+          "arrogance",
+          "humility"
+        ],
+        "dua_arabic": "اللهم اغفر لي ذنبي وجهلي وإسرافي في أمري",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 56,
+        "title": "Dua for Seeking Forgiveness in Times of Wrongdoing",
+        "description": "A supplication to seek forgiveness from Allah for any wrongdoing and injustice.",
+        "detail": "O Allah, forgive me for any wrongdoing or injustice I have committed against myself or others.",
+        "keywords": [
+          "forgiveness",
+          "wrongdoing",
+          "injustice"
+        ],
+        "dua_arabic": "اللهم اغفر لي ظلمي وجهلي وإسرافي في أمري",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 57,
+        "title": "Dua for Seeking Forgiveness in Times of Weakness",
+        "description": "A supplication to seek forgiveness from Allah during times of weakness and vulnerability.",
+        "detail": "O Allah, forgive me and strengthen me during my times of weakness and vulnerability.",
+        "keywords": [
+          "forgiveness",
+          "weakness",
+          "vulnerability"
+        ],
+        "dua_arabic": "اللهم اغفر لي في ضعفي واسترني في قلة حيلتي",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 58,
+        "title": "Dua for Seeking Forgiveness in Times of Temptation",
+        "description": "A supplication to seek forgiveness from Allah during times of temptation and desires.",
+        "detail": "O Allah, forgive me and protect me from the temptations and desires of this world.",
+        "keywords": [
+          "forgiveness",
+          "temptation",
+          "desires"
+        ],
+        "dua_arabic": "اللهم اغفر لي ما أنت أعلم به مني، وما أنا أعلم به من نفسي",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 59,
+        "title": "Dua for Seeking Forgiveness in Times of Regret",
+        "description": "A supplication to seek forgiveness from Allah during times of regret and remorse.",
+        "detail": "O Allah, forgive me for my past mistakes and help me rectify my actions.",
+        "keywords": [
+          "forgiveness",
+          "regret",
+          "remorse"
+        ],
+        "dua_arabic": "اللهم اغفر لي ذنبي الذي لا يغفره إلا أنت",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 60,
+        "title": "Dua for Seeking Forgiveness in Times of Failure",
+        "description": "A supplication to seek forgiveness from Allah during times of failure and disappointment.",
+        "detail": "O Allah, forgive me for my failures and grant me success in both this life and the Hereafter.",
+        "keywords": [
+          "forgiveness",
+          "failure",
+          "success"
+        ],
+        "dua_arabic": "اللهم اغفر لي، وتب عليّ، إنك أنت التواب الرحيم",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      }
+    ]
+  },
+  "Dua for Good Health": {
+    "duas": [
+      {
+        "id": 61,
+        "title": "Dua for Protection from Illness",
+        "description": "A supplication to seek protection from illness and diseases.",
+        "detail": "O Allah, protect me from all illnesses and grant me good health.",
+        "keywords": [
+          "protection",
+          "illness",
+          "good health"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من البرص والجنون والجذام ومن سيئ الأسقام",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 62,
+        "title": "Dua for Healing",
+        "description": "A supplication to seek healing for any sickness or ailment.",
+        "detail": "O Allah, grant me healing and cure from all illnesses and ailments.",
+        "keywords": [
+          "healing",
+          "sickness",
+          "ailment"
+        ],
+        "dua_arabic": "اللهم رب الناس، مذهب البأس، اشف أنت الشافي، لا شفاء إلا شفاؤك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 63,
+        "title": "Dua for Strength and Well-being",
+        "description": "A supplication to seek strength and well-being in body and mind.",
+        "detail": "O Allah, grant me strength and well-being in my body, mind, and soul.",
+        "keywords": [
+          "strength",
+          "well-being",
+          "body",
+          "mind"
+        ],
+        "dua_arabic": "اللهم أعني على ذكرك وشكرك وحسن عبادتك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 64,
+        "title": "Dua for Protection from Harmful Environments",
+        "description": "A supplication to seek protection from harmful environments and diseases.",
+        "detail": "O Allah, protect me from harmful environments and keep me safe from diseases.",
+        "keywords": [
+          "protection",
+          "harmful environments",
+          "diseases"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من الهم والحزن، وأعوذ بك من العجز والكسل، وأعوذ بك من الجبن والبخل، وأعوذ بك من غلبة الدين وقهر الرجال",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 65,
+        "title": "Dua for Protection from Evil Eye",
+        "description": "A supplication to seek protection from the evil eye and its harmful effects.",
+        "detail": "O Allah, protect me from the evil eye and the envy of others.",
+        "keywords": [
+          "protection",
+          "evil eye",
+          "envy"
+        ],
+        "dua_arabic": "اللهم بارك لي فيما أعطيت، وقني عذابك واحفظني من شر ما قضيت",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 66,
+        "title": "Dua for Strengthening the Immune System",
+        "description": "A supplication to seek a strong and healthy immune system.",
+        "detail": "O Allah, grant me a strong and healthy immune system to ward off diseases.",
+        "keywords": [
+          "strengthening",
+          "immune system",
+          "health"
+        ],
+        "dua_arabic": "اللهم بسط علينا من بركاتك، وارحمنا برحمتك، وزدنا من فضلك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 67,
+        "title": "Dua for Relief from Pain and Discomfort",
+        "description": "A supplication to seek relief from any physical pain or discomfort.",
+        "detail": "O Allah, relieve me from all forms of pain and discomfort in my body.",
+        "keywords": [
+          "relief",
+          "pain",
+          "discomfort"
+        ],
+        "dua_arabic": "اللهم رب الناس، أذهب البأس، واشف، أنت الشافي، لا شفاء إلا شفاؤك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 68,
+        "title": "Dua for Sound Sleep and Rest",
+        "description": "A supplication to seek a peaceful and restful sleep.",
+        "detail": "O Allah, grant me sound sleep and rest that rejuvenates my body and mind.",
+        "keywords": [
+          "sound sleep",
+          "rest",
+          "peaceful"
+        ],
+        "dua_arabic": "اللهم بسمك أحيا وبك أموت وإليك المصير",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 69,
+        "title": "Dua for Protection from Mental Stress and Anxiety",
+        "description": "A supplication to seek protection from mental stress and anxiety.",
+        "detail": "O Allah, protect me from mental stress and anxiety and grant me peace of mind.",
+        "keywords": [
+          "protection",
+          "mental stress",
+          "anxiety",
+          "peace of mind"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من الهم والحزن، والعجز والكسل، والجبن والبخل، وضلع الدين وغلبة الرجال",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 70,
+        "title": "Dua for Long and Healthy Life",
+        "description": "A supplication to seek a long and healthy life filled with blessings.",
+        "detail": "O Allah, grant me a long and healthy life in obedience to You.",
+        "keywords": [
+          "long life",
+          "healthy life",
+          "blessings"
+        ],
+        "dua_arabic": "اللهم أعني على ذكرك وشكرك وحسن عبادتك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 71,
+        "title": "Dua for Protection from Accidents and Injuries",
+        "description": "A supplication to seek protection from accidents and injuries.",
+        "detail": "O Allah, protect me from accidents and injuries and keep me safe at all times.",
+        "keywords": [
+          "protection",
+          "accidents",
+          "injuries",
+          "safety"
+        ],
+        "dua_arabic": "اللهم احفظنا من بين أيدينا ومن خلفنا وعن يمينا وعن شمالنا ومن فوقنا",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 72,
+        "title": "Dua for Ease in Daily Activities",
+        "description": "A supplication to seek ease and facilitation in daily activities.",
+        "detail": "O Allah, make my daily activities easy and grant me ease in everything I do.",
+        "keywords": [
+          "ease",
+          "daily activities",
+          "facilitation"
+        ],
+        "dua_arabic": "اللهم يسر لي أمري واجعله في أمري يسراً",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 73,
+        "title": "Dua for Protection from Mental and Physical Fatigue",
+        "description": "A supplication to seek protection from mental and physical fatigue.",
+        "detail": "O Allah, protect me from mental and physical fatigue and grant me strength.",
+        "keywords": [
+          "protection",
+          "mental fatigue",
+          "physical fatigue",
+          "strength"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من الهم والحزن، والعجز والكسل، والجبن والبخل، وضلع الدين وغلبة الرجال",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 74,
+        "title": "Dua for Protection from Harmful Habits",
+        "description": "A supplication to seek protection from harmful habits and addictions.",
+        "detail": "O Allah, protect me from harmful habits and grant me the strength to overcome them.",
+        "keywords": [
+          "protection",
+          "harmful habits",
+          "addictions"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من الخبث والخبائث",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 75,
+        "title": "Dua for Mental and Emotional Well-being",
+        "description": "A supplication to seek mental and emotional well-being.",
+        "detail": "O Allah, grant me mental and emotional well-being and protect me from distress.",
+        "keywords": [
+          "mental well-being",
+          "emotional well-being",
+          "distress"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من الهم والحزن، والعجز والكسل، والجبن والبخل، وضلع الدين وغلبة الرجال",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 76,
+        "title": "Dua for Protection from Harmful Food and Drinks",
+        "description": "A supplication to seek protection from harmful food and drinks.",
+        "detail": "O Allah, protect me from consuming harmful food and drinks and keep me healthy.",
+        "keywords": [
+          "protection",
+          "harmful food",
+          "harmful drinks",
+          "health"
+        ],
+        "dua_arabic": "اللهم بارك لنا فيما رزقتنا وقنا عذابك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 77,
+        "title": "Dua for Healing from Chronic Illness",
+        "description": "A supplication to seek healing from chronic illnesses.",
+        "detail": "O Allah, grant me complete healing and cure from my chronic illness.",
+        "keywords": [
+          "healing",
+          "chronic illness",
+          "cure"
+        ],
+        "dua_arabic": "اللهم رب الناس، أذهب البأس، واشف، أنت الشافي، لا شفاء إلا شفاؤك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 78,
+        "title": "Dua for Protection from Harmful Airborne Diseases",
+        "description": "A supplication to seek protection from harmful airborne diseases.",
+        "detail": "O Allah, protect me from harmful airborne diseases and keep me safe.",
+        "keywords": [
+          "protection",
+          "airborne diseases",
+          "safety"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من البرص والجنون والجذام ومن سيئ الأسقام",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 79,
+        "title": "Dua for Recovery from Surgery",
+        "description": "A supplication to seek recovery and healing after a surgery.",
+        "detail": "O Allah, grant me a swift and complete recovery from my surgery.",
+        "keywords": [
+          "recovery",
+          "surgery",
+          "healing"
+        ],
+        "dua_arabic": "بسم الله، أعوذ بالله من الشيطان الرجيم، اللهم رب الناس، أذهب البأس، واشف، أنت الشافي، لا شفاء إلا شفاؤك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 80,
+        "title": "Dua for Protection from Allergies",
+        "description": "A supplication to seek protection from allergies and their harmful effects.",
+        "detail": "O Allah, protect me from allergies and their harmful effects on my health.",
+        "keywords": [
+          "protection",
+          "allergies",
+          "health"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من البرص والجنون والجذام ومن سيئ الأسقام",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      }
+    ]
+  },
+  "Dua for Contentment": {
+    "duas": [
+      {
+        "id": 81,
+        "title": "Dua for Contentment in Life",
+        "description": "A supplication to seek contentment and satisfaction in life.",
+        "detail": "O Allah, grant me contentment and satisfaction with Your decree.",
+        "keywords": [
+          "contentment",
+          "satisfaction",
+          "life"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من زوال نعمتك، وتحول عافيتك، وفجاءة نقمتك، وجميع سخطك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 82,
+        "title": "Dua for Gratitude and Thankfulness",
+        "description": "A supplication to express gratitude and thankfulness to Allah.",
+        "detail": "O Allah, I am grateful for all the blessings You have bestowed upon me.",
+        "keywords": [
+          "gratitude",
+          "thankfulness",
+          "blessings"
+        ],
+        "dua_arabic": "الحمد لله",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 83,
+        "title": "Dua for Acceptance of Allah's Decree",
+        "description": "A supplication to seek acceptance of Allah's decree and find contentment in it.",
+        "detail": "O Allah, help me accept Your decree and find contentment in Your plan for me.",
+        "keywords": [
+          "acceptance",
+          "Allah's decree",
+          "contentment"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من زوال نعمتك، وتحول عافيتك، وفجاءة نقمتك، وجميع سخطك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 84,
+        "title": "Dua for Contentment in Difficult Times",
+        "description": "A supplication to seek contentment during difficult and challenging times.",
+        "detail": "O Allah, grant me contentment and patience during times of difficulty.",
+        "keywords": [
+          "contentment",
+          "difficult times",
+          "patience"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من زوال نعمتك، وتحول عافيتك، وفجاءة نقمتك، وجميع سخطك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 85,
+        "title": "Dua for Finding Peace and Tranquility",
+        "description": "A supplication to seek peace and tranquility in life.",
+        "detail": "O Allah, grant me inner peace and tranquility in my heart and soul.",
+        "keywords": [
+          "peace",
+          "tranquility",
+          "inner peace"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من الهم والحزن، والعجز والكسل، والجبن والبخل، وضلع الدين وغلبة الرجال",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 86,
+        "title": "Dua for Contentment in Wealth",
+        "description": "A supplication to seek contentment and gratitude in wealth and provisions.",
+        "detail": "O Allah, bless me with contentment and gratitude in the wealth You have provided.",
+        "keywords": [
+          "contentment",
+          "wealth",
+          "gratitude"
+        ],
+        "dua_arabic": "الحمد لله",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 87,
+        "title": "Dua for Contentment in Relationships",
+        "description": "A supplication to seek contentment and harmony in relationships.",
+        "detail": "O Allah, bless my relationships with contentment, love, and understanding.",
+        "keywords": [
+          "contentment",
+          "relationships",
+          "harmony"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من زوال نعمتك، وتحول عافيتك، وفجاءة نقمتك، وجميع سخطك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 88,
+        "title": "Dua for Contentment in Worship",
+        "description": "A supplication to seek contentment and satisfaction in acts of worship.",
+        "detail": "O Allah, grant me contentment and satisfaction in worshipping You alone.",
+        "keywords": [
+          "contentment",
+          "worship",
+          "satisfaction"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من زوال نعمتك، وتحول عافيتك، وفجاءة نقمتك، وجميع سخطك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 89,
+        "title": "Dua for Contentment in Difficult Decisions",
+        "description": "A supplication to seek contentment and guidance in making difficult decisions.",
+        "detail": "O Allah, grant me contentment and guide me in making the right decisions.",
+        "keywords": [
+          "contentment",
+          "difficult decisions",
+          "guidance"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من زوال نعمتك، وتحول عافيتك، وفجاءة نقمتك، وجميع سخطك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 90,
+        "title": "Dua for Contentment in Solitude",
+        "description": "A supplication to seek contentment and peace in solitude and seclusion.",
+        "detail": "O Allah, bless me with contentment and tranquility in moments of solitude.",
+        "keywords": [
+          "contentment",
+          "solitude",
+          "peace"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من الهم والحزن، والعجز والكسل، والجبن والبخل، وضلع الدين وغلبة الرجال",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 91,
+        "title": "Dua for Contentment in Success",
+        "description": "A supplication to seek contentment and gratitude in success and achievements.",
+        "detail": "O Allah, grant me contentment and gratitude in the success You have granted me.",
+        "keywords": [
+          "contentment",
+          "success",
+          "gratitude"
+        ],
+        "dua_arabic": "الحمد لله",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 92,
+        "title": "Dua for Contentment in Failure",
+        "description": "A supplication to seek contentment and patience in times of failure and setbacks.",
+        "detail": "O Allah, grant me contentment and patience in the face of failure and setbacks.",
+        "keywords": [
+          "contentment",
+          "failure",
+          "patience"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من زوال نعمتك، وتحول عافيتك، وفجاءة نقمتك، وجميع سخطك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 93,
+        "title": "Dua for Contentment in Trials and Tribulations",
+        "description": "A supplication to seek contentment and strength during trials and tribulations.",
+        "detail": "O Allah, grant me contentment and strength to endure trials and tribulations.",
+        "keywords": [
+          "contentment",
+          "trials",
+          "tribulations",
+          "strength"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من زوال نعمتك، وتحول عافيتك، وفجاءة نقمتك، وجميع سخطك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 94,
+        "title": "Dua for Contentment in Loss",
+        "description": "A supplication to seek contentment and acceptance in times of loss and bereavement.",
+        "detail": "O Allah, grant me contentment and acceptance in times of loss and grief.",
+        "keywords": [
+          "contentment",
+          "loss",
+          "acceptance",
+          "grief"
+        ],
+        "dua_arabic": "إِنَّا لِلّهِ وَإِنَّـا إِلَيْهِ رَاجِعونَ",
+        "reference": "Quran (2:156)"
+      },
+      {
+        "id": 95,
+        "title": "Dua for Contentment in Hardship",
+        "description": "A supplication to seek contentment and relief during times of hardship and adversity.",
+        "detail": "O Allah, grant me contentment and ease during times of hardship and adversity.",
+        "keywords": [
+          "contentment",
+          "hardship",
+          "relief"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من الهم والحزن، والعجز والكسل، والجبن والبخل، وضلع الدين وغلبة الرجال",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 96,
+        "title": "Dua for Contentment in Disappointment",
+        "description": "A supplication to seek contentment and acceptance when faced with disappointment.",
+        "detail": "O Allah, grant me contentment and acceptance when my expectations are not met.",
+        "keywords": [
+          "contentment",
+          "disappointment",
+          "acceptance"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من زوال نعمتك، وتحول عافيتك، وفجاءة نقمتك، وجميع سخطك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 97,
+        "title": "Dua for Contentment in Uncertainty",
+        "description": "A supplication to seek contentment and trust in Allah during times of uncertainty.",
+        "detail": "O Allah, grant me contentment and trust in Your plan during times of uncertainty.",
+        "keywords": [
+          "contentment",
+          "uncertainty",
+          "trust"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من الهم والحزن، والعجز والكسل، والجبن والبخل، وضلع الدين وغلبة الرجال",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 98,
+        "title": "Dua for Contentment in Envy",
+        "description": "A supplication to seek contentment and protection from envy and jealousy.",
+        "detail": "O Allah, protect me from envy and grant me contentment with what You have blessed me.",
+        "keywords": [
+          "contentment",
+          "envy",
+          "jealousy",
+          "protection"
+        ],
+        "dua_arabic": "الحمد لله",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 99,
+        "title": "Dua for Contentment in Comparison",
+        "description": "A supplication to seek contentment and avoid the harm of comparison with others.",
+        "detail": "O Allah, grant me contentment and save me from the harm of comparing myself to others.",
+        "keywords": [
+          "contentment",
+          "comparison",
+          "harm"
+        ],
+        "dua_arabic": "اللهم إني أعوذ بك من زوال نعمتك، وتحول عافيتك، وفجاءة نقمتك، وجميع سخطك",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 100,
+        "title": "Dua for Contentment in the Hereafter",
+        "description": "A supplication to seek contentment and eternal bliss in the Hereafter.",
+        "detail": "O Allah, grant me contentment and a place in Paradise in the Hereafter.",
+        "keywords": [
+          "contentment",
+          "Hereafter",
+          "Paradise",
+          "bliss"
+        ],
+        "dua_arabic": "اللهم إني أسألك الجنة وما قرب إليها من قول أو عمل",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      }
+    ]
+  },
+  "Dua for Protection": {
+    "duas": [
+      {
+        "id": 101,
+        "title": "Dua for Protection from Evil",
+        "description": "A supplication to seek protection from evil and harm.",
+        "detail": "O Allah, protect me from the evils of the world and the whisperings of Shaytan.",
+        "keywords": [
+          "protection",
+          "evil",
+          "harm"
+        ],
+        "dua_arabic": "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 102,
+        "title": "Dua for Protection from Envy",
+        "description": "A supplication to seek protection from envy and the evil eye.",
+        "detail": "O Allah, protect me from the envy and the evil eye of others.",
+        "keywords": [
+          "protection",
+          "envy",
+          "evil eye"
+        ],
+        "dua_arabic": "اللَّهُمَّ بَارِكْ لَنَا فِيمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 103,
+        "title": "Dua for Protection from Accidents",
+        "description": "A supplication to seek protection from accidents and calamities.",
+        "detail": "O Allah, protect me from accidents and keep me safe from harm.",
+        "keywords": [
+          "protection",
+          "accidents",
+          "calamities"
+        ],
+        "dua_arabic": "بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 104,
+        "title": "Dua for Protection from Illness",
+        "description": "A supplication to seek protection from illnesses and diseases.",
+        "detail": "O Allah, protect me from illnesses and keep me in good health.",
+        "keywords": [
+          "protection",
+          "illness",
+          "disease"
+        ],
+        "dua_arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْبَرَصِ، وَالْجُنُونِ، وَالْجُذَامِ، وَمِنْ سَيِّئِ الأَسْقَامِ",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 105,
+        "title": "Dua for Protection from Evil Eye",
+        "description": "A supplication to seek protection from the evil eye.",
+        "detail": "O Allah, protect me from the evil eye and its harmful effects.",
+        "keywords": [
+          "protection",
+          "evil eye",
+          "harm"
+        ],
+        "dua_arabic": "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ كُلِّ شَيْطَانٍ وَهَامَّةٍ، وَمِنْ كُلِّ عَيْنٍ لَامَّةٍ",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 106,
+        "title": "Dua for Protection from Fire",
+        "description": "A supplication to seek protection from fire and its harm.",
+        "detail": "O Allah, protect me from fire and keep me safe from its harm.",
+        "keywords": [
+          "protection",
+          "fire",
+          "harm"
+        ],
+        "dua_arabic": "اللَّهُمَّ أَجِرْنِي مِنَ النَّارِ",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 107,
+        "title": "Dua for Protection from Sins",
+        "description": "A supplication to seek protection from sins and wrongdoing.",
+        "detail": "O Allah, protect me from sins and keep me on the straight path.",
+        "keywords": [
+          "protection",
+          "sins",
+          "wrongdoing"
+        ],
+        "dua_arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عِلْمٍ لَا يَنْفَعُ، وَمِنْ قَلْبٍ لَا يَخْشَعُ، وَمِنْ نَفْسٍ لَا تَشْبَعُ، وَمِنْ دَعْوَةٍ لَا يُسْتَجَابُ لَهَا",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 108,
+        "title": "Dua for Protection from Evil Thoughts",
+        "description": "A supplication to seek protection from evil thoughts and whispers.",
+        "detail": "O Allah, protect me from evil thoughts and whispers of Shaytan.",
+        "keywords": [
+          "protection",
+          "evil thoughts",
+          "whispers"
+        ],
+        "dua_arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِاللَّهِ مِنَ الْوَسْوَاسِ الْخَنَّاسِ",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 109,
+        "title": "Dua for Protection from Theft",
+        "description": "A supplication to seek protection from theft and robbery.",
+        "detail": "O Allah, protect me from theft and keep my belongings safe.",
+        "keywords": [
+          "protection",
+          "theft",
+          "robbery"
+        ],
+        "dua_arabic": "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِك َ",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 110,
+        "title": "Dua for Protection from Disasters",
+        "description": "A supplication to seek protection from disasters and calamities.",
+        "detail": "O Allah, protect me from disasters and keep me safe from harm.",
+        "keywords": [
+          "protection",
+          "disasters",
+          "calamities"
+        ],
+        "dua_arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ الْبَرَصِ، وَالْجُنُونِ، وَالْجُذَامِ، وَمِنْ سَيِّئِ الأَسْقَامِ",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 111,
+        "title": "Dua for Protection from Evil Company",
+        "description": "A supplication to seek protection from evil company and bad influences.",
+        "detail": "O Allah, protect me from the company of those who lead me astray.",
+        "keywords": [
+          "protection",
+          "evil company",
+          "bad influences"
+        ],
+        "dua_arabic": "اللَّهُمَّ أَصْلِحْ لِي دِينِي الَّذِي هُوَ عِصْمَةُ أَمْرِي، وَأَصْلِحْ لِي دُنْيَايَ الَّتِي فِيهَا مَعَاشِي، وَأَصْلِحْ لِي آخِرَتِي الَّتِي فِيهَا مَعَادِي، وَاجْعَلِ الْحَيَاةَ زِيَادَةً لِي فِي كُلِّ خَيْرٍ، وَاجْعَلِ الْمَوْتَ رَاحَةً لِي مِنْ كُلِّ شَرٍّ",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 112,
+        "title": "Dua for Protection from Evil Jinn",
+        "description": "A supplication to seek protection from evil jinn and their harm.",
+        "detail": "O Allah, protect me from the mischief of the evil jinn.",
+        "keywords": [
+          "protection",
+          "evil jinn",
+          "harm"
+        ],
+        "dua_arabic": "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 113,
+        "title": "Dua for Protection from Magic",
+        "description": "A supplication to seek protection from magic and its effects.",
+        "detail": "O Allah, protect me from the harm of magic and its effects.",
+        "keywords": [
+          "protection",
+          "magic",
+          "effects"
+        ],
+        "dua_arabic": "اللَّهُمَّ بَارِكْ لَنَا فِيمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 114,
+        "title": "Dua for Protection from Evil Dreams",
+        "description": "A supplication to seek protection from evil dreams and nightmares.",
+        "detail": "O Allah, protect me from evil dreams and nightmares.",
+        "keywords": [
+          "protection",
+          "evil dreams",
+          "nightmares"
+        ],
+        "dua_arabic": "بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِه ِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 115,
+        "title": "Dua for Protection from Shirk",
+        "description": "A supplication to seek protection from associating partners with Allah (shirk).",
+        "detail": "O Allah, protect me from committing shirk and keep me steadfast on monotheism.",
+        "keywords": [
+          "protection",
+          "shirk",
+          "monotheism"
+        ],
+        "dua_arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ شِرْكٍ أَنْ أَظْلِمَ أُحَدًا وَأَعْلَمَ",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 116,
+        "title": "Dua for Protection from Evil Speech",
+        "description": "A supplication to seek protection from engaging in evil speech.",
+        "detail": "O Allah, protect me from engaging in backbiting, gossip, and harmful speech.",
+        "keywords": [
+          "protection",
+          "evil speech",
+          "backbiting",
+          "gossip"
+        ],
+        "dua_arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ، وَالْفَقْرِ، وَاللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 117,
+        "title": "Dua for Protection from Evil Deeds",
+        "description": "A supplication to seek protection from engaging in evil deeds and actions.",
+        "detail": "O Allah, protect me from engaging in evil deeds and actions.",
+        "keywords": [
+          "protection",
+          "evil deeds",
+          "actions"
+        ],
+        "dua_arabic": "اللَّهُمَّ أَصْلِحْ لِي دِينِي الَّذِي هُوَ عِصْمَةُ أَمْرِي، وَأَصْلِحْ لِي دُنْيَايَ الَّتِي فِيهَا مَعَاشِي، وَأَصْلِحْ لِي آخِرَتِي الَّتِي فِيهَا مَعَادِي، وَاجْعَلِ الْحَيَاةَ زِيَادَةً لِي فِي كُلِّ خَيْرٍ، وَاجْعَلِ الْمَوْتَ رَاحَةً لِي مِنْ كُلِّ شَرٍّ",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 118,
+        "title": "Dua for Protection from Envy",
+        "description": "A supplication to seek protection from the evil eye and envy.",
+        "detail": "O Allah, protect me from the evil eye and the envy of others.",
+        "keywords": [
+          "protection",
+          "envy",
+          "evil eye"
+        ],
+        "dua_arabic": "اللَّهُمَّ بَارِكْ لَنَا فِيمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 119,
+        "title": "Dua for Protection from Bad Companions",
+        "description": "A supplication to seek protection from bad companions and their negative influence.",
+        "detail": "O Allah, protect me from the companionship of those who lead me astray.",
+        "keywords": [
+          "protection",
+          "bad companions",
+          "negative influence"
+        ],
+        "dua_arabic": "اللَّهُمَّ أَصْلِحْ لِي نِيَّتِي وَعَمَلِي، وَاجْعَلْهُ لِي خَيْرًا مِنْ مَا يَتَوَقَّعُ",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      },
+      {
+        "id": 120,
+        "title": "Dua for Protection from Accidents",
+        "description": "A supplication to seek protection from accidents and mishaps.",
+        "detail": "O Allah, protect me from accidents and keep me safe from harm.",
+        "keywords": [
+          "protection",
+          "accidents",
+          "mishaps"
+        ],
+        "dua_arabic": "بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ",
+        "reference": "Prophet Muhammad (peace be upon him)"
+      }
+    ]
+  }
+}

@@ -9,6 +9,9 @@
     "start": "react-native start",
     "test": "jest"
   },
+  "rnpm": {
+    "assets": ["./assets/fonts/"]
+ },
   "dependencies": {
     "@notifee/react-native": "^7.7.1",
     "@quranjs/api": "^1.7.1",
@@ -35,6 +38,7 @@
     "react-native-compass-heading": "^1.4.2",
     "react-native-countdown-component": "^2.7.1",
     "react-native-fs": "^2.20.0",
+    "react-native-geocoding": "^0.5.0",
     "react-native-geolocation-service": "^5.3.1",
     "react-native-location": "^2.5.0",
     "react-native-modal-datetime-picker": "^15.0.0",
@@ -56,7 +60,6 @@
     "react-native-table-component": "^1.2.2",
     "react-native-track-player": "^3.2.0",
     "react-native-vector-icons": "^9.2.0",
-    "react-native-video": "^5.2.1",
     "react-native-vision-camera": "^2.15.4",
     "rn-fetch-blob": "^0.12.0"
   },

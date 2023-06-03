@@ -1,14 +1,14 @@
 
-
+// AIzaSyASR27x7rc2BXDvoAd7lys--K-bSCJg71w
 
 
 import {
-    StyleSheet,RefreshControl,Text,View,SafeAreaView,Platform,Image,TouchableOpacity,ImageBackground,ScrollView,Alert,StatusBar,ActivityIndicator,AppState, Button, PermissionsAndroid,BackHandler
+    StyleSheet,RefreshControl,Text,View,SafeAreaView,Platform,Image,TouchableOpacity,ImageBackground,ScrollView,Alert,StatusBar,ActivityIndicator,AppState, Button, PermissionsAndroid,BackHandler,BackPressEventName
   } from "react-native";
   import NetInfo from "@react-native-community/netinfo";
   import React, { useState, useEffect, useMemo, useContext, useRef } from "react";
   import moment from "moment";
-  import { useFocusEffect, useIsFocused } from "@react-navigation/native";
+  import { useFocusEffect, useIsFocused, useNavigation } from "@react-navigation/native";
   import CountDown from "react-native-countdown-component";
   // import { MyContext } from "./Global/MyContext";
   import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -19,10 +19,15 @@ import axios from "axios";
 import BackgroundTimer from 'react-native-background-timer';
 // import 'react-native-simple-local-storage';
 import { Linking } from "react-native";
-// import RNSettings from 'react-native-settings';
+import { API_KEY } from "../../utills/data/googleApiKey";
 import Geolocation from 'react-native-geolocation-service';
-// import RNSettings from "react-native-settings";
-  export default function SalahTimes({ navigation }) {
+import Geocoder from 'react-native-geocoding';
+
+
+
+export default function SalahTimes() {
+    const navigation=useNavigation()
+    
     let fjrhours,fjrmint,fjrscds;
     let dhrhours,dhrmint,dhrscds;
     let asrhours,asrmint,asrscds;
@@ -54,20 +59,12 @@ import Geolocation from 'react-native-geolocation-service';
     const appstate=useRef(AppState.currentState);
     const [refreshme,setRefreshme]=useState(false);
 
-    useEffect(()=>{
-      // getData()
-     
-      AppState.addEventListener("change",_handleAppStateChange);
-      BackHandler.addEventListener``
-      
-      
-      return()=>{
-        AppState.addEventListener("change",_handleAppStateChange);
-      }
-    },[])
-
     
-    const _handleAppStateChange=(nextAppState)=>{
+
+
+    // ,_handleAppStateChange)
+    const _handleAppStateChange=AppState.addEventListener("change",(nextAppState)=>{
+
        if (appstate.current.match(/inactive|background/) && nextAppState==='active'){
         BackgroundTimer.stopBackgroundTimer();
         // setAlaramready(true);
@@ -120,7 +117,7 @@ import Geolocation from 'react-native-geolocation-service';
         if (appstate.current==='active'){
           BackgroundTimer.stopBackgroundTimer();
           setRefreshme(true);
-          setTimeout(async()=>{
+          setInterval(async()=>{
             try {
               BackgroundTimer.stopBackgroundTimer();
               
@@ -129,7 +126,9 @@ import Geolocation from 'react-native-geolocation-service';
             }
           },1000);
         }
-      }
+
+        _handleAppStateChange.remove()
+      })
 async function checkNotificationPermission() {
   const settings = await notifee.getNotificationSettings();
 // console.log(settings.authorizationStatus);
@@ -344,8 +343,9 @@ async function updatetheish(ishtime){
 
 
 
+
     const wait = (timeout) => {
-      return new Promise((resolve) => setTimeout(resolve, timeout));
+      return new Promise((resolve) => setInterval(resolve, timeout));
     };
     
   
@@ -355,24 +355,22 @@ async function updatetheish(ishtime){
     let apiData;
     let apiobj;
     let localdata;
-    useEffect(() => {
-      
-     
+  
+    useMemo(() => {     
       let lat, lng,granted=false,countryname;
-      checkNotificationPermission();
-      getData();
+      // checkNotificationPermission();
+      // getData();
       // console.log("at Home Screen");
-      const unsubscribe = navigation.addListener('focus', () => {
-        NetInfo.fetch().then(async(state) => {
-          if (state.isConnected==true) {
-      ( () => {
+      const unsubscribe = navigation.addListener('focus', async() => {
+      
+      
         RNLocation.requestPermission({
           ios: "whenInUse",
           android: {
             detail: "coarse"
           }
         })
-        .then(granted => {
+        .then(async (granted) => {
             if (granted) {
                 
               if (PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION))
@@ -382,85 +380,81 @@ async function updatetheish(ishtime){
                   lat = position.coords.latitude;
                       lng = position.coords.longitude;
                       await AsyncStorage.setItem("locationCoor",JSON.stringify([position.coords.latitude, position.coords.longitude]));
-                      getLocationC(position.coords.latitude, position.coords.longitude).then(async(res)=>{
-                        let nam=getFirstAndLastWords(res.data.display_name);
-                        console.log("location that im geting-> ",nam.split(",")[0],nam.split(" ")[1]);
-                        setLocation([nam.split(",")[0],nam.split(" ")[1]]);
-                        // countryname=nam.split(" ")[1];
-                        await AsyncStorage.setItem("countryname",JSON.stringify([nam.split(",")[0],nam.split(" ")[1]]))
-                        })
-                        if (JSON.parse(await AsyncStorage.getItem("countrycheckvalue"))==null){
+                      getLocationC(position.coords.latitude, position.coords.longitude)
+                        // if (JSON.parse(await AsyncStorage.getItem("countrycheckvalue"))==null){
                           
-                        }
+                        // }
                         apifetch(lat,lng);
                 
-                },(error) => {
-                  (async()=>{
-                    // alert("locations is still of")
-                    const loct=JSON.parse(await AsyncStorage.getItem("locationCoor"));
-                    // console.log("location that im geting-> ",loct);
-                    (loct!=null) 
-                      // Alert.alert("location is off")
-                      let cname=JSON.parse(await AsyncStorage.getItem("countryname"));
-                      setLocation(cname); 
-                      let dd = new Date().getDate();
-                  // Alert.alert("No Internet Connection");
-                  let res=JSON.parse(await AsyncStorage.getItem("apiData"));
-                  // console.log("res",res);
-                  apiData=res.data.data[dd-1].timings;
-                  // console.log("location name",cname);
-                  apiobj = {
-                    Fajr: formatDate(apiData.Fajr).split("(")[0],
-                    Sunrise: formatDate(apiData.Sunrise).split("(")[0],
-                    Dhuhr: formatDate(apiData.Dhuhr).split("(")[0],
-                    Asr: formatDate(apiData.Asr).split("(")[0],
-                    Sunset: formatDate(apiData.Sunset).split("(")[0],
-                    Maghrib: formatDate(apiData.Maghrib).split("(")[0],
-                    Isha: formatDate(apiData.Isha).split("(")[0],
-                  };
-                  // console.log("apiobj",apiobj);
-                  setTimes(apiobj);
-                  // console.log("times ->",times);
-                  setIsready(true);
-                  settimer();
-                  // setNoInternet(true);
-})();})
-              }}
+                })
+//                 (error) => {
+//                   (async()=>{
+//                     // alert("locations is still of")
+//                     const loct=JSON.parse(await AsyncStorage.getItem("locationCoor"));
+//                     // console.log("location that im geting-> ",loct);
+//                     (loct!=null) 
+//                       // Alert.alert("location is off")
+//                       let cname=JSON.parse(await AsyncStorage.getItem("countryname"));
+//                       setLocation(cname); 
+//                       let dd = new Date().getDate();
+//                   // Alert.alert("No Internet Connection");
+//                   let res=JSON.parse(await AsyncStorage.getItem("apiData"));
+//                   // console.log("res",res);
+//                   apiData=res.data.data[dd-1].timings;
+//                   // console.log("location name",cname);
+//                   apiobj = {
+//                     Fajr: formatDate(apiData.Fajr).split("(")[0],
+//                     Sunrise: formatDate(apiData.Sunrise).split("(")[0],
+//                     Dhuhr: formatDate(apiData.Dhuhr).split("(")[0],
+//                     Asr: formatDate(apiData.Asr).split("(")[0],
+//                     Sunset: formatDate(apiData.Sunset).split("(")[0],
+//                     Maghrib: formatDate(apiData.Maghrib).split("(")[0],
+//                     Isha: formatDate(apiData.Isha).split("(")[0],
+//                   };
+//                   // console.log("apiobj",apiobj);
+//                   setTimes(apiobj);
+//                   // console.log("times ->",times);
+//                   setIsready(true);
+//                   settimer();
+//                   // setNoInternet(true);
+// })();})
+//               }}
             
-        })
-        .finally(()=>{
-              (async()=>{
-                // alert("locations is still of")
-                const loct=JSON.parse(await AsyncStorage.getItem("locationCoor"));
-                // console.log("location that im geting-> ",loct);
-                (loct!=null) 
-                  // Alert.alert("location is off")
-                  let cname=JSON.parse(await AsyncStorage.getItem("countryname"));
-                  // setLocation(cname); 
-                  let dd = new Date().getDate();
-              // Alert.alert("No Internet Connection");
-              let res=JSON.parse(await AsyncStorage.getItem("apiData"));
-              apiData=res.data.data[dd-1].timings;
-              // console.log("location name",cname);
-              apiobj = {
-                Fajr: formatDate(apiData.Fajr).split("(")[0],
-                Sunrise: formatDate(apiData.Sunrise).split("(")[0],
-                Dhuhr: formatDate(apiData.Dhuhr).split("(")[0],
-                Asr: formatDate(apiData.Asr).split("(")[0],
-                Sunset: formatDate(apiData.Sunset).split("(")[0],
-                Maghrib: formatDate(apiData.Maghrib).split("(")[0],
-                Isha: formatDate(apiData.Isha).split("(")[0],
-              };
-              // console.log("apiobj",apiobj);
-              setTimes(apiobj);
-              // console.log("times ->",times);
-              setIsready(true);
-              settimer();
-              // setNoInternet(true);
-})()
-            })   
-          })(); 
-        }
+        // })
+//         .finally(()=>{
+//               (async()=>{
+//                 // alert("locations is still of")
+//                 const loct=JSON.parse(await AsyncStorage.getItem("locationCoor"));
+//                 // console.log("location that im geting-> ",loct);
+//                 (loct!=null) 
+//                   // Alert.alert("location is off")
+//                   let cname=JSON.parse(await AsyncStorage.getItem("countryname"));
+//                   // setLocation(cname); 
+//                   let dd = new Date().getDate();
+//               // Alert.alert("No Internet Connection");
+//               let res=JSON.parse(await AsyncStorage.getItem("apiData"));
+//               apiData=res.data.data[dd-1].timings;
+//               // console.log("location name",cname);
+//               apiobj = {
+//                 Fajr: formatDate(apiData.Fajr).split("(")[0],
+//                 Sunrise: formatDate(apiData.Sunrise).split("(")[0],
+//                 Dhuhr: formatDate(apiData.Dhuhr).split("(")[0],
+//                 Asr: formatDate(apiData.Asr).split("(")[0],
+//                 Sunset: formatDate(apiData.Sunset).split("(")[0],
+//                 Maghrib: formatDate(apiData.Maghrib).split("(")[0],
+//                 Isha: formatDate(apiData.Isha).split("(")[0],
+//               };
+//               // console.log("apiobj",apiobj);
+//               setTimes(apiobj);
+//               // console.log("times ->",times);
+//               setIsready(true);
+//               settimer();
+//               // setNoInternet(true);
+// })()
+            // })   
+          // }
+          // )(); 
+        }}
         else{
           let dd=new Date().getDate();
           let res=JSON.parse(await AsyncStorage.getItem("apiData"));
@@ -484,10 +478,13 @@ async function updatetheish(ishtime){
           setNoInternet(true);
 
         }
-      })
-    });
-    return unsubscribe;
-    }, [isFocused, refreshing,methodvalue,noInternet]);
+        
+    })
+    })
+  // }})
+    // });
+    return unsubscribe
+    }, [isFocused==true, refreshing,methodvalue]);
   
     function getFirstAndLastWords(text) {
       var text_arr = text.split(" ");
@@ -526,9 +523,15 @@ async function updatetheish(ishtime){
     // this function returns the country name and village name
     async function getLocationC(lat, lon) {
       // console.log("lat and long is ",lat, lon);
-      let res = await axios.get('https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat='+lat+'&lon='+lon+'&accept-language=en');
+      Geocoder.init(API_KEY);
+      Geocoder.from(lat, lon).then(async json => {
+        console.log(json.results[0].address_components[1].short_name, json.results[0].address_components);
+        await AsyncStorage.setItem("countryname",JSON.stringify([json.results[0].address_components[0].long_name, json.results[0].address_components[1].long_name]))
+        setLocation([json.results[0].address_components[1].long_name, json.results[0].address_components[json.results[0].address_components.length-1].long_name]);
+            })
+      // let res = await axios.get('https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat='+lat+'&lon='+lon+'&accept-language=en');
       // let data = await res.json();
-      return res
+      // return res
   }
     // this fuction get the data from api and convert the 24 hours in 12 hours
     
@@ -563,7 +566,7 @@ async function updatetheish(ishtime){
               // console.log(res.data.data[dd-1].date.gregorian.date);
           apiData = res.data.data[dd-1].timings;
           // console.log(res.data.data[1]);
-          setTimes1(apiData);
+          // setTimes1(apiData);
           await AsyncStorage.setItem("apiData",JSON.stringify(res));
           apiobj = {
             Fajr: formatDate(apiData.Fajr).split("(")[0],
@@ -654,10 +657,7 @@ async function updatetheish(ishtime){
       setRefreshing(true);
       wait(2000).then(() => {setRefreshing(false)});
     }, [refreshing]);
-    // useEffect(() => {
-    //   // setRemtime(remtime=>(remtime));
-    //   // console.log("remtime", remtime);
-    // }, [remtime]);
+  
   
     const setTimer = (seconds,ish) => {
       try {
@@ -704,6 +704,17 @@ async function setLocalData(localdata){
   
     // storing data on alarm state changing
     useEffect(()=>{
+     
+     const handler= BackHandler.removeEventListener('hardwareBackPress', (handleBackPress)=>{
+        console.log("back press",handleBackPress);
+        navigation.navigate("Home");
+        handler.remove();
+
+      });
+      
+      
+      checkNotificationPermission();
+      getData();
       storeAlaram(obj);
       // console.log("obj",obj);
       if (obj!=null){
@@ -714,7 +725,7 @@ async function setLocalData(localdata){
         setIshrAlarm(obj.Ishaalarm);
       };
     },[obj]);
-  useEffect(()=>{
+  useMemo(()=>{
   
     setObj({
       Fjralarm:Fjralarm,
@@ -1082,26 +1093,22 @@ async function setLocalData(localdata){
     return (
       <>
         {/* <StatusBar style="dark"></StatusBar> */}
-      {isready?(
+      {location?(
         <SafeAreaView style={{ flex: 1, backgroundColor:"white" }}>
          
           {/* topbar */}
           <View style={styles.viewHeading}>
           <TouchableOpacity
               onPress={() =>
-                navigation.push('Home')
-              }
+                {navigation.navigate("QuranHome")}}
+                
             >
               <Image
                 source={require('./images/leftarrow.png')}
                 style={{width:30,height:30,tintColor:"white" }}
                 />
             </TouchableOpacity>
-            {/* <TouchableOpacity> */}
-              {/* {noInternet? 
-              <Image source={require('./images/no-wifi.png')} style={{ width: 30, height: 30}}></Image>:<Image source={{}} style={{ width: 30, height: 30 }}></Image>
-              } */}
-            {/* </TouchableOpacity> */}
+            
             <Text style={styles.headingText}>Salah Times</Text>
             <TouchableOpacity
               onPress={() =>
@@ -1135,12 +1142,14 @@ async function setLocalData(localdata){
             {/* remaining time */}
             <View style={{ alignItems: "center", justifyContent: "center" }}>
               <View style={styles.remTimeView}>
+               {location?
+               <>
                 <Text
                   style={{
                     fontSize: 15,
                     color:"black",
                     fontFamily:
-                      Platform.OS === "ios" ? "AvenirNext-DemiBold" : "monospace",
+                    Platform.OS === "ios" ? "AvenirNext-DemiBold" : "monospace",
                     fontStyle: "italic",
                   }}
                 >
@@ -1154,9 +1163,11 @@ async function setLocalData(localdata){
                       Platform.OS === "ios" ? "AvenirNext-DemiBold" : "monospace",
                     fontStyle: "italic",
                   }}
-                >
+                  >
                  {location?location[1]:null}
                 </Text>
+                  </>
+                :null}
               </View>
             </View>
             {/* Sunset time */}
@@ -1468,7 +1479,11 @@ async function setLocalData(localdata){
             <Text style={{color:"black"}}>Back To Home</Text>
           </TouchableOpacity> */}
         </SafeAreaView>
-           ):null} 
+           ):
+           <View style={{position:"absolute", backgroundColor:"#104586", flex:1}}>
+             <ActivityIndicator size={30} color="white" />
+           </View>
+             } 
       </>
     );
   }

@@ -45,24 +45,51 @@ import Home from './src/modules/quran/screens/Home';
 import Surah from './src/modules/quran/screens/Surah';
 import Para_Juz from './src/modules/quran/screens/Para_Juz';
 import SearchScreen from './src/modules/quran/screens/SearchScreen';
+import Tajweed from './src/modules/quran/components/Tajweed';
+
+// Tasbish Screens
+import Count from './src/modules/tasbihCounter/Components/Count';
+
+// Dua Screens
+import DuaScreen from './src/modules/duas/screen/DuaScreen';
+import DuaDetails from './src/modules/duas/components/DuaDetails';
+import SubahShamAzkar from './src/modules/duas/components/SubahShamAzkar';
+import GeneralDuasScreen from './src/modules/duas/components/GeneralDuasScreen';
+
+// hadith screen
+import Hadith from './src/modules/hadith/screen/Hadith';
+import SearchHadith from './src/modules/hadith/component/SearchHadith';
+
+// Prophet Stories Screens
+import ProStories from './src/modules/prophetStories/screen/ProStories';
+import StoriesScreen from './src/modules/prophetStories/components/StoriesScreen';
+
+
+// splash screen
+import SplashScreen from './SplashScreen';
+import NameHome from './src/modules/namesofAllah/screen/NamesHome';
+
 // navigation stack
 const Stack = createNativeStackNavigator();
 const SalahTimeStack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 const QiblaStack = createNativeStackNavigator();
 const QuranStack = createNativeStackNavigator();
+const DuaStack = createNativeStackNavigator();
+const hadithStack=createNativeStackNavigator();
+const ProphetStoriesStack = createNativeStackNavigator();
 
 //================================ Salah Tracker Navigation ================================
 function TabNavigation() {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="SalahTimesHome"
       screenOptions={{
         // tabBarActiveBackgroundColor: "brown",
         tabBarActiveBackgroundColor: '#1A2A52',
-        tabBarInactiveBackgroundColor: '#273B69',
+        tabBarInactiveBackgroundColor: '#104586',
         // tabBarInactiveTintColor: "b",
-        tabBarInactiveBackgroundColor: '#273B69',
+        tabBarInactiveBackgroundColor: '#104586',
         headerShown: false,
         tabBarLabelStyle: {
           color: 'white',
@@ -72,7 +99,7 @@ function TabNavigation() {
         },
       }}>
       <Tab.Screen
-        name="Home"
+        name="SalahTimesHome"
         component={Calender}
         options={{
           title: 'Salah Tracker',
@@ -140,7 +167,7 @@ function SalahTimesNavigator() {
 function QiblaNavigation() {
   return (
     <QiblaStack.Navigator screenOptions={{headerShown: false}}>
-      <QiblaStack.Screen name="Home" component={LoadingScreen} />
+      <QiblaStack.Screen name="LoadingScreen" component={LoadingScreen} />
       <QiblaStack.Screen name="RequestAccess" component={RequestAccess} />
       <QiblaStack.Screen name="FaceQibla" component={FaceQibla} />
       <QiblaStack.Screen name="FacingQibla" component={FacingQibla} />
@@ -153,24 +180,77 @@ function QiblaNavigation() {
 function QuranNavigation() {
   return (
     <QuranStack.Navigator
-      initialRouteName="Home"
+      initialRouteName="QuranHome"
       screenOptions={{headerShown: false}}>
-      <QuranStack.Screen name="Home" component={Home} />
+      <QuranStack.Screen name="QuranHome" component={Home} />
       <QuranStack.Screen name="Surah" component={Surah} />
       <QuranStack.Screen name="Para" component={Para_Juz} />
       <QuranStack.Screen name="SearchScreen" component={SearchScreen} />
+      <QuranStack.Screen name="Tajweed" component={Tajweed} />
     </QuranStack.Navigator>
   );
 }
 
+
+// ================================ Dua Navigation ================================
+function DuaNavigation() {
+  return (
+    <DuaStack.Navigator
+      initialRouteName="DuaScreen"
+      screenOptions={{headerShown: false}}>
+      <DuaStack.Screen name="DuaScreen" component={DuaScreen} />
+      <DuaStack.Screen name="DuaDetails" component={DuaDetails} />
+      <DuaStack.Screen name="SubahShamAzkar" component={SubahShamAzkar} />
+      <DuaStack.Screen name="GeneralDuasScreen" component={GeneralDuasScreen} />
+
+    </DuaStack.Navigator>
+  );
+}
+
+
+// ================================= Hadith Navigation =================================
+function HadithNavigatio(){
+  return(
+    <hadithStack.Navigator
+    initialRouteName="Hadith"
+    screenOptions={{headerShown: false}}>
+      <hadithStack.Screen name='Hadith' component={Hadith}/>
+      <hadithStack.Screen name='SearchHadith' component={SearchHadith}/>
+    </hadithStack.Navigator>
+  )
+}
+
+// ================================ Prophet Stories Navigation ================================
+function ProphetStoriesNavigation() {
+  return(
+  <ProphetStoriesStack.Navigator initialRouteName="ProStories" screenOptions={{headerShown: false}}>
+    <ProphetStoriesStack.Screen name="ProStories" component={ProStories} />
+    <ProphetStoriesStack.Screen name="StoriesScreen" component={StoriesScreen} />
+  </ProphetStoriesStack.Navigator>
+  )
+}
+
+
 // ================================ App Navigation ================================
 
 const App = () => {
+  const [appReady, setAppReady] = React.useState(false);
+  
+    React.useEffect(() => {
+      // Simulate an asynchronous task, e.g., loading necessary data or assets
+      setTimeout(() => {
+        setAppReady(true);
+      }, 2000); // 3 seconds delay for demonstration purposes, replace with your actual loading logic
+    }, []);
+  
+  
+    if (!appReady) {
+      
+       return <SplashScreen/>;
+    }
+
   return (
       <ApiProvider>
-        {/* <HomePage/>
-         */}
-
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Home">
             <Stack.Screen
@@ -183,13 +263,6 @@ const App = () => {
               component={SalahTimesNavigator}
               options={{headerShown: false}}
             />
-
-            {/*  <Stack.Screen name="SalahTimes" component={ApiCall} options={{headerShown:false
-          }}/> 
-            <Stack.Screen name="Settings" component={Settings} options={{headerShown:false
-          }}/>  
-            <Stack.Screen name="Monthly" component={Monthly_Timings} options={{headerShown:false
-          }}/>  */}
             <Stack.Screen
               name="TabNavigatorTracker"
               component={TabNavigation}
@@ -203,6 +276,31 @@ const App = () => {
             <Stack.Screen
               name="Quran"
               component={QuranNavigation}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Tasbih"
+              component={Count}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Dua"
+              component={DuaNavigation}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Hadith"
+              component={HadithNavigatio}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Names"
+              component={NameHome}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="ProphetStories"
+              component={ProphetStoriesNavigation}
               options={{headerShown: false}}
             />
           </Stack.Navigator>

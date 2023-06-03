@@ -17,13 +17,13 @@ export const Data=[
         uri:require('../../images/dua.png'),
         title:'Dua',
         id:'123458',
-        screenName:''
+        screenName:'Dua'
     },
     {
         uri:require('../../images/tasbih.png'),
         title:'Tasbih',
         id:'123459',
-        screenName:''
+        screenName:'Tasbih'
     },
     {
         uri:require('../../images/quran.png'),
@@ -33,33 +33,33 @@ export const Data=[
     },
     {
         uri:require('../../images/teaching.png'),
-        title:'Teachings',
+        title:'Hadith',
         id:'123466',
-        screenName:''
+        screenName:'Hadith'
     },
     {
         uri:require('../../images/dictionary.png'),
-        title:'Dictionary1',
+        title:'Stories ',
         id:'123476',
-        screenName:'Dummy'
+        screenName:'ProphetStories'
     },
     {
-        uri:require('../../images/dictionary.png'),
+        uri:require('../../images/update.png'),
         title:'Tracker',
         id:'123486',
         screenName:'TabNavigatorTracker'
     },
     {
-        uri:require('../../images/dictionary.png'),
-        title:'Dictionary',
+        uri:require('../../images/belief.png'),
+        title:'99 Names',
         id:'123496',
-        screenName:''
+        screenName:'Names'
     },
-    {
-        uri:require('../../images/dictionary.png'),
-        title:'Dictionary',
-        id:'123406',
-        screenName:''
-    },
+    // {
+    //     uri:require('../../images/dictionary.png'),
+    //     title:'Dictionary',
+    //     id:'123406',
+    //     screenName:''
+    // },
 ];
 

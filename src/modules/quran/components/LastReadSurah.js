@@ -5,7 +5,7 @@ import {widthPercentageToDP as WP} from '../../../utills/pixelratio';
 import {heightPercentageToDP as HP} from '../../../utills/pixelratio';
 import {scale as SC} from '../../../utills/pixelratio';
 
-const LastReadSurah = () => {
+const LastReadSurah = ({lastRead}) => {
   return (
     <ImageBackground
     source={require('../images/bg.png')}
@@ -16,13 +16,13 @@ const LastReadSurah = () => {
         <View style={styles.first}>
           <Image
             source={require('../images/quran-read.png')}
-            style={{tintColor: 'white', width: WP(5.5), height: HP(5.5)}}
+            style={{tintColor: 'white', width: WP(6.5), height: HP(5.5)}}
           />
-          <Text style={[styles.text, {}]}>Last Read</Text>
+          <Text style={[styles.text, {paddingHorizontal:WP('4')}]}>Last Read</Text>
         </View>
         <TouchableOpacity style={[styles.second, styles.text]}>
-          <Text style={[styles.text, {fontWeight: '700', fontSize: 25}]}>
-            Al-Fatiha
+          <Text style={[styles.text, { fontSize: SC(23),  alignSelf:"center", fontFamily:'Amiri-Regular'}]}>
+             {lastRead?" ("+lastRead.paraId+") "+lastRead.ParaName:"Juz Name"}
           </Text>
         </TouchableOpacity>
         <View style={styles.third}>
@@ -31,7 +31,7 @@ const LastReadSurah = () => {
               styles.text,
               {letterSpacing: WP('0.5'), marginTop: WP('2')},
             ]}>
-            Ayah No:1
+            Ayah No: {lastRead?lastRead.ayaId:"1"}
           </Text>
         </View>
       </View>
@@ -59,26 +59,24 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         padding: WP('4'),
         marginLeft: WP('1'),
-        // marginBottom:WP('2'),
       },
       first: {
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
-        // textAlign:'center',
       },
       second: {
-        marginTop: WP('3.5'),
+        
       },
       text: {
         color: 'white',
+        fontSize: SC(15),
+      
       },
       quran: {
         width: WP('36'),
         height: HP('16'),
         tintColor: 'white',
         resizeMode: 'contain',
-        // marginTop:WP('-2'),
-        // marginRight:WP('-2'),
       },
 })

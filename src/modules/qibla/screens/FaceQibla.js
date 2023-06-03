@@ -600,7 +600,7 @@ import {
                     tintColor='white'
                     tintColorSecondary='white'
                     onAnimationComplete={()=>(
-                        navigation.navigate('FacingQibla')
+                        navigation.navigate('Home')
                       
                       
                     )}

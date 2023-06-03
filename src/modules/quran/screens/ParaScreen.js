@@ -25,18 +25,16 @@ const ParaScreen = () => {
                            <TouchableOpacity style={{flexDirection:'row',padding:10}} 
                            onPress={()=>navigation.navigate('Para',{juz:item.id})}>
                                 <ImageBackground source={require("../images/shape.png")} style={{width:WP('13.3'),height:HP('8'),justifyContent:'space-around',alignItems:"center", marginRight:7,marginLeft:1 }} imageStyle={{tintColor:"#004C9B",borderWidth:3}} >
-                                    <Text style={{fontWeight:'500'}}>{item.id}</Text>
+                                    <Text style={{fontWeight:'500', color:'black'}}>{item.id}</Text>
                                 </ImageBackground >
                                 <View style={{flexDirection:"row",width:WP('70'),justifyContent:"space-between",alignItems:"center"}}>
                                     <View style={{flexDirection:'column'}}>
                                     <Text style={{fontWeight:'500',fontSize:17,color:"black"}}>{item.transliteration}</Text>
                                     <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-                                    {/* <Text style={{color:'grey'}}>jj</Text> */}
-                                    {/* <Text style={{color:'grey'}}>{Quran.type}</Text> */}
-                                    {/* <Text style={{color:'grey'}}>• {Quran.item} Verses</Text>  */}
+                                    
                                     </View>
                                     </View>
-                                    <Text style={{fontWeight:'600',fontSize:20,color:"#004C9B"}}>{item.name}</Text>
+                                    <Text style={{fontWeight:'600',fontSize:20,color:"#004C9B",fontFamily:'Amiri-Regular'}}>{item.name}</Text>
                                 </View>
                             </TouchableOpacity>
                             {/* //  <Text style={{fontWeight:'600',fontSize:20,color:"#004C9B"}}>{item.transliteration}</Text>

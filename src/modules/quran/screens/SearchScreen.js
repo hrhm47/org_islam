@@ -48,6 +48,7 @@ const SearchScreen = () => {
     uri: '',
   });
   const [bySearch, setBySearch] = useState(false);
+  const [isLoading, setIsLoading] = useState(null);
   const audioSet = {
     AudioEncoderAndroid: AudioEncoderAndroidType.AAC,
     AudioSourceAndroid: AudioSourceAndroidType.MIC,
@@ -55,8 +56,19 @@ const SearchScreen = () => {
   };
 
   const onStartRecord = async () => {
-    callPermissions();
-
+    setIsLoading(true);
+    callPermissions()
+    // .then((res)=>{
+    //   if(res){
+    //     console.log("permissions granted");
+    //   }else{
+    //     callPermissions();
+    //   }
+    // })
+    
+    await audioRecorderPlayer.stopPlayer();
+    audioRecorderPlayer.removeRecordBackListener();
+    // setRecordBackListener(null);
     const recordingDirectory = `${RNFS.DocumentDirectoryPath}/recordings`;
     const path = `${recordingDirectory}/myrecording.m4a`;
 
@@ -86,6 +98,7 @@ const SearchScreen = () => {
   };
 
   const onStopRecord = async () => {
+    setIsLoading(false);
     setIsListening(true);
     try {
       const result = await audioRecorderPlayer.stopRecorder();
@@ -178,7 +191,7 @@ const SearchScreen = () => {
   return (
     <View style={{backgroundColor: 'white', flex: 1, alignItems: 'center'}}>
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+        <TouchableOpacity onPress={() => navigation.navigate('QuranHome')}>
           <Icon name="arrow-back-ios" size={24} color="white" />
         </TouchableOpacity>
         <TextInput
@@ -214,11 +227,15 @@ const SearchScreen = () => {
       ):(
         <>
         
+        {/* {isLoading?
+        <> */}
         {jsonText == null ? (
           null
           // <ActivityIndicator size="large" color="#0000ff" />
         ) : (
-          <View style={{flex: 1, backgroundColor: 'white', width: '100%', top:100}}>  
+        
+
+          (<View style={{flex: 1, backgroundColor: 'white', width: '100%', top:100}}>  
             <View style={{flex: .3, backgroundColor: 'lightblue'}}>
               <ScrollView>
                 <Text style={{fontSize: 24}}>Search Text : {'\n' + jsonText}</Text>
@@ -226,9 +243,11 @@ const SearchScreen = () => {
             </View>
               <SearchScreenParaList surah_no={suran_nos} searchText={jsonText} />
           
-        </View>
+        </View>)
         )}
-        </>
+        {/* </>
+        :<ActivityIndicator size="large" color="#0000ff" />}*/}
+        </> 
       )}
       
       

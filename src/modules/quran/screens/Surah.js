@@ -48,7 +48,7 @@ export default function Surah({route,navigation}) {
                             <MenuOptions >
                                 <MenuOption onSelect={() => {setSelectTranslation('ur')}} text='Urdu' />
                                 <MenuOption onSelect={() => {setSelectTranslation('en')}} text='English' />
-                                <MenuOption onSelect={() => {setSelectTranslation('tr')}} text='Turkish' />
+                                <MenuOption onSelect={() => {setSelectTranslation('tr')}} text='Turkish' color= 'black'/>
                             </MenuOptions>
                             <Text style={{color:"black"}}>Qaries</Text>
                             <MenuOptions>
@@ -70,7 +70,7 @@ export default function Surah({route,navigation}) {
         
         {/* heading with image details */}
             <View style={styles.heading}>
-                <TouchableOpacity onPress={() => {navigation.navigate('Home'), setIsVisible(false)}}>
+                <TouchableOpacity onPress={() => {navigation.navigate('QuranHome'), setIsVisible(false)}}>
                     {/* <Image source={require("../images/back.png")}  style={styles.images}/> */}
                     <Icon name='arrow-back-ios' size={25} color='white'/>
                 </TouchableOpacity>
@@ -94,7 +94,9 @@ export default function Surah({route,navigation}) {
                     <Text style={{color:'white',fontSize:SC(16), textTransform:'uppercase'}}>{quran.type}</Text>
                     <Text style={{color:'white',fontSize:SC(16), textTransform:'uppercase'}}>   • {quran.total_verses} Verses</Text>
                 </View>
-                <Text style={{color:'white',fontSize:25, paddingTop:WP('4'), fontFamily:"Roboto"}}>
+                <Text style={{color:'#fff',fontSize:SC(25), paddingTop:WP('0'), fontFamily:'Amiri-Regular'}}>
+                
+                {/* AmiriQuran-Regular */}
                     بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</Text>
             </View>
             </ImageBackground>

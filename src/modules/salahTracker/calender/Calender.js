@@ -74,7 +74,7 @@ export default function Calender() {
       setIshacong(obj.ishacong);
       setNafalind(obj.nafalind);
     }
-    console.log("hmm-> ",obj);
+    // console.log("hmm-> ",obj);
   }, [obj]);
 
   // storing the states in the async storage
@@ -200,156 +200,10 @@ export default function Calender() {
     }
   };
 
-  // counting streak
-  // const streak = async () => {
-  //   try {
-  //     if (streakdates.length > 0) {
-  //       try {
-  //         await AsyncStorage.setItem(
-  //           "streakdates",
-  //           JSON.stringify(streakdates)
-  //         );
 
-  //         const jsonValue = await AsyncStorage.getItem("streakdates");
-  //         const data = jsonValue !== null ? JSON.parse(jsonValue) :JSON.parse(today);
-  //           console.log("streak dates ", data);
-  //         let count = 0;
-  //         for (let i = 0; i <=data.length; i++) {
-  //           var newtoday = new Date(today);
-  //           // console.log("newtoday", newtoday);
-  //           newtoday.setDate(newtoday.getDate() - (i + 1));
-  //           var dd = String(newtoday.getDate()).padStart(2, "0");
-  //           var mm = String(newtoday.getMonth() + 1).padStart(2, "0"); //January is 0!
-  //           var yyyy = newtoday.getFullYear();
-  //           newtoday = yyyy + "-" + mm + "-" + dd;
-  //           if (jsonValue.includes(newtoday)) {
-  //             const jsonValue = await AsyncStorage.getItem(newtoday);
-  //             const data = jsonValue !== null ? JSON.parse(jsonValue) : null;
-  //             if (
-  //               ((data.fjrind == true)|| (data.fjrcong == true)) &&
-  //               ((data.dhrind == true) || (data.dhrcong == true)) &&
-  //               ((data.asrind == true) || (data.asrcong == true)) &&
-  //               ((data.maghribind == true) || (data.maghribcong == true)) &&
-  //               ((data.ishaind == true) || (data.ishacong == true))
-  //             ) {
-  //               var innervalue = new Date(newtoday);
-  //               innervalue.setDate(innervalue.getDate() - 1);
-  //               var dd = String(innervalue.getDate()).padStart(2, "0");
-  //               var mm = String(innervalue.getMonth() + 1).padStart(2, "0"); //January is 0!
-  //               var yyyy = innervalue.getFullYear();
-  //               innervalue = yyyy + "-" + mm + "-" + dd;
-  //               if (innervalue <today)  {
-  //                 try {
-  //                   const jsonValue1 = await AsyncStorage.getItem(innervalue);
-  //                   const data1 =
-  //                     jsonValue1 !== null ? JSON.parse(jsonValue1) : null;
-  //                   if (
-  //                     ((data1.fjrind == true)|| (data1.fjrcong == true)) &&
-  //                     ((data1.dhrind == true) || (data1.dhrcong == true)) &&
-  //                     ((data1.asrind == true) || (data1.asrcong == true)) &&
-  //                     ((data1.maghribind == true) || (data1.maghribcong == true)) &&
-  //                     ((data1.ishaind == true) || (data1.ishacong == true))
-  //                   ) {
-  //                     count = count + 1;
-  //                   }
-  //                   // setCountstreak(count);
-  //                 } catch (error) {}
-  //               }
-  //             }
-              
-  //              else {
-  //               // await AsyncStorage.setItem("streakcount", count.toString());
-  //               // console.log("count", count);
-  //               setCountstreak(count);
-  //               setLongeststreak(innervalue);
-  //               return;
-  //             }
-  //           } else {
-  //             // await AsyncStorage.setItem("streakcount", count.toString());
-  //             // console.log("count", count);
-  //             setCountstreak(count);
-  //             setLongeststreak(newtoday);
-  //             return;
-  //           }
-  //         }
-  //       } catch (error) {}
-  //     }
-
-  //   } catch (error) {}
-  // };
-  // useEffect(() => {
-  //   streak();
-    
-  //   // console.log("last 4 months data", last4months);
-  // }, [streakdates, isFocused]);
-  // streak code
-  // function callmeonCompletetion(){
     const  objjjs=[];
     let mark = {};
-    // let times;
-  //   async function completedsalahDates(){
-  //     try {
-  //       const passingdates=JSON.parse(await AsyncStorage.getItem("selectedDates"));
-  //       function dmyOrdA(a,b){ return myDate(a) - myDate(b);}
-  //       // function dmyOrdD(a,b){ return myDate(b) - myDate(a);}
-  //       function myDate(s){var a=s.split(/-|\//); return new Date(a[0],a[1]-1,a[2]);}
-  //       let dates=passingdates.sort(dmyOrdA);
-  //       console.log("in order dates-<> ",passingdates);
-
-  //   //     for (let i=0; i<dates.length; i++){
-  //   //       const data=JSON.parse(await AsyncStorage.getItem(dates[i]));
-  //   //       console.log("sorted dates",dates[i], data);
-  //   //       if (data!==null){
-  //   //         //   // console.log("data",data);
-  //   //         if (((data.fjrind == true)|| (data.fjrcong == true)) &&
-  //   //         ((data.dhrind == true) || (data.dhrcong == true)) &&
-  //   //       ((data.asrind == true) || (data.asrcong == true)) &&
-  //   //       ((data.maghribind == true) || (data.maghribcong == true)) &&
-  //   //       ((data.ishaind == true) || (data.ishacong == true))){
-  //   //         if (!objjjs.includes(dates[i])){
-  //   //         // setMarkdates([...markdates,item]);
-  //   //         objjjs.push(dates[i])
-  //   //       }
-  //   //     }
-  //   //   }
-      
-  //   // }
-  //   // console.log("marked dates", objjjs);
-  //   // alert("hello")
-  // objjjs.forEach(day => {
-  //   mark[day] = {
-  //     customStyles: {
-  //       container:{
-  //         backgroundColor:"teal",
-  //         // borderColor
-  //       },
-  //       text: {
-  //         color:"white",
-  //         // fontWeight:"bold"
-  //       }
-  //     }
-  //   };
-  // });
-  // mark[calenderdate]={
-    // customStyles: {
-    //   container:{
-    //     // backgroundColor:"red",
-    //     borderColor:"red",
-    //     borderWidth:2
-    //   },
-    //   text: {
-    //     color:"teal",
-    //     // fontWeight:"bold"
-    //   }
-    // }
-  // }
-  
-  // setDummydate(mark);
-  // } catch (error) {
-        
-  //     }  
-  // } 
-  
+     
   
   useEffect(() => {
   
@@ -403,13 +257,13 @@ export default function Calender() {
   return (
     <>
       <StatusBar showHideTransition={"none"}></StatusBar>
-      <SafeAreaView style={{ flex: 1, backgroundColor: "#273B69" }}>
-        <View style={{flexDirection:"row"}}>
-        <View style={{ height:35,  left:13,alignSelf:'flex-start',flexDirection:"row" }}>
-        <Text style={{alignSelf:"center",color:"white",fontSize:18,fontWeight:"bold",letterSpacing:1}}> Salah Habbit</Text>
+      <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
+        {/* <View style={{flexDirection:"row"}}> */}
+        <View style={{ marginBottom:8,height:55,alignItems:"center",justifyContent:"center",flexDirection:"row", backgroundColor:"#104586" }}>
+        <Text style={{alignSelf:"center",textAlign:"center",color:"#fff",fontSize:25,fontWeight:"bold",letterSpacing:1}}> Salah Habbit</Text>
         </View>
         
-        </View>
+        {/* </View> */}
         <View style={{ width:"100%" }}>
           <CalendarList
             markingType={"custom"}
@@ -418,7 +272,7 @@ export default function Calender() {
               customStyles: {
                 container:{
                   // backgroundColor:"red",
-                  borderColor:"lightgreen",
+                  borderColor:"#fff",
                   borderWidth:2
                 },
                 text: {
@@ -428,33 +282,17 @@ export default function Calender() {
               }}}
             }
             
-            // onLongPress={(day) => {
-              
-            //   mark[calenderdate]={
-            //   customStyles: {
-            //     container:{
-            //       backgroundColor:"red",
-            //       borderColor:"red",
-            //       borderWidth:2
-            //     },
-            //     text: {
-            //       color:"teal",
-            //       // fontWeight:"bold"
-            //     }
-            //   }
-            // }
-            // setDummydate(mark);}}
             firstDay={1}
             futureScrollRange={0}
             onDayPress={(date) => {onDayPress(date);}}
             pastScrollRange={4}
-            style={{ height:hp(54), width: "100%", backgroundColor: "#273B69",borderRadius:10,borderBottomWidth:1,borderBottomColor:"#1A2A52"}}
+            style={{ height:hp(44), width: "100%", backgroundColor: "#fff",borderRadius:20,}}
             // maxDate={new Date()}
             maxDate={new Date}
             hideExtraDays={true}
-            headerStyle={{ backgroundColor: "#1A2A52", height: 80,borderRadius:10,paddingBottom:4}}
+            headerStyle={{ backgroundColor: "#1A2A52", height: 80,paddingBottom:4, borderTopRightRadius:20,borderTopLeftRadius:20 }}
             theme={{
-              calendarBackground: "#273B69",
+              calendarBackground: "#104586",
               textSectionTitleDisabledColor: "#d9e1e8",
               selectedDayBackgroundColor: "black",
               textSectionTitleColor: "white",
@@ -474,12 +312,13 @@ export default function Calender() {
               // textDayHeaderbacgroundColor: "black",
              
               contentStyle:{
-                borderRadius:10
-              }
+                borderBottomRightRadius:10
+              },
+
               
             }}
             
-            calendarStyle={{ backgroundColor: "#273B69",borderRadius:10 }}
+            calendarStyle={{ backgroundColor: "#fff", borderBottomRightRadius:20,borderBottomLeftRadius:20 }}
             contentContainerStyle={{ width: "100%",borderRadius:10 }}
             horizontal={true}
             scrollEnabled={true}

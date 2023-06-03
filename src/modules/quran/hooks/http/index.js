@@ -15,7 +15,8 @@ export const uploadFile = async(fileUri) => {
   let res= await fetch(
     // 'http://192.168.10.7:5000/upload' // for physical device  192.168.10.7
     // 'http://10.0.2.2:5000/upload' // for virtual device
-    'http://192.168.43.178:5000/upload' // for device net 
+    'http://192.168.201.24:5000/upload' // for device net 
+    // 'http://192.168.35.209:5000/upload' // for device net 
     ,{
       method:"post",
       body:formData,

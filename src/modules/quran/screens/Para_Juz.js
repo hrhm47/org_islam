@@ -21,12 +21,8 @@ import {
 } from '../../../utills/pixelratio';
 import {useNavigation, useIsFocused} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import TrackPlayer, {
-  usePlaybackState,
-  useTrackPlayerProgress,
-  PlayerOptions,
-  Track,
-} from 'react-native-track-player';
+import TrackPlayer, { TrackType } from 'react-native-track-player';
+
 import {setupPlayer, addTracks} from '../../../../trackServices.js';
 
 import {PARAS} from '../../../utills/data/paraNames/ParaNames';
@@ -43,12 +39,12 @@ const Para_Juz = ({route}) => {
   const [juzData, setJuzData] = useState(null);
   let b;
   const [surahName, setSurahName] = useState(PARAS[juz - 1].name);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isPlayerReady, setIsPlayerReady] = useState(null);
-  const [isBuffering, setIsBuffering] = useState(true);
-  const [getIndex, setGetIndex] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [ayatNumber,setAyatNumber]=useState({ayatNumber:null,ayat:null})
+  const [updateAya,setUpdateAya]=useState(0)
   useEffect(() => {
     getJuzData();
+    callSetup();
   }, [isFocused]);
 
   // fetcing data from api
@@ -66,7 +62,8 @@ const Para_Juz = ({route}) => {
           })
           .catch(err => console.log('err', err));
       } else {
-        b = data;
+        // b = data;
+        console.log('at else');
         setJuzData(data);
       }
     });
@@ -89,76 +86,145 @@ const Para_Juz = ({route}) => {
     }, 1000);
   };
 
-  // changing color
-  const changeColor = (number, index) => {
-    if (number === index) {
-      setSelectColor(true);
+ const lastReadStoreAya = async () => {
+  let data;
+  juzData.map((item,index)=>{
+      
+    // data=item.number==selectColor?item:null;
+    if (selectColor==item.number){
+      data={
+        ParaName: surahName,
+        paraId: item.juz,
+        ayaId: item.number,
+        // ayaId: data.id,
+        ayaText: item.text,
+      };
     }
-    console.log('number', number, 'index', index);
-  };
+    })
+  console.log('current track pause');
+  await TrackPlayer.pause();
+  await AsyncStorage.setItem('lastReadAya', JSON.stringify(data));
+
+ }
 
   const stopAudio = async () => {
-    console.log('current track pause');
+    lastReadStoreAya();
     await TrackPlayer.pause();
     // await TrackPlayer.reset();
     setIsPlaying(false);
   };
 
-
-  const playAudio = async (verseNumber, ayat) => {
-    // TrackPlayer.destroy();
-    const startingAyat = ayat.number ? ayat.number : juzData[0].number;
-    const endingAyat = juzData[juzData.length - 1].number;
-    // audioPlayer();
-    const tracks = ArrayofUrl(
-      startingAyat,
-      endingAyat,
-      'ar.abdulbasitmurattal',
-    );
-    console.log('tracks', tracks[0]);
-    let flag = false;
-
-    if (isPlaying == true) {
-      setup();
-    } else if (isPlaying == false) {
-      console.log('stop the queue');
-
-      // try {
-      //   TrackPlayer.stop;
-      // } catch (error) {
-      //   console.log('error while stoppping ', error);
-      // }
-    }
-    let update = ayat.number;
-    async function setup() {
+  const callSetup=async()=>{
+    
+    const setupReady=await setupPlayer();
+    if (setupReady){
       
-      try {
-        let isSetup = await setupPlayer();
-        let queue = await TrackPlayer.getQueue();
+      return true;
+    }
+  }
+  const emptyQueue=async()=>{
+    let queue = await TrackPlayer.getQueue();
         if (queue.length > 0) {
           await TrackPlayer.reset();
+          await TrackPlayer.stop();
+          await TrackPlayer.destroy();
+          await TrackPlayer.clearNowPlayingMetadata();
+          await TrackPlayer.removeUpcomingTracks();
+          console.log("queue",queue);
+          // callSetup()
         }
-        if (isSetup) {
-          console.log('adding tracks');
-          // TrackPlayer.stop();
-          for (const url of tracks) {
-            // console.log(url);
-            await TrackPlayer.add({
-              url: url.url,
-              id: url.id,
-            }).then(() => {
-              TrackPlayer.play().then(res => {});
-            });
-          }
-        } else {
-          console.log('Queue is full');
-        }
-      } catch (err) {
-        console.log('error while playing and loading ', err);
-      }
-      // console.log("issetup",isSetup,"queue", queue);
-    }
+  }
+  const addUrls=async(ayatNumber,ayat)=>{
+        console.log("ayatNumber",ayatNumber);
+        callSetup().then(async(res)=>{
+          if(res){
 
+            const startingAyat = ayatNumber
+            const endingAyat = juzData[juzData.length - 1].number;
+            const tracks = ArrayofUrl(
+              startingAyat,
+              endingAyat,
+              'ar.abdulbasitmurattal',
+            );
+            emptyQueue();
+            for (const url of tracks) {
+            
+              await TrackPlayer.add({
+                url: url.url,
+                id: url.id,
+              })
+            }}
+        })
+        // let queue = await TrackPlayer.getQueue();
+        // if (queue.length > 0) {
+        //   await TrackPlayer.reset();
+        // }
+        
+      
+    //   // console.log("issetup",isSetup,"queue", queue);
+    
+    
+    // const startingAyat = ayatNumber.ayatNumber
+    // const endingAyat = juzData[juzData.length - 1].number;
+    // const tracks = ArrayofUrl(
+    //   startingAyat,
+    //   endingAyat,
+    //   'ar.abdulbasitmurattal',
+    // );
+    // if (setup){
+    //   for (const url of tracks) {
+    //     // console.log(url);
+    //     await TrackPlayer.add({
+    //       url: url.url,
+    //       id: url.id,
+    //     })
+    //   }
+    // }else{
+    //   await TrackPlayer.reset();
+    //   await setupPlayer();
+    //   for (const url of tracks) {
+    //     // console.log(url);
+    //     await TrackPlayer.add({
+    //       url: url.url,
+    //       id: url.id,
+    //     })
+    //   }
+
+    // }
+  }
+  const playAudio = async (verseNumber, ayat) => {
+    // console.log("verseNumber",verseNumber);
+    addUrls(verseNumber,ayatNumber.ayat);
+    await TrackPlayer.play()
+
+
+    // TrackPlayer.destroy();
+    // const startingAyat = ayat.number ? ayat.number : juzData[0].number;
+    const startingAyat = ayatNumber.ayatNumber;
+    // const endingAyat = juzData[juzData.length - 1].number;
+    // audioPlayer();
+   
+    // console.log('tracks', tracks[0]);
+    let flag = false;
+    // if (startingAyat)
+    // await TrackPlayer.getQueue().then(res => {
+    //   console.log('res', res.map(item => item));
+    // })
+    // if (TrackPlayer.isServiceRunning()) {
+    //   console.log('service is running');
+    //   await TrackPlayer.pause();
+    //   // await TrackPlayer.reset();
+    //   await TrackPlayer.removeUpcomingTracks();
+    // }
+    // console.log(await TrackPlayer.getQueue());
+    // await TrackPlayer.play()
+    // .then(async res => {
+      // console.log('res', res);
+      // console.log("not null");
+    // })
+    // try {
+    // } catch (error) {
+    // }
     TrackPlayer.addEventListener('playback-track-changed', async event => {
       if (event.nextTrack !== null) {
         // Get the current track index
@@ -170,24 +236,69 @@ const Para_Juz = ({route}) => {
             startingAyat + currentTrackIndex,
           );
           setSelectColor(startingAyat + currentTrackIndex);
+          // setUpdateAya(startingAyat + currentTrackIndex);
+          setAyatNumber({ayatNumber:startingAyat + currentTrackIndex,ayat:ayat})
         }
       }
     });
+    let update = ayat.number;
+
+    
   };
 
-  //   const [paused, setPaused] = useState(true);
-  // const playbackState = usePlaybackState();
-  // const { position, duration } = useTrackPlayerProgress();
-  const handlePlayPause = async () => {
-    // if (playbackState === TrackPlayer.STATE_PLAYING) {
-      await TrackPlayer.pause();
-      setPaused(true);
-      console.log('paused');
-    // } else {
-    // await TrackPlayer.stop();
-    // setPaused(false);
-    // }
-  };
+//   const BookMarkThePara=async()=>{
+//     let data=null,firstGetData2, addingPreviousData;;
+//     juzData.map((item,index)=>{
+      
+//       // data=item.number==selectColor?item:null;
+//       if (selectColor==item.number){
+//         data={
+//           ParaName: surahName,
+//           paraId: item.juz,
+//           ayaId: item.number,
+//           // ayaId: data.id,
+//           ayaText: item.text,
+//         };
+//       }
+//       })
+//       // console.log("data", data);
+
+
+//         const firstGetData = JSON.parse(await AsyncStorage.getItem("ParBookMark"));
+//         // console.log("this is firstGetData",firstGetData);
+      
+//         if (firstGetData == null) {
+//           // console.log('null data');
+//           addingPreviousData = [data];
+//         } else {
+//           // firstGetData2 = firstGetData;
+//           firstGetData2=firstGetData.filter((item) => item.ayaId !== data.ayaId);
+//           addingPreviousData = firstGetData2? [...firstGetData2, data]: [data];
+//         }
+//         // const firstGetData=await AsyncStorage.getItem(selectColor.toString());
+//         // if (firstGetData==null){
+          
+//         //   BookMarkThePara(item);
+//          await AsyncStorage.setItem("ParBookMark",JSON.stringify(addingPreviousData));
+//         //   console.log("first time bookmarked");
+        
+      
+    
+   
+  
+//   // console.log(bookMarParaAya);
+// //   // item.id.toString() ======> this is aya id
+  
+//   // console.log(addingPreviousData);
+
+// //   await AsyncStorage.setItem(
+// //     'bookMarkAya',
+// //     JSON.stringify(addingPreviousData),
+// //   );
+// // };
+    
+
+//   }
 
   const handlePlay = async () => {
     await TrackPlayer.play();
@@ -201,23 +312,25 @@ const Para_Juz = ({route}) => {
     <>
       <StatusBar backgroundColor="#104586" />
       <View style={styles.container}>
+       
         <View style={styles.heading}>
           <TouchableOpacity
+
             onPress={() => {
-              navigation.navigate('Home');
+              lastReadStoreAya();
+              navigation.navigate('PARA');
             }}
             style={{
               width: WP('10'),
               height: HP('5'),
               justifyContent: 'center',
-              paddingLeft: WP('2'),
             }}>
-            <Icon name="arrow-back-ios" size={30} color="white" />
+            <Icon name="arrow-back-ios" size={25} color="white" />
           </TouchableOpacity>
           <Text style={styles.headText}>{PARAS[juz - 1].name}</Text>
           <Icon
             name="list"
-            size={30}
+            size={25}
             color="transparent"
             style={{marginLeft: 10}}
           />
@@ -245,22 +358,23 @@ const Para_Juz = ({route}) => {
             <ScrollView style={styles.scroll}>
               <Text style={styles.surahPage} adjustsFontSizeToFit>
                 {juzData &&
-                  juzData.map((ayat, index) => (
-                    // <TouchableOpacity onPress={()=>console.log(index)}>
+                  juzData.map((ayat, index) => 
+                    
+               
+                   ( 
+                    <>
+                    
                     <Text
                       key={index}
-                      allowFontScaling={false}
+                      allowFontScaling={true}
                       selectable={true}
-                      style={{}}
-                      onPress={() => {
-                        if (isPlaying == false) {
-                          setIsPlaying(true);
-                          // setSelectColor(null)
-                        } else if (isPlaying == true) {
-                          setIsPlaying(true);
-                          setSelectColor(index);
-                          playAudio(ayat.number, ayat);
-                        }
+                      style={{ textAlign:"right",fontSize:SC(22)}}
+                      onPress={async() => {
+                        
+                        setAyatNumber({ayatNumber:ayat.number,ayat:ayat})
+                        // addUrls(verseNumber,ayatNumber.ayat);
+
+                        setSelectColor(ayat.number);
                         console.log(ayat.number, isPlaying);
                         // setIsPlayerReady(false)
                       }}>
@@ -285,8 +399,13 @@ const Para_Juz = ({route}) => {
                         {'\u{FD3F}' + (index + 1) + '\u{FD3E}' + '\b'}
                       </Text>
                       {/* </TouchableOpacity> */}
+                      
                     </Text>
-                  ))}
+                    </>)
+
+                  
+                  
+                  )}
               </Text>
             </ScrollView>
           ) : (
@@ -301,64 +420,80 @@ const Para_Juz = ({route}) => {
             </View>
           )}
         </View>
-        <View style={{flex: 1 / 7, backgroundColor: 'red'}}>
+        <View style={{ backgroundColor: '#104586',}}>
           <View
             style={{
               flexDirection: 'row',
-              backgroundColor: 'black',
+              // backgroundColor: '#105582',
               paddingHorizontal: WP('3'),
               paddingVertical: HP('1'),
-            }}>
-            <Icon name="settings" size={30} color={'white'} />
-            <Text
-              style={{
-                color: 'white',
-                alignSelf: 'center',
-                flex: 1,
-                textAlign: 'center',
-                fontSize: SC(20),
-              }}>
-              {surahName}
-            </Text>
-            <Text
-              style={{
-                color: 'white',
-                alignSelf: 'center',
-                flex: 1,
-                textAlign: 'center',
-                fontSize: SC(20),
-              }}>
-              {getIndex - 1}
-              {selectColor}
-            </Text>
-            {/* <Icon name='skip-next' size={30} /> */}
-          </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              backgroundColor: 'red',
-              paddingHorizontal: WP('3'),
-              alignSelf: 'center',
+              justifyContent:"space-between",
               alignItems: 'center',
             }}>
-            <Icon name="bookmark-border" size={30} color={'white'} />
+            {/* <Icon name="settings" size={30} color={'white'} /> */}
+            <TouchableOpacity 
+                onPress={async()=>{
+                  BookMarkThePara();
+                }}
+              >
+                <Icon name="bookmark-border" size={30} color={'white'} />
+              </TouchableOpacity>
             {isPlaying ? (
               <TouchableOpacity
+              style={{}}
                 onPress={() => {
                   stopAudio();
-                  // setIsPlaying(true)
-                }}>
-                <Icon1 name="play-circle-outline" size={30} color={'white'} />
-              </TouchableOpacity>
-            ) : (
-              <TouchableOpacity
-              onPress={() => {
-                  handlePlay();
+                  
+                     console.log("not working");
+                  
+                  setIsPlaying(false)
                 }}>
                 <Icon1 name="stop-circle-outline" size={30} color={'white'} />
               </TouchableOpacity>
+            ) : (
+              <TouchableOpacity
+              style={{ }}
+              onPress={async() => {
+                // stopAudio();
+                // if (updateAya>0){
+                //   await TrackPlayer.play();
+                // }
+                // else{
+                  console.log("ayatNumber",ayatNumber);
+                  playAudio(ayatNumber.ayatNumber,ayatNumber.ayat);
+                  // setIsPlaying(true);
+                // }
+                setIsPlaying(true);
+                
+                }}>
+                <Icon1 name="play-circle-outline" size={30} color={'white'} />
+              </TouchableOpacity>
             )}
+            <TouchableOpacity 
+              onPress={async()=>{
+                if (ayatNumber.ayatNumber==null){
+                  alert('Please Select Ayat')
+                }
+                else{
+                  navigation.navigate("Tajweed",{ayatData:ayatNumber})
+                }
+              
+              }}
+            >
+                <Text
+                  style={{
+                    color: 'white',
+                    alignSelf: 'center',
+                    alignItems:"center",
+                    fontSize: SC(15),
+                  }}>
+                  Tajweed
+                </Text>
+              </TouchableOpacity>
+           
+            
           </View>
+          
         </View>
       </View>
     </>
@@ -379,45 +514,42 @@ const styles = StyleSheet.create({
     backgroundColor: '#112',
   },
   heading: {
-    flex: 0.1,
+    // flex: 0.1,
     backgroundColor: '#104586',
     flexDirection: 'row',
     // justifyContent:"space-evenly",
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     marginBottom: HP('1'),
+    paddingHorizontal: WP('4'),
   },
   headText: {
     fontSize: SC(25),
-    fontWeight: 'bold',
-    justifyContent: 'space-evenly',
-    fontFamily: 'serif',
+    fontFamily:'Amiri-Regular',
     color: 'white',
     marginLeft: WP('5'),
   },
   scroll: {
     flex: 1,
-    // padding: 7,
   },
   surahPage: {
     flex: 1,
-    marginBottom: 20,
-    marginTop: 15,
-    // alignSelf:'center',
-    fontSize: SC(23),
-    // flexWrap:"wrap",
-    lineHeight: HP('5'),
-    // backgroundColor:"red",
-    paddingRight: WP('2'),
-    paddingLeft: WP('4'),
+    fontSize: SC(26),
+    lineHeight:50,
+
+    paddingHorizontal:10,
+    writingDirection:'auto',
     textAlign: 'justify',
-    fontWeight: '600',
+    fontFamily:'Amiri-Regular',
+
+  },
+  
+  ayat: {
+   
   },
 
-  ayat: {},
-
   number: {
-    fontSize: SC(18),
+    fontSize: SC(16),
     color: '#104586',
   },
   selectedText: {
