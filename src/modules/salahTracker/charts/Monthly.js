@@ -174,19 +174,20 @@ export default function Monthly() {
 
   
   const chartConfig = {
-    backgroundGradientFrom: "#273B69",
-    backgroundGradientTo: "#273B69",
+    backgroundGradientFrom: "#fff",
+    backgroundGradientTo: "#fff",
     backgroundGradientFromOpacity: 1,
     barPercentage: 0.6,
-    // fillShadowGradient: 'green',
+    fillShadowGradient: '#1A2A52',
     fillShadowGradientOpacity: 1,
     decimalPlaces: 0, // optional, defaults to 2dp
-    color: (opacity = 1) => `rgba(0,0,0, 1)`,
-    labelColor: (opacity = 1) => `rgb(180,4,50)`,
+    color: (opacity = 1) => "#1A2A52",
+    labelColor: (opacity = 1) => "#1A2A52",
     propsForBackgroundLines: {
-      strokeWidth: .5,
-      stroke: "#e3e3e3",
+      strokeWidth: 1,
+      stroke: "#1A2A52",
       strokeDasharray: "1",
+      // color: "#1A2A52",
       
       
     },
@@ -219,7 +220,7 @@ const monthstringnames=["Jan",
     ],
     legend: ["Fajr", "Dhuhr", "Asr", "Maghrib", "Isha","Nafl"],
     data: chartData,
-    barColors: ["#b07939", "#fce570", "#FAD6A5", "#552E7D", "#211463","#FF5733"],
+    barColors: ["#4bc0f0", "#edd76a", "#f39367", "#8d9bdd", "#965498","green"],
   };
 
 
@@ -241,7 +242,7 @@ const monthstringnames=["Jan",
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#273B69",
+    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },

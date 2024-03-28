@@ -12,9 +12,9 @@ const ApiProvider = ({children}) => {
   const [calculatestreak,setCalculatestreak]=useState(0);
   const [streakstartdate,setStreakstartdate]=useState([]);
   const [location, setLocation] = useState(null);
-
   const [remtime, setRemtime] = useState(0); //   remianing time
   const [latlang,setLantlang] = useState("");
+  const [isVisible,setIsVisible]=useState(false); // using for model updown
 
 
 
@@ -34,8 +34,8 @@ const ApiProvider = ({children}) => {
 
   const value = useMemo(() => ({
     
-    chartData,setChartData,backupdata,setBackupdata,countstreak,setCountstreak, longeststreak,setLongeststreak,today,setToday,calculatestreak,setCalculatestreak,streakstartdate,setStreakstartdate,last4months,setLast4months,streakdates,setStreakdates,markdates,setMarkdates, remtime,setRemtime,latlang,setLantlang,
-  }), [chartData,backupdata,countstreak,longeststreak,today,calculatestreak,streakstartdate,last4months,streakdates,markdates,remtime,latlang]);
+    chartData,setChartData,backupdata,setBackupdata,countstreak,setCountstreak, longeststreak,setLongeststreak,today,setToday,calculatestreak,setCalculatestreak,streakstartdate,setStreakstartdate,last4months,setLast4months,streakdates,setStreakdates,markdates,setMarkdates, remtime,setRemtime,latlang,setLantlang,isVisible,setIsVisible
+  }), [chartData,backupdata,countstreak,longeststreak,today,calculatestreak,streakstartdate,last4months,streakdates,markdates,remtime,latlang,isVisible]);
 
     return(
         <ChartsContext.Provider value={value}>
