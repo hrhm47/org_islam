@@ -7,7 +7,8 @@ import HomeScreenMain from '../../modules/homeScreen/HomeScreenMain';
 const HomePage = () => {
     return (
       <SafeAreaView style={styles.container}>
-        <Header/>
+        
+        {/* <Header/> */}
         <HomeScreenMain/>
         
     </SafeAreaView>
@@ -18,10 +19,10 @@ const HomePage = () => {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#0F2247', //'#004C9B'
+      backgroundColor: 'white', //'#004C9B'
       alignItems: 'center',
       justifyContent: 'flex-start',
-      paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
+      // paddingTsop: Platform.OS === "android" ? StatusBar.currentHeight/2 : 0
     },
   });
 

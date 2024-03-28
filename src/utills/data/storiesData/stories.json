@@ -1,0 +1,32 @@
+{
+    "prophetStories": [
+      {
+        "name": "Prophet Adam",
+        "description": "The story of Prophet Adam, the first human being created by Allah. He was placed in the Garden of Eden and was given the responsibility to worship and obey Allah. However, he and his wife, Hawwa (Eve), were tempted by Satan and ate from the forbidden tree. They were then sent down to Earth as a test and were granted repentance and forgiveness by Allah.",
+        "lessons": [
+          "Importance of obeying Allah's commands",
+          "Consequences of giving in to temptation",
+          "The power of repentance and seeking forgiveness"
+        ]
+      },
+      {
+        "name": "Prophet Ibrahim",
+        "description": "The story of Prophet Ibrahim, known for his unwavering faith and willingness to sacrifice. He was chosen by Allah as His close friend and was tested in various ways. One of the most significant tests was when he was commanded to sacrifice his son, Ismail. However, Allah replaced Ismail with a ram at the last moment, demonstrating Prophet Ibrahim's complete submission to Allah's will.",
+        "lessons": [
+          "Importance of unwavering faith and trust in Allah",
+          "Readiness to sacrifice for the sake of Allah",
+          "Allah's mercy and provision in times of trial"
+        ]
+      },
+      {
+        "name": "Prophet Muhammad",
+        "description": "The story of Prophet Muhammad, the final messenger of Allah. He was born in Makkah, faced many challenges and opposition from the Quraysh tribe, and eventually migrated to Madinah. Prophet Muhammad received the revelation of the Quran and spent his life spreading the message of Islam. His exemplary character, teachings, and leadership continue to inspire millions of people around the world.",
+        "lessons": [
+          "Exemplary character and leadership qualities",
+          "The importance of unity and community",
+          "Spreading the message of Islam with wisdom and compassion"
+        ]
+      }
+    ]
+  }
+  

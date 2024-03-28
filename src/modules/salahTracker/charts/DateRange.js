@@ -158,11 +158,11 @@ export default function DataRange() {
     }
   };
   const chartConfig = {
-    backgroundGradientFrom: "#FFF8EB",
-    backgroundGradientTo: "#FFF8EB",
+    backgroundGradientFrom: "#FFF",
+    backgroundGradientTo: "#FFF",
     barPercentage: 0.7,
     height: 600,
-    fillShadowGradient: `rgba(113, 12, 05, 1)`,
+    fillShadowGradient: "#104586",
     fillShadowGradientOpacity: 1,
     decimalPlaces: 0, 
     color: () => `rgba(123, 122, 205,1)`,
@@ -217,9 +217,9 @@ export default function DataRange() {
                   fontSize: RFValue(16, 680),
                   fontWeight: "bold",
                   letterSpacing: 2,
-                  color: "black",
+                  color: "#fff",
                   position: "relative",
-                  backgroundColor: "lightgreen",
+                  backgroundColor: "#1A2A52",
                   padding: 3,
                   textAlign:"center",
                   borderRadius: 4,
@@ -287,10 +287,10 @@ export default function DataRange() {
                   fontSize: RFValue(16, 680),
                   fontWeight: "bold",
                   // letterSpacing: 2,
-                  color: "black",
+                  color: "#fff",
                   // marginBottom: 10,
                   // position: "relative",
-                  backgroundColor: "lightgreen",
+                  backgroundColor: "#1A2A52",
                   padding: 3,
                   textAlign:"center",
                   borderRadius: 4,
@@ -370,27 +370,27 @@ export default function DataRange() {
             defaultButtonText={selectedValue[0]}
             ref={dropdownRef}
             buttonStyle={styles.dropdown3BtnStyle}
-           buttonTextStyle={{color:'black',fontSize:RFValue(17, 680),fontWeight:'bold',letterSpacing:2}}
+           buttonTextStyle={{color:'#fff',fontSize:RFValue(15, 680)}}
             dropdownStyle={styles.dropdown3DropdownStyle}
             rowStyle={styles.dropdown3RowStyle}
            rowTextStyle={{fontSize:RFValue(20, 680), color:"navy",fontWeight:"bold"}}
-           selectedRowTextStyle={{backgroundColor:"lightgreen",color:"black",fontWeight:"bold", borderRadius:20}}
+           selectedRowTextStyle={{backgroundColor:"#104586",color:"#fff",fontWeight:"bold", borderRadius:20}}
           />
             </View>
             <View>
               <TouchableOpacity style={styles.Btn} onPress={() => filterData()}>
-                <Text style={{ color: "white" }}>Filter</Text>
+                <Text style={{ color: "white",fontSize:RFValue(15,680) }}>Filter</Text>
               </TouchableOpacity>
 
               <TouchableOpacity style={styles.Btn} onPress={()=>{setFromdate(); setTodate(); setBackupdata([]); setChartData([]);dropdownRef.current.reset();}}>
-                <Text style={{ color: "white" }}>Clear</Text>
+                <Text style={{ color: "white",fontSize:RFValue(15,680) }}>Clear</Text>
               </TouchableOpacity>
             </View>
           </View>
         </View>
         
         <BarChart
-          style={{ bottom: 20,backgroundColor:"#FFF8EB"}}
+          style={{ bottom: 20,backgroundColor:"#FFF"}}
           fromZero={true}
           
           data={data}
@@ -407,7 +407,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     // top: 1,
-    backgroundColor: "#FFF8EB",
+    backgroundColor: "#FFF",
     // width: 360,
   },
   datePicker: {
@@ -445,12 +445,12 @@ const styles = StyleSheet.create({
     marginLeft:0,
     width: "100%",
     borderRadius: 10,
-    backgroundColor: "lightblue",
+    backgroundColor: "#104586",
   },
   Btn: {
     marginTop: 5,
     alignItems: "center",
-    backgroundColor: "darkblue",
+    backgroundColor: "#104586",
     borderRadius: 5,
     padding: 8,
     width: "100%",
@@ -459,7 +459,7 @@ const styles = StyleSheet.create({
   dropdown3BtnStyle: {
     width: '100%',
     height: 35,
-    backgroundColor: 'lightgreen',
+    backgroundColor: '#104586',
     paddingHorizontal: 0,
     borderRadius: 5,
   },
@@ -470,9 +470,9 @@ const styles = StyleSheet.create({
     fontSize: RFValue(24, 680),
     marginHorizontal: 12,
   },
-  dropdown3DropdownStyle: {backgroundColor: '#FFF8EB',borderRadius:20},
+  dropdown3DropdownStyle: {backgroundColor: '#FFF',borderRadius:20},
   dropdown3RowStyle: {
-    backgroundColor: '#FFF8EB',
+    backgroundColor: '#FFF',
     // borderBottomWidth:5,
     borderColor: '#888',
     height: 40,
