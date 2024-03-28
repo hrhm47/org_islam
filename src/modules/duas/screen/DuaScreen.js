@@ -34,10 +34,11 @@ const DuaScreen = () => {
 
   return (
     <View style={styles.container}>
-      <View style={{width:"100%",backgroundColor:"#104586",height:HP('8'), justifyContent:"center", alignItems:"center",}}>
-
+      <View style={{width:"100%",backgroundColor:"#104586",height:HP('8'), justifyContent:"space-around", alignItems:"center",flexDirection:"row"}}>
+      <Icon name="arrow-back" size={SC(30)} color="#fff" style={{left:10}} onPress={()=>navigation.goBack()}/>
       <Text style={{ color:"#fff",
         fontSize:SC(23),fontWeight:"bold",letterSpacing:1,textAlign:"center"}}>Dhikr & Dua's</Text>
+        <Icon name="arrow-back" size={SC(30)} color="transparent" style={{left:10}}/>
         </View>
 
         <FlatList

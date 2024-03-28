@@ -21,7 +21,7 @@ import {
 } from '../../../utills/pixelratio';
 import {useNavigation, useIsFocused} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import TrackPlayer, { TrackType } from 'react-native-track-player';
+import TrackPlayer,{ TrackType,  } from 'react-native-track-player';
 
 import {setupPlayer, addTracks} from '../../../../trackServices.js';
 
@@ -78,13 +78,6 @@ const Para_Juz = ({route}) => {
     // setJuzData(ayaData?ayaData:null)
   };
 
-  // calculate time for slow internet
-  const calculateTime = () => {
-    console.log('calculating time');
-    setInterval(() => {
-      setInternetIsSlow(true);
-    }, 1000);
-  };
 
  const lastReadStoreAya = async () => {
   let data;
@@ -122,23 +115,14 @@ const Para_Juz = ({route}) => {
       return true;
     }
   }
-  const emptyQueue=async()=>{
-    let queue = await TrackPlayer.getQueue();
-        if (queue.length > 0) {
-          await TrackPlayer.reset();
-          await TrackPlayer.stop();
-          await TrackPlayer.destroy();
-          await TrackPlayer.clearNowPlayingMetadata();
-          await TrackPlayer.removeUpcomingTracks();
-          console.log("queue",queue);
-          // callSetup()
-        }
-  }
+
   const addUrls=async(ayatNumber,ayat)=>{
         console.log("ayatNumber",ayatNumber);
-        callSetup().then(async(res)=>{
-          if(res){
+        const setupReady=await setupPlayer();
+        
+          if(setupReady){
 
+            await TrackPlayer.reset();
             const startingAyat = ayatNumber
             const endingAyat = juzData[juzData.length - 1].number;
             const tracks = ArrayofUrl(
@@ -146,97 +130,34 @@ const Para_Juz = ({route}) => {
               endingAyat,
               'ar.abdulbasitmurattal',
             );
-            emptyQueue();
             for (const url of tracks) {
             
               await TrackPlayer.add({
                 url: url.url,
                 id: url.id,
+              }).then(async res=>{
+                await TrackPlayer.play();
               })
             }}
-        })
-        // let queue = await TrackPlayer.getQueue();
-        // if (queue.length > 0) {
-        //   await TrackPlayer.reset();
-        // }
-        
-      
-    //   // console.log("issetup",isSetup,"queue", queue);
-    
-    
-    // const startingAyat = ayatNumber.ayatNumber
-    // const endingAyat = juzData[juzData.length - 1].number;
-    // const tracks = ArrayofUrl(
-    //   startingAyat,
-    //   endingAyat,
-    //   'ar.abdulbasitmurattal',
-    // );
-    // if (setup){
-    //   for (const url of tracks) {
-    //     // console.log(url);
-    //     await TrackPlayer.add({
-    //       url: url.url,
-    //       id: url.id,
-    //     })
-    //   }
-    // }else{
-    //   await TrackPlayer.reset();
-    //   await setupPlayer();
-    //   for (const url of tracks) {
-    //     // console.log(url);
-    //     await TrackPlayer.add({
-    //       url: url.url,
-    //       id: url.id,
-    //     })
-    //   }
-
-    // }
+            else{
+              // console.log("not setup");
+            }
   }
   const playAudio = async (verseNumber, ayat) => {
-    // console.log("verseNumber",verseNumber);
     addUrls(verseNumber,ayatNumber.ayat);
-    await TrackPlayer.play()
-
-
-    // TrackPlayer.destroy();
-    // const startingAyat = ayat.number ? ayat.number : juzData[0].number;
     const startingAyat = ayatNumber.ayatNumber;
-    // const endingAyat = juzData[juzData.length - 1].number;
-    // audioPlayer();
    
-    // console.log('tracks', tracks[0]);
-    let flag = false;
-    // if (startingAyat)
-    // await TrackPlayer.getQueue().then(res => {
-    //   console.log('res', res.map(item => item));
-    // })
-    // if (TrackPlayer.isServiceRunning()) {
-    //   console.log('service is running');
-    //   await TrackPlayer.pause();
-    //   // await TrackPlayer.reset();
-    //   await TrackPlayer.removeUpcomingTracks();
-    // }
-    // console.log(await TrackPlayer.getQueue());
-    // await TrackPlayer.play()
-    // .then(async res => {
-      // console.log('res', res);
-      // console.log("not null");
-    // })
-    // try {
-    // } catch (error) {
-    // }
     TrackPlayer.addEventListener('playback-track-changed', async event => {
       if (event.nextTrack !== null) {
         // Get the current track index
         const currentTrackIndex = await TrackPlayer.getCurrentTrack();
         if (currentTrackIndex == (await TrackPlayer.getCurrentTrack())) {
-          // update=update+1;
+         
           console.log(
             'current track index update once',
             startingAyat + currentTrackIndex,
           );
           setSelectColor(startingAyat + currentTrackIndex);
-          // setUpdateAya(startingAyat + currentTrackIndex);
           setAyatNumber({ayatNumber:startingAyat + currentTrackIndex,ayat:ayat})
         }
       }
@@ -246,67 +167,6 @@ const Para_Juz = ({route}) => {
     
   };
 
-//   const BookMarkThePara=async()=>{
-//     let data=null,firstGetData2, addingPreviousData;;
-//     juzData.map((item,index)=>{
-      
-//       // data=item.number==selectColor?item:null;
-//       if (selectColor==item.number){
-//         data={
-//           ParaName: surahName,
-//           paraId: item.juz,
-//           ayaId: item.number,
-//           // ayaId: data.id,
-//           ayaText: item.text,
-//         };
-//       }
-//       })
-//       // console.log("data", data);
-
-
-//         const firstGetData = JSON.parse(await AsyncStorage.getItem("ParBookMark"));
-//         // console.log("this is firstGetData",firstGetData);
-      
-//         if (firstGetData == null) {
-//           // console.log('null data');
-//           addingPreviousData = [data];
-//         } else {
-//           // firstGetData2 = firstGetData;
-//           firstGetData2=firstGetData.filter((item) => item.ayaId !== data.ayaId);
-//           addingPreviousData = firstGetData2? [...firstGetData2, data]: [data];
-//         }
-//         // const firstGetData=await AsyncStorage.getItem(selectColor.toString());
-//         // if (firstGetData==null){
-          
-//         //   BookMarkThePara(item);
-//          await AsyncStorage.setItem("ParBookMark",JSON.stringify(addingPreviousData));
-//         //   console.log("first time bookmarked");
-        
-      
-    
-   
-  
-//   // console.log(bookMarParaAya);
-// //   // item.id.toString() ======> this is aya id
-  
-//   // console.log(addingPreviousData);
-
-// //   await AsyncStorage.setItem(
-// //     'bookMarkAya',
-// //     JSON.stringify(addingPreviousData),
-// //   );
-// // };
-    
-
-//   }
-
-  const handlePlay = async () => {
-    await TrackPlayer.play();
-    console.log('playing');
-    
-    setIsPlaying(true)
-    // setPaused(true);
-  };
 
   return (
     <>
@@ -376,9 +236,8 @@ const Para_Juz = ({route}) => {
 
                         setSelectColor(ayat.number);
                         console.log(ayat.number, isPlaying);
-                        // setIsPlayerReady(false)
+                        
                       }}>
-                      {/* <TouchableOpacity style={styles.ayat}> */}
                       <Text
                         selectable={true}
                         style={[
@@ -390,7 +249,7 @@ const Para_Juz = ({route}) => {
                         ]}>
                         {ayat.text + '\b'}
                       </Text>
-                      {/* <Text style={styles.number}>&#1757;{"\b"}</Text> */}
+                      
                       <Text
                         style={[
                           styles.number,
@@ -398,7 +257,7 @@ const Para_Juz = ({route}) => {
                         ]}>
                         {'\u{FD3F}' + (index + 1) + '\u{FD3E}' + '\b'}
                       </Text>
-                      {/* </TouchableOpacity> */}
+                      
                       
                     </Text>
                     </>)
@@ -436,7 +295,7 @@ const Para_Juz = ({route}) => {
                   BookMarkThePara();
                 }}
               >
-                <Icon name="bookmark-border" size={30} color={'white'} />
+                <Icon name="bookmark-border" size={30} color={'transparent'} />
               </TouchableOpacity>
             {isPlaying ? (
               <TouchableOpacity
@@ -454,15 +313,9 @@ const Para_Juz = ({route}) => {
               <TouchableOpacity
               style={{ }}
               onPress={async() => {
-                // stopAudio();
-                // if (updateAya>0){
-                //   await TrackPlayer.play();
-                // }
-                // else{
-                  console.log("ayatNumber",ayatNumber);
+               
                   playAudio(ayatNumber.ayatNumber,ayatNumber.ayat);
-                  // setIsPlaying(true);
-                // }
+                  
                 setIsPlaying(true);
                 
                 }}>
@@ -533,21 +386,20 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   surahPage: {
-    flex: 1,
-    fontSize: SC(26),
+    // flex: 1,
+    width: WP('100'),
+    fontSize: SC(23),
     lineHeight:50,
 
-    paddingHorizontal:10,
+    // paddingRight:4,
+    // paddingLeft:4,
     writingDirection:'auto',
     textAlign: 'justify',
     fontFamily:'Amiri-Regular',
 
   },
   
-  ayat: {
-   
-  },
-
+  ayat: {},
   number: {
     fontSize: SC(16),
     color: '#104586',

@@ -143,7 +143,9 @@ function TabNavigation() {
 // ================================ Salah Times Navigation ================================
 function SalahTimesNavigator() {
   return (
-    <SalahTimeStack.Navigator>
+    <SalahTimeStack.Navigator
+    initialRouteName="SalahTimes"
+      screenOptions={{headerShown: false}}>
       <SalahTimeStack.Screen
         name="SalahTimes"
         component={ApiCall}
@@ -240,7 +242,7 @@ const App = () => {
       // Simulate an asynchronous task, e.g., loading necessary data or assets
       setTimeout(() => {
         setAppReady(true);
-      }, 2000); // 3 seconds delay for demonstration purposes, replace with your actual loading logic
+      }, 1500); // 3 seconds delay for demonstration purposes, replace with your actual loading logic
     }, []);
   
   

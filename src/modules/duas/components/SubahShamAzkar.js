@@ -24,8 +24,8 @@ console.log('route.params.item',data);
             renderItem={({ item,index }) => {
                 return (
                     <View style={{backgroundColor:"#104586", margin:HP('2'),borderWidth:3,borderColor:"lightgrey", borderRadius:10, alignSelf:"auto", paddingVertical:HP('1'), paddingHorizontal:WP('1')}}>
-                        <Text style={{color:"#fff", paddingHorizontal:WP('1'), lineHeight:HP('5'), fontSize:SC(18), fontFamily:"JannatRegular", letterSpacing:2}}>{item.dua}</Text>
-                        <Text style={{color:"#fff", paddingHorizontal:WP('1'), lineHeight:HP('5'), fontSize:SC(18), fontFamily:"JannatRegular"}}>{item.translation}</Text>
+                        <Text style={{color:"#fff", paddingHorizontal:WP('1'), lineHeight:HP('5'), fontSize:SC(20), fontFamily:"Amiri-Regular", letterSpacing:2}}>{item.dua}</Text>
+                        <Text style={{color:"#fff", paddingHorizontal:WP('1'), lineHeight:HP('5'), fontSize:SC(18), fontFamily:"Amiri-Regular"}}>{item.translation}</Text>
                         <Text style={{color:"#fff", textAlign:"center", fontSize:SC(16)}}>{item.reference}</Text>
                     
                         </View>
@@ -40,7 +40,7 @@ console.log('route.params.item',data);
             renderItem={({ item,index }) => {
                 return (
                     <View style={{backgroundColor:"#104586", margin:HP('2'),borderWidth:3,borderColor:"lightgrey", borderRadius:10, alignSelf:"auto", paddingVertical:HP('1'), paddingHorizontal:WP('1')}}>
-                        <Text style={{color:"#fff", paddingHorizontal:WP('1'), lineHeight:HP('5'), fontSize:SC(18), fontFamily:"JannatRegular"}}>{item.zekr}</Text>
+                        <Text style={{color:"#fff", paddingHorizontal:WP('1'), lineHeight:HP('5'), fontSize:SC(20), fontFamily:"Amiri-Regular"}}>{item.zekr}</Text>
                         <Text style={{color:"#fff", textAlign:"center", fontSize:SC(16)}}>{item.repeat} {item.repeat>1?"Times":"Time"}</Text>
                     
                         </View>

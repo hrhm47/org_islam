@@ -46,15 +46,27 @@ export default function Surah({route,navigation}) {
                         <MenuOption>
                             <Text style={{color:"black"}}>Translations</Text>
                             <MenuOptions >
-                                <MenuOption onSelect={() => {setSelectTranslation('ur')}} text='Urdu' />
-                                <MenuOption onSelect={() => {setSelectTranslation('en')}} text='English' />
-                                <MenuOption onSelect={() => {setSelectTranslation('tr')}} text='Turkish' color= 'black'/>
+                                <MenuOption onSelect={() => {setSelectTranslation('ur')}}>
+                                    <Text style={{color:"black"}}>Urdu</Text>
+                                </MenuOption>
+                                <MenuOption onSelect={() => {setSelectTranslation('en')}}>
+                                <Text style={{color:"black"}}>English</Text>
+                                </MenuOption>
+                                <MenuOption onSelect={() => {setSelectTranslation('tr')}}>
+                                <Text style={{color:"black"}}>Turkish</Text>
+                                </MenuOption>
                             </MenuOptions>
                             <Text style={{color:"black"}}>Qaries</Text>
                             <MenuOptions>
-                                <MenuOption onSelect={() => {setSelectQari('ar.abdulbasitmurattal')}} text='Abdul Basit'/>
-                                <MenuOption onSelect={() => {setSelectQari('ar.abdullahbasfar')}} text='Abdullah Basfar' />
-                                <MenuOption onSelect={() => {setSelectQari('ar.abdurrahmaansudais')}} text='Abdurrahmaan As-Sudais' />
+                                <MenuOption onSelect={() => {setSelectQari('ar.abdulbasitmurattal')}}>
+                                        <Text style={{color:"black"}}>Abdul Basit</Text>
+                                </MenuOption>
+                                <MenuOption onSelect={() => {setSelectQari('ar.abdullahbasfar')}} >
+                                    <Text style={{color:"black"}}>Abdullah Basfar</Text>
+                                </MenuOption>
+                                <MenuOption onSelect={() => {setSelectQari('ar.abdurrahmaansudais')}}>
+                                    <Text style={{color:"black"}}>Abdurrahmaan As-Sudais</Text>
+                                </MenuOption>
                             </MenuOptions>
                         </MenuOption>
                         </MenuOptions> 

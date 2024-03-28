@@ -63,7 +63,7 @@ export default function SalahTimes() {
 
 
     // ,_handleAppStateChange)
-    const _handleAppStateChange=AppState.addEventListener("change",(nextAppState)=>{
+    AppState.addEventListener("change",(nextAppState)=>{
 
        if (appstate.current.match(/inactive|background/) && nextAppState==='active'){
         BackgroundTimer.stopBackgroundTimer();
@@ -127,8 +127,8 @@ export default function SalahTimes() {
           },1000);
         }
 
-        _handleAppStateChange.remove()
       })
+
 async function checkNotificationPermission() {
   const settings = await notifee.getNotificationSettings();
 // console.log(settings.authorizationStatus);
@@ -703,14 +703,14 @@ async function setLocalData(localdata){
 }
   
     // storing data on alarm state changing
-    useEffect(()=>{
-     
-     const handler= BackHandler.removeEventListener('hardwareBackPress', (handleBackPress)=>{
-        console.log("back press",handleBackPress);
-        navigation.navigate("Home");
-        handler.remove();
+    // BackHandler.removeEventListener('hardwareBackPress', (handleBackPress)=>{
+    //    console.log("back press",handleBackPress);
+    //    navigation.navigate("Home");
+      //  handler.remove();
+   
 
-      });
+    // });
+    useEffect(()=>{
       
       
       checkNotificationPermission();
@@ -1100,8 +1100,8 @@ async function setLocalData(localdata){
           <View style={styles.viewHeading}>
           <TouchableOpacity
               onPress={() =>
-                {navigation.navigate("QuranHome")}}
-                
+                {
+                navigation.navigate("Home");}}
             >
               <Image
                 source={require('./images/leftarrow.png')}
@@ -1135,7 +1135,7 @@ async function setLocalData(localdata){
                 source={require("./images/sunrise.png")}
                 style={{ width: 30, height: 30,tintColor:"#104586"}}
               ></Image>
-              <Text style={{ fontWeight: "400", fontSize: 17,color:"black" }}>
+              <Text style={{ fontWeight: "400", fontSize: 17,color:"#104586" }}>
                 {isready ? times.Sunrise : "Loading..."}
               </Text>
             </View>
@@ -1200,7 +1200,7 @@ async function setLocalData(localdata){
                 </View>
   
                 <Text
-                  style={{ fontWeight: "400", fontSize: 19, letterSpacing: 4,color:"#104586" }}
+                  style={{ fontWeight: "400", fontSize: 19, letterSpacing: 4,color:"black" }}
                 >
                   -------------
                 </Text>
@@ -1239,8 +1239,6 @@ async function setLocalData(localdata){
                   digitTxtStyle={{color:"white"}}
                   timeLabels={{ m: null, s: null }}
                   showSeparator={true}
-                    
-                  
                 
                 />
               ) : null}

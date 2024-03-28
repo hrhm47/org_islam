@@ -176,10 +176,7 @@ const QuranAyat = ({quran, translation, qari, tafseerId, searchText}) => {
     // setUrlInfo({item})
     await axios
       .get(
-        'https://quranenc.com/api/v1/translation/aya/urdu_junagarhi/' +
-          quran.id +
-          '/' +
-          item.id,
+        `https://quranenc.com/api/v1/translation/aya/urdu_junagarhi/${quran.id}/${item.id}`,
       )
       .then(res => {
         setTafsir(res.data.result);

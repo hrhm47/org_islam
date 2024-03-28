@@ -28,7 +28,7 @@ var RNFS = require('react-native-fs');
 const Tajweed = () => {
     const route=useRoute();
     const navigation=useNavigation();
-    console.log(route.params.ayatData);
+    // console.log(route.params.ayatData);
     BackHandler.addEventListener('hardwareBackPress', function() {
         // navigation.navigate('Para');
         navigation.goBack();
@@ -93,7 +93,7 @@ const Tajweed = () => {
               recordTime: audioRecorderPlayer.mmssss(Math.floor(e.currentPosition)),
             });
           });
-          console.log(`uri: ${uri}`);
+          // console.log(`uri: ${uri}`);
         } catch (error) {
           console.log('error', error.message);
         }
@@ -103,14 +103,14 @@ const Tajweed = () => {
         setIsLoading(false);
         setIsListening(true);
         try {
-          const result = await audioRecorderPlayer.stopRecorder();
+           await audioRecorderPlayer.stopRecorder();
     
           audioRecorderPlayer.removeRecordBackListener(recordBackListener);
           setAudioRecord({
             recordSecs: 0,
           });
         //   audioRecorderPlayer.startPlayer(pathUri.path);
-          console.log('path', pathUri.path, result);
+          // console.log('path', pathUri.path, result);
           const recordingDirectory = `${RNFS.DocumentDirectoryPath}/recordings`;
           const recordingPath = `${recordingDirectory}/myrecording.m4a`;
     
@@ -122,10 +122,11 @@ const Tajweed = () => {
             });
             // uploadFile(fileUri)
             const response = await uploadFile(fileUri,route.params.ayatData.ayat.text);
-            setJsonText(response.tajeed);
-            response.surah_no.sort();
-            console.log('response after sort', response.surah_no);
-            setSurah_Nos(response.surah_no);
+            setJsonText({tajweed:response.tajeed,smiliarity:response.similarity});
+            // console.log('response', response.tajeed);
+            // response.surah_no.sort();
+            console.log('response after sort', response);
+            // setSurah_Nos(response.surah_no);
           } else {
             console.log('File not found:', recordingPath);
           }
@@ -133,32 +134,18 @@ const Tajweed = () => {
           console.log('error', err);
         }
       };
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      
 
 
   return (
     <View style={{flex:1, backgroundColor:"#FFF",}}>
-        <View style={{flex:1/10, backgroundColor:"#104586"}}>
+        <View style={{flex:1/7, backgroundColor:"#104586", flexDirection:"row", justifyContent:"space-between"}}>
+          <Icon name="arrow-back" size={30} color="white" style={{padding:10}} onPress={()=>navigation.goBack()}/>
             <Text style={{fontSize:23, color:"white", alignItems:"center", alignSelf:"center", paddingVertical:2}}>Tajweed</Text>
+          <Icon name="arrow-back" size={30} color="transparent" style={{padding:10}} onPress={()=>navigation.goBack()}/>
         </View>
         <View style={{flex:1, backgroundColor:"#fff", alignSelf:"auto", top:10, paddingHorizontal:10}}>
-            <Text style={{fontSize:23, color:"#104586",alignSelf:"auto",}}>{route.params.ayatData.ayat.text}</Text>
+            <Text style={{fontSize:23, color:"#104586",alignSelf:"auto",fontFamily:'Amiri-Regular',}}>{route.params.ayatData.ayat.text}</Text>
             <TouchableOpacity style={{backgroundColor:"grey", width:"50%", alignItems:"center", justifyContent:"center", alignSelf:"center",margin:10, flexDirection:"row", borderRadius:10 }} 
             onPress={() => {
                 isListening ? onStartRecord() : onStopRecord();
@@ -174,36 +161,29 @@ const Tajweed = () => {
             </TouchableOpacity>
                 {/* <Text>Audio Viuusaliszation</Text> */}
         </View>
-            <View style={{flex:1, backgroundColor:"lightgrey", alignSelf:"auto", top:40}}> 
-            {/* <TouchableOpacity onPress={()=>{
-                
-            }}>
-
-            <Text style={{fontSize:23, color:"#104586",alignSelf:"auto",}}>Audio Viuusaliszation</Text>
-            </TouchableOpacity> */}
+            <View style={{flex:1, backgroundColor:"lightblue",alignSelf:"auto", top:30, borderRadius:20}}> 
+            
             {jsonText == null ? (
           // null
           <ActivityIndicator size="large" color="#0000ff" />
         ) : (
         
 
-          (<View style={{flex: 1, backgroundColor: 'white', width: '100%', height:"20%"}}>  
-            <View style={{backgroundColor: 'lightblue'}}>
+          <>
+              <Text style={{fontSize:23, color:"#104586",alignSelf:"auto",fontFamily:'Amiri-Regular', left:10}}> Similarity { Math.round(jsonText.smiliarity,0)} P </Text>
               <FlatList 
-                data={jsonText}
+                data={jsonText.tajweed}
                 renderItem={({item}) => (
                   <>
-                <Text style={{fontSize: 24}}>your voice words{item.word} Actual words{item.correct_word}</Text>
-                {/* <Text style={{fontSize: 24}}>Actual words{item.correct_word}</Text> */}
+                      <Text style={{fontSize: 24,top:0, left:10}}>input- {item.word}  actual-{item.correct_word}</Text>
+                
                   </>
                 )
               }
                 keyExtractor={(item, index) => index.toString()}
               />
-              {/* </ScrollView> */}
-            </View>
                        
-        </View>)
+                       </>
         )}
         </View>
     </View>

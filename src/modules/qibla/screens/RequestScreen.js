@@ -13,8 +13,8 @@ export default function RequestAccess({navigation}) {
   return (
     <View style={styles.container}>
 
-      <ImageBackground source={require('../images/bg3.png')} resizeMode="cover" style={styles.bgImage}>
-      </ImageBackground>
+      {/* <ImageBackground source={require('../images/bg3.png')} resizeMode="cover" style={styles.bgImage}>
+      </ImageBackground> */}
         <View style={styles.inner}>
             <Image source={require('../images/qibla.png')} style={styles.logo}></Image>
             <View style={styles.text}>
@@ -40,17 +40,17 @@ export default function RequestAccess({navigation}) {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      // backgroundColor: '#fff',
+      backgroundColor: '#fff',
       // paddingTop:StatusBar.currentHeight,
     },
     
-    bgImage:{
-      width:responsiveWidth('100'),
-      height:responsiveHeight('100'),
-      justifyContent:'center',
-      flex:1,
-      opacity:1
-    },
+    // bgImage:{
+    //   width:responsiveWidth('100'),
+    //   height:responsiveHeight('100'),
+    //   justifyContent:'center',
+    //   flex:1,
+    //   opacity:1
+    // },
     inner:{
     //   flex:1,
       // flexDirection:'column',
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     },
     text:{
       // flex:1,
-      color:'white',
+      color:'black',
       lineHeight:responsiveHeight('5'),
         alignItems:'center',
         
@@ -78,11 +78,11 @@ const styles = StyleSheet.create({
     },
     title:{
       fontSize:responsiveFontSize(4),
-      color:'white',
+      color:'black',
     lineHeight:responsiveHeight(8),
     },
     subtitle:{
-      color:'white',
+      color:'black',
       textAlign:'center',
         fontSize:responsiveFontSize(2),
         lineHeight:responsiveHeight(3),
@@ -94,17 +94,17 @@ const styles = StyleSheet.create({
      marginTop:responsiveHeight('5'),
       paddingTop:10,
       paddingBottom:10,
-      backgroundColor:'#fff',
+      backgroundColor:'#104586',
       borderRadius:10,
       borderWidth: 1,
       borderColor: '#fff',
-      width:responsiveWidth('57'),
-      height:responsiveHeight('6'),
+      width:responsiveWidth('50'),
+      height:responsiveHeight('7'),
       // shadowColor: "#000",
       // shadowOpacity: 0.25,
     },
     loginText:{
-      color:'#000',
+      color:'#fff',
       // justifyContent:'center',
       textAlign:'center',
   

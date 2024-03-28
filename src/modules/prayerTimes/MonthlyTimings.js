@@ -179,7 +179,7 @@ let mm= new Date().getMonth()+1;
       </View>
     <ScrollView horizontal={true} >
         <Table borderStyle={{borderWidth: 1, borderColor: '#104586'}} >
-          <Row data={state.tableHead} widthArr={state.widthArr} style={styles.header} textStyle={{color:"#104586", textAlign:"center", fontWeight:"bold", fontSize:18}} />
+          <Row data={state.tableHead} widthArr={state.widthArr} style={styles.header} textStyle={{color:"#fff", textAlign:"center", fontWeight:"bold", fontSize:18}} />
         <ScrollView >
           {/* <TableWrapper style={styles.wrapper}> */}
           <Col
@@ -196,7 +196,7 @@ let mm= new Date().getMonth()+1;
                   data={rowData}
                   height={20}
                   widthArr={state.widthArr}
-                  style={[styles.row, index%2 && {backgroundColor: '#fff', color:'#104586'}]}
+                  style={[styles.row, index%2 && {backgroundColor: 'lightgrey', color:'black'}]}
                   textStyle={styles.text}
                 />
                 ))
@@ -219,9 +219,9 @@ const styles = StyleSheet.create({
   month:{justifyContent: 'center',textAlign:'center',  fontSize: 20, fontWeight: 'bold',margin:2,fontFamily: Platform.OS === 'ios' ? 'AvenirNext-DemiBold' : 'monospace', letterSpacing: Platform.OS === 'ios' ? 2: null, color:"#104586"},
   header: { height: 50,fontSize:35, fontWeight: '900',backgroundColor:'#004C9B',padding:10,color:"#fff" },
   title: { backgroundColor:"#fff" },
-  text: { textAlign: 'center', color:"white",fontSize:15,backgroundColor:"#104586"},
+  text: { textAlign: 'center', color:"black",fontSize:15,backgroundColor:"white"},
   dataWrapper: { marginTop: -1 },
-  row: { height: 40,justifyContent:"center", alignItems:"center",backgroundColor:"#0F2247" },
+  row: { height: 40,justifyContent:"center", alignItems:"center",backgroundColor:"white" },
   
   
 })

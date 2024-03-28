@@ -11,7 +11,7 @@ export default function LoadingScreen({navigation}) {
     return (
 
             <View style={styles.container}>
-              <ImageBackground source={require('../images/bg.jpg')} resizeMode="cover" style={styles.bgImage}></ImageBackground>
+              {/* <ImageBackground source={require('../images/bg.jpg')} resizeMode="cover" style={styles.bgImage}></ImageBackground> */}
               <View style={styles.inner}>
                 <Image source={require('../images/qibla.png')} style={styles.logo}></Image>
                 <View style={styles.text}>
@@ -36,8 +36,8 @@ export default function LoadingScreen({navigation}) {
 
 const styles = StyleSheet.create({
     container: {
-        // flex: 1,
-        // backgroundColor: '#fff',
+        flex: 1,
+        backgroundColor: '#fff',
         // paddingTop:StatusBar.currentHeight,
       },
       
@@ -77,10 +77,10 @@ const styles = StyleSheet.create({
       },
       title:{
         fontSize:responsiveFontSize(5),
-        color:'white',
+        color:'#104586',
       },
       subtitle:{
-        color:'white',
+        color:'black',
     
       },
     
@@ -90,17 +90,18 @@ const styles = StyleSheet.create({
        marginTop:responsiveHeight('5'),
         paddingTop:10,
         paddingBottom:10,
-        backgroundColor:'#fff',
+        backgroundColor:'#104586',
         borderRadius:10,
         borderWidth: 1,
         borderColor: '#fff',
-        width:responsiveWidth('60'),
+        width:responsiveWidth('50'),
         height:responsiveHeight('7'),
         // shadowColor: "#000",
         // shadowOpacity: 0.25,
       },
       loginText:{
-        color:'#000',
+        color:'#fff',
+
         // justifyContent:'center',
         textAlign:'center',
     

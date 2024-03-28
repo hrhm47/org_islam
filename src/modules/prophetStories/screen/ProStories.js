@@ -15,7 +15,7 @@ import {
 } from '../../../utills/pixelratio';
 import {PROPHET_STORIES} from '../json/ProphetsStories';
 import { useNavigation } from '@react-navigation/native';
-
+import Icon from 'react-native-vector-icons/MaterialIcons';
 const ProStories = () => {
 
     const naviagtion = useNavigation();
@@ -30,6 +30,7 @@ const ProStories = () => {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
+          <Icon name="arrow-back" size={30} color="#fff" style={{left:10, position:"absolute"}} onPress={()=>naviagtion.goBack()}/>
         <Text
           style={{
             color: '#fff',

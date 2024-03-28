@@ -3,6 +3,8 @@ import React from 'react'
 import axios from 'axios'
 import { heightPercentageToDP, scale, widthPercentageToDP } from '../../../utills/pixelratio'
 import { useNavigation } from '@react-navigation/native'
+import Icon from 'react-native-vector-icons/MaterialIcons'
+
 const Hadith = () => {
     const navigation=useNavigation();
     const [hadithData,setHadithData]=React.useState(null)
@@ -140,9 +142,10 @@ const [langChange,setLangChange]=React.useState(false);
 
   return (
     <View style={{flex:1, backgroundColor:"#104586" }}>
-        <View style={{height:heightPercentageToDP('8'), justifyContent:"center", alignItems:"center"}}>
-
+        <View style={{height:heightPercentageToDP('8'), justifyContent:"space-between", alignItems:"center", flexDirection:"row"}}>
+        <Icon name="arrow-back" size={scale(30)} color="#fff" style={{left:10}} onPress={()=>navigation.goBack()}/>
         <Text style={{fontSize:scale(23), fontWeight:'600', letterSpacing:1, color:"#fff"}}>Hadith</Text>
+        <Icon name="arrow-back" size={scale(30)} color="transparent" style={{left:10}} onPress={()=>navigation.goBack()}/>
         </View>
         <View style={{backgroundColor:"#fff",flex:1/6, paddingHorizontal:10, paddingVertical:10, borderTopLeftRadius:20, borderTopRightRadius:20, paddingTop:heightPercentageToDP('5')}}>
         <TouchableOpacity onPress={()=>{

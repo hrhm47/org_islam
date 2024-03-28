@@ -26,15 +26,15 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import SelectDropdown from "react-native-select-dropdown";
 import TasbishModel from './TasbishModel';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
+import { useNavigation } from '@react-navigation/native';
 
 
 
 export default function Count() {
+  const navigation=useNavigation();
   const [count, setCount] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
   const [dhikerValue, setDhikerValue] = useState(" ");
-  // const [dhikrLoadData, setDhikrLoadData]=(null);
-  // const [dhikrCount, setDhikrCount]=useState('');
 
   const [load, setLoad] = useState('Load');
   const [imageSource, setImageSource] = useState('X');
@@ -47,10 +47,7 @@ export default function Count() {
   const [selectedRowData, setSelectedRowData] = useState(null);
   
   const handleInputText= (text) => {
-    // setDhikerValue(text);
     setUserDhikr(text);
-    // dhikrSelectionData.push(text);
-    // console.log(text);
   }
   // reamainng load= wala 
   const handleAddRow = async() => {
@@ -232,14 +229,17 @@ if (loadModelVisible){
   const [animationColor,setAnimationColor]=useState('#104586')
   return (
     <View style={styles.container}>
+
       <View
         style={{
           width: '100%',
           backgroundColor: '#104586',
           height: HP('8'),
-          justifyContent: 'center',
+          justifyContent: 'space-evenly',
           alignItems: 'center',
+          flexDirection: 'row',
         }}>
+          <Icon name="arrow-back" size={SC(30)} color="#fff" style={{}} onPress={()=>navigation.goBack()}/>
         <Text
           style={{
             color: '#fff',
@@ -250,6 +250,7 @@ if (loadModelVisible){
           }}>
           TASBIH COUNTER
         </Text>
+            <Icon name="arrow-back" size={SC(30)} color="transparent" style={{}}/>
       </View>
      
       {/* model view */}
@@ -359,7 +360,7 @@ if (loadModelVisible){
          width={10}
          lineCap='butt'
          fill={count}
-         tintColor={'#00ff00'}
+         tintColor={'#fff'}
          backgroundColor="#104586"
          padding={20}
          backgroundWidth={17}
@@ -369,7 +370,7 @@ if (loadModelVisible){
          onAnimationComplete={()=>{
 
          }}
-         tintColorSecondary='#fff'
+        //  tintColorSecondary='#00ff00'
          
           // renderCap={({ center }) => <Circle cx={center.x} cy={center.y} r="10" fill="blue" />}
          >

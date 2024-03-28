@@ -3,7 +3,7 @@ import { StyleSheet, Text, View,FlatList,TouchableOpacity } from 'react-native';
 import { widthPercentageToDP as WP, heightPercentageToDP as HP, scale as SC } from '../../../utills/pixelratio';
 import duaData from './../json/GuidanceDua.json';
 import { useNavigation } from '@react-navigation/native';
-
+import Icon from 'react-native-vector-icons/MaterialIcons';
 const DuaDetails = ({ route }) => {
   // const { description, detail, dua_arabic, keywords, reference, title } = route.params.item;
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -59,10 +59,11 @@ const DuaDetails = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <View style={{width:"100%",backgroundColor:"#104586",height:HP('8'), justifyContent:"center", alignItems:"center",}}>
-
+      <View style={{width:"100%",backgroundColor:"#104586",height:HP('8'), justifyContent:"space-around", alignItems:"center",flexDirection:"row"}}>
+      <Icon name="arrow-back" size={SC(30)} color="#fff" style={{left:10}} onPress={()=>navigation.goBack()}/>
       <Text style={{ color:"#fff",
         fontSize:SC(23),fontWeight:"bold",letterSpacing:1,textAlign:"center"}}>General Dua's</Text>
+        <Icon name="arrow-back" size={SC(30)} color="transparent" style={{left:10}} onPress={()=>navigation.goBack()}/>
         </View>
      <FlatList
         data={categories}

@@ -14,12 +14,18 @@ import {
   widthPercentageToDP as WP,
   scale as SC,
 } from '../../../utills/pixelratio';
+import { useNavigation } from '@react-navigation/native';
+
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
 const StoriesScreen = ({route}) => {
+  const naviagtion = useNavigation();
   // console.log('data', route.params);
   const data = route.params.item;
 
   return (
     <View style={styles.container}>
+
       <View
         style={{
           width: '100%',
@@ -28,6 +34,7 @@ const StoriesScreen = ({route}) => {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
+           <Icon name="arrow-back" size={30} color="#fff" style={{left:10, position:"absolute"}} onPress={()=>naviagtion.goBack()}/>
         <Text
           style={{
             color: '#fff',

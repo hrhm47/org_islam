@@ -16,11 +16,13 @@ import { Calendar, CalendarList, Agenda,CalendarListProps} from "react-native-ca
 import moment from "moment";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Checkbox from '@react-native-community/checkbox';
-import { useIsFocused } from "@react-navigation/native";
+import { useIsFocused, useNavigation } from "@react-navigation/native";
 import { ChartsContext } from "../../../contextApi/ApiProvider";
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 // import TextTicker from 'react-native-text-ticker'
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
 
 export default function Calender() {
   const [fjrind, setFjrind] = useState(false);
@@ -252,7 +254,7 @@ export default function Calender() {
 
   
   const [ dummydate, setDummydate ] = useState([]);
-  
+  const navigation = useNavigation();
   
   return (
     <>
@@ -260,6 +262,8 @@ export default function Calender() {
       <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
         {/* <View style={{flexDirection:"row"}}> */}
         <View style={{ marginBottom:8,height:55,alignItems:"center",justifyContent:"center",flexDirection:"row", backgroundColor:"#104586" }}>
+      
+        <Icon name="arrow-back" size={30} color="#fff" style={{left:10, position:"absolute"}} onPress={()=>navigation.goBack()}/>
         <Text style={{alignSelf:"center",textAlign:"center",color:"#fff",fontSize:25,fontWeight:"bold",letterSpacing:1}}> Salah Habbit</Text>
         </View>
         
