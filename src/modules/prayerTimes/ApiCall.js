@@ -1,7 +1,4 @@
 
-// AIzaSyASR27x7rc2BXDvoAd7lys--K-bSCJg71w
-
-
 import {
     StyleSheet,RefreshControl,Text,View,SafeAreaView,Platform,Image,TouchableOpacity,ImageBackground,ScrollView,Alert,StatusBar,ActivityIndicator,AppState, Button, PermissionsAndroid,BackHandler,BackPressEventName
   } from "react-native";
